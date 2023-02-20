@@ -1,0 +1,77 @@
+@keyframes gear_fade_in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes arrow-down {
+    0% {opacity: 0; transform: translateY(0%);}
+    10% {opacity: 0.1; transform: translateY(5%);}
+    20% {opacity: 0.2; transform: translateY(10%);}
+    30% {opacity: 0.3; transform: translateY(15%);}
+    40% {opacity: 0.4; transform: translateY(20%);}
+    50% {opacity: 0.5; transform: translateY(25%);}
+    60% {opacity: 0.6; transform: translateY(30%);}
+    70% {opacity: 0.7; transform: translateY(35%);}
+    80% {opacity: 0.8; transform: translateY(40%);}
+    90% {opacity: 0.9; transform: translateY(45%);}
+    100% {opacity: 0.8; transform: translateY(50%);}
+}
+
+.scroll-container {
+    width: 8rem; height: inherit;
+    animation: gear_fade_in 2s;
+}
+
+.scroll-wrapper {
+    width: inherit; height: 100vh;
+    display: flex; justify-content: flex-start; align-items: center; flex-direction: column;
+    position: sticky; top: 0; left: 0;
+}
+
+/* top gear */
+.gear-one {
+    width: 6.6rem; height: 6.6rem; z-index: 1;
+    display: flex; justify-content: center; align-items: center;
+    position: absolute; top: calc(7.5vh - 3.3rem);
+}
+
+.rotator-top {
+    width: 6.6rem; height: 6.6rem;
+    border-radius: 100%; border: solid white 0.35rem; position: absolute;
+}
+
+.logo {
+    width: 6rem; height: 6rem;
+    background-image: url("../assets/gear.png"); background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* bottom gear */
+.gear-two {
+    width: inherit; height: 15vh;
+    display: flex; justify-content: center; align-items: center;
+    position: absolute; top: calc(85vh);
+}
+.rotator-bottom {
+    width: 6.6rem; height: 6.6rem;
+    border-radius: 100%; border: 0.35rem solid white; position: absolute;
+}
+
+/* pulley lines */
+.lines {
+    position: sticky; top: calc(7.5vh);
+    width: 6.6rem; height: calc(85vh);
+    border-left: solid white 0.35rem;
+    border-right: solid white 0.35rem;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.down-arrow {
+    display: block;
+    animation: arrow-down 1s ease-in-out infinite;
+    color: white; font-size: 4rem;
+}
