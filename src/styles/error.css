@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap');
+
+.error {
+    width: 100vw; height: 100vh;
+    background-color: #2E383F;
+}
+
+.error-msg {
+    width: inherit; height: inherit;
+    color: white;
+    font-size: 10rem; font-family: "Sofia Sans"; font-weight: 700;
+    display: flex; justify-content: center;align-items: center;
+}

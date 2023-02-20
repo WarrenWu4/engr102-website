@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+
+.tao-container {
+    width: 20rem; height: 30rem; place-self: center;
+    box-sizing: border-box;
+}
+
+.tao-card {
+    min-width: 20rem; min-height: 30rem;
+    background-color: #ECECEB;
+    display: flex; align-items: center; justify-content: space-evenly; flex-direction: column;
+}
+
+.tao-profile {
+    width: 18.5rem; height: 18.5rem;
+    background-color: #2E383F;
+}
+
+.tao-profile:hover {
+    background-color: black; opacity: 0.8;
+}
+
+.tao-info {
+    width: 18.5rem; height: 9.5rem;
+    background-color: #2E383F;
+}
+
+.tao-name {
+    width: inherit; height: 50%;
+    color: #ECECEB; font-size: 2rem; font-family: "Rubik"; font-weight: 700;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.tao-socials {
+    width: inherit; height: 50%;
+    display: flex; justify-content: space-evenly; align-items: flex-start;
+    color: #ECECEB; font-size: 2.5rem;
+}
+
+.tao-socials a:hover {
+    color:#F64662;
+}

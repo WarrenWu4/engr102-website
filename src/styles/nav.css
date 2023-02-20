@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.nav-container {
+    width: 100vw; height: 15vh;
+    display: flex; justify-content: space-between; align-items: center;
+    animation: fadein 1s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.nav-main {
+    margin-left: 6rem;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.nav-logo {
+    width: 6rem; height: 8rem; margin-right: 0.5rem;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.logo {
+    width: 6rem; height: 6rem;
+    background-image: url("../assets/gear.png"); background-size: contain;
+    animation: spin 3s;
+
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+.nav-main a {
+    width: 8rem; height:10rem;
+    font-size: 2.5rem; color: #ECECEB; text-decoration: none;
+    display: flex; justify-content: center; align-items: center;
+    font-family: "Bebas Neue";
+    cursor: pointer;
+}
+
+.nav-main a:hover {
+    text-decoration: underline; text-decoration-color: inherit; text-decoration-thickness: 0.5rem;
+}
+
+a.active {
+    color: #F64662;
+}
+
+.nav-secondary {
+    margin-right: 10rem;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.nav-donate {
+    margin-right: 1.5rem;
+}
+
+.nav-donate, .nav-discord {
+    font-size: 3.5rem; color:#ECECEB;
+    cursor: pointer;
+}
+
+.nav-donate:hover, .nav-discord:hover {
+    color: #F64662;
+}
