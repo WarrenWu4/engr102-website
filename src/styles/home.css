@@ -58,12 +58,23 @@
 }
 
 /* scroll bar stuff */
-body::-webkit-scrollbar {
-    display: none;
-}
 body {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    overflow-x:hidden;
+    overflow-y: overlay;
+    scrollbar-width: 1.5rem;
+    scrollbar-color: #888;
+}
+::-webkit-scrollbar {
+    width: 1.5rem;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 /* section two of home page */
@@ -92,15 +103,9 @@ body {
     color: #F64662; text-decoration: underline; text-decoration-thickness: 0.5rem;
 }
 
-.down-arrow-two {
-    position: absolute; width: 100vw;
-    bottom: 25vh;
-    display: flex; justify-content: center; align-items: center;
-    font-size: 6rem; color: #07617D;
-}
-/* 
+/* section three of home page */
 .home-sec-three {
-    width: 100vw; height: 120vh; position: sticky; top: 0px;
+    width: 100vw; height: 100vh;
     background-color: #07617D;
     display: flex; justify-content: flex-start; align-items: center; flex-direction: column;
 }
@@ -120,19 +125,39 @@ body {
     color: #F64662; text-decoration: underline; text-decoration-thickness: 0.5rem;
 }
 
-.down-arrow-three {
-    position: absolute; width: 100vw;
-    bottom: 25vh;
-    display: flex; justify-content: center; align-items: center;
-    font-size: 6rem; color: #ECECEB;
-}
-
 .py-proj-showcase {
     width: 100vw; height: 60vh; display: flex; justify-content: center; align-items: center; flex-direction: row; background-color: gray;
 }
 
+/* section four of home page */
 .home-sec-four {
-    width: 100vw; height: 100vh; position: sticky; top: 0;
+    width: 100vw; min-height: 100vh;
     background-color: #ECECEB;
-    display: flex; justify-content: center; align-items: center; flex-direction: column;
-} */
+    display: flex; justify-content: flex-start; align-items: center; flex-direction: column;
+}
+
+.title-four {
+    width: 80vw; text-align: center; font-size: 9rem; font-weight: 700;
+    font-family: "Sofia Sans";
+    color: #2E383F;
+    margin-top: 5rem;
+}
+
+.faq-container {
+    width: 90vw;
+    display: flex; justify-content: space-evenly;
+    margin-top: 4rem;
+}
+
+@media only screen and (max-width: 1400px) {
+    .faq-container {
+        width: 90vw;
+        display: flex; align-items: center; flex-direction: column;
+        margin-top: 4rem;
+    }
+}
+
+.faq-column {
+    display: flex; flex-direction: column;
+    align-items: center;
+}

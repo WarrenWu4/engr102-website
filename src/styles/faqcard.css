@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap');
+
+.faq-card {
+    width: 55rem;
+    display: flex; flex-direction: column;
+    margin: 1rem;
+}
+
+.faq-question-container {
+    width: inherit; height: 10rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 3rem; font-family: "Sofia Sans"; font-weight: 700;
+    border: solid #2E383F;
+    border-width: 0.4rem;
+    border-radius: 1rem;
+    color: #2E383F;
+}
+
+.faq-question {
+    margin-left: 5rem;
+}
+
+.faq-icon {
+    margin-right: 5rem;
+    cursor: pointer;
+    transform: translateY(0.5rem);
+}
+
+.faq-answer-container {
+    width: inherit;
+    margin-top: 1rem;
+    border: solid #2E383F;
+    border-width: 0.4rem;
+    border-radius: 1rem;
+    background-color: #2E383F;
+
+}
+
+.faq-answer {
+    margin: 1rem;
+    color: #ECECEB;
+    font-size: 2rem; font-family: "Sofia Sans"; font-weight: 700;
+}
