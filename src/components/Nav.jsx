@@ -6,6 +6,7 @@ export default function Nav() {
     return (
         <div className='nav-container'>
             <div className='nav-main'>
+                <div className='logo'/>
                 <div className='nav-home'>
                     <NavLink to="/">Home</NavLink>
                 </div>

@@ -1,13 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 /* animations */
-@keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
 }
 
 /* main navbar stuff */
@@ -55,4 +51,12 @@ a.active {
 
 .nav-donate:hover, .nav-discord:hover {
     color: #F64662;
+}
+
+.logo {
+    width: 6rem; height: 6rem;
+    background-image: url("../assets/gear.png"); background-size: contain;
+    background-repeat: no-repeat; background-position: center;
+    margin-left: 5rem;
+    animation: rotate 2s;
 }

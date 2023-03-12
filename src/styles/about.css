@@ -1,12 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap');
 
 /* animations */
-@keyframes fadein {
-    from {opacity: 0; transform: translateY(10%);}
-    to {opacity: 1; transform: translateY(0%);}
-}
 
 
+/* about page css */
 .about-page {
     width: 100vw; height: 100vh;
     background-color: #2E383F;

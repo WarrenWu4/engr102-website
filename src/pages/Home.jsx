@@ -5,10 +5,8 @@ import Nav from '../components/Nav'
 export default function Home() {
     return(
         <div className="home-page">
-            
-
             <div className='home-sec-one'>
-                <Nav/>
+                <Nav/> 
                 <div className='hero-container'>
 
                     <div className='hero-header'>
