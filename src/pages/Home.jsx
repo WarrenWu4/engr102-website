@@ -30,31 +30,26 @@ export default function Home() {
 
     return(
         <div className="home-page">
-            <div className='home-sec-one'>
-                <Nav/> 
-                <div className='hero-container'>
 
-                    <div className='hero-header'>
+            <Nav/> 
+
+            <div className='home-sec-one'>
+                <div className='hero-header'>
                     Howdy Aggie Engineers
                     <div className='hero-subheader'>
                         Welcome to the ENGR 102 Website 
                         <br></br>
                         Your <span>guide</span> through the 102 course
                     </div>
-                    </div>
-                    <div className='hero-img'></div>
-
                 </div>
-
+                <div className='hero-img'></div>
             </div>
 
             {/* add mouse trail effect b/c too boring for big screens */}
 
             <div className='home-sec-two' >
-                <div className='home-sec-two-content'>
-                    <div className='title-two'>What is ENGR 102?</div>
-                    <div className='text-two'>ENGR 102 is a mandatory course for all incoming engineering majors. The course is all about <span>Python</span> &#40;the programming language not the snake&#41;.</div>
-                </div>
+                <div className='title-two'>What is ENGR 102?</div>
+                <div className='text-two'>ENGR 102 is a mandatory course for all incoming engineering majors. The course is all about <span>Python</span> &#40;the programming language not the snake&#41;.</div>
             </div>
 
                 
@@ -80,6 +75,9 @@ export default function Home() {
                         {fcR}
                     </div>
                 </div>
+            </div>
+
+            <div className='footer'>
             </div>
 
         </div>

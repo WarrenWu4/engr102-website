@@ -5,56 +5,10 @@
 @keyframes fadein {
     from {
         opacity: 0; 
-        transform: translateY(10%);
     }
     to {
         opacity: 1; 
-        transform: translateY(0%);
     }
-}
-
-/* home page container */
-.home-page {
-    width: 100vw;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    flex-direction: column;
-}
-
-
-/* section one of home page */
-.home-sec-one {
-    width: 100vw; height: 100vh;
-    background-color: #2E383F;
-}
-
-
-.hero-container {
-    width: inherit; height: 60vh;
-    display: flex; justify-content: center; align-items: center;
-    animation: fadein 2s;
-}
-
-.hero-header {
-    font-size: 8rem; font-weight: bold; color: #F64662; font-family: 'Sofia Sans';
-    text-align: center; margin-left: 6rem; margin-right: 6rem;
-}
-
-.hero-subheader {
-    font-size: 5rem; font-weight: bold; color: #EE6177; font-family: "Sofia Sans";
-    margin-top: 2rem;
-}
-
-.hero-img {
-    width: 50rem; height: 50rem;
-    background-image: url("../assets/reveille.png"); background-size: contain;
-    background-repeat: no-repeat; background-position: center;
-    transform: scaleX(-1);
-}
-
-.hero-subheader span {
-    color : #F9A828; text-decoration: underline;
 }
 
 /* scroll bar stuff */
@@ -77,26 +31,66 @@ body {
     background: #555;
 }
 
-/* section two of home page */
-.home-sec-two {
-    width: 100vw; height: 100vh;
-    background-color: #F9A828;
-    display: flex; justify-content: flex-start; align-items: center; flex-direction: column;
+/* home page container */
+.home-page {
+    width: 100vw;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;
 }
 
-.home-sec-two-content {
-    display: flex; justify-content: center; align-items: center; flex-direction: column;
-    width: 100vw; height: 100vh;
+
+/* section one of home page */
+.home-sec-one {
+    width: 100vw;
+    background-color: #2E383F;
+    display: flex; justify-content: center;
+    align-items: center; flex-direction: row;
+    margin: 5rem 0 5rem 0;
+}
+
+.hero-header {
+    flex-direction: column;
+    font-size: 6rem; font-weight: bold; 
+    color: #F64662; font-family: 'Sofia Sans';
+    text-align: center;
+}
+
+.hero-subheader {
+    font-size: 4rem; font-weight: bold; color: #EE6177; font-family: "Sofia Sans";
+    margin-top: 2rem;
+}
+
+.hero-img {
+    width: 40rem; height: 40rem;
+    background-image: url("../assets/reveille.png"); background-size: contain;
+    background-repeat: no-repeat; background-position: center;
+    transform: scaleX(-1);
+}
+
+.hero-subheader span {
+    color : #F9A828; text-decoration: underline;
+}
+
+
+/* section two of home page */
+.home-sec-two {
+    width: 100vw;
+    display: flex; justify-content: flex-start; align-items: center; flex-direction: column;
+    margin-top: 10rem; margin-bottom: 20rem;
 }
 
 .title-two {
-    width: 80vw; text-align: center; 
-    font-size: 9rem; font-weight: 700; font-family: "Sofia Sans"; color: #07617D;
+    width: 80vw; text-align: center; font-size: 6rem; font-weight: 700;
+    font-family: "Sofia Sans";
+    margin-top: 6rem; color: #F9A828;
 }
 
 .text-two {
-    width: 80vw; text-align: center;
-    font-size: 5rem; font-weight: 700; font-family: "Sofia Sans"; color: #2F778D;
+    width: 60vw; text-align: center;
+    margin-top: 4rem;
+    font-size: 4rem; font-weight: 700; font-family: "Sofia Sans"; color: #F9A828;
 }
 
 .text-two span {
@@ -105,20 +99,20 @@ body {
 
 /* section three of home page */
 .home-sec-three {
-    width: 100vw; height: 100vh;
-    background-color: #07617D;
+    width: 100vw;
     display: flex; justify-content: flex-start; align-items: center; flex-direction: column;
+    margin-top: 10rem; margin-bottom: 20rem;
 }
 .home-sec-three-content {
     width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; flex-direction: column;
 }
 .title-three {
-    width: 80vw; text-align: center; font-size: 9rem; font-weight: 700; font-family: "Sofia Sans";
-    color: #ECECEB
+    width: 80vw; text-align: center; font-size: 6rem; font-weight: 700; font-family: "Sofia Sans";
+    color: #07617D
 }
 .text-three {
     width: 80vw; text-align: center;
-    font-size: 3rem; font-weight: 700; font-family: "Sofia Sans"; color: #ECECEB;
+    font-size: 4rem; font-weight: 700; font-family: "Sofia Sans"; color: #07617D;
 }
 
 .text-three span {
@@ -126,32 +120,35 @@ body {
 }
 
 .py-proj-showcase {
-    width: 100vw; height: 60vh; display: flex; justify-content: center; align-items: center; flex-direction: row; background-color: gray;
+    width: 80vw; height: 70vh; display: flex; justify-content: center; align-items: center; flex-direction: row;
+    background-color: #565E63;
+    border-radius: 2rem;
 }
 
 /* section four of home page */
 .home-sec-four {
-    width: 100vw; min-height: 100vh;
-    background-color: #ECECEB;
+    width: 100vw;
+    background-color: #2E383F;
     display: flex; justify-content: flex-start; align-items: center; flex-direction: column;
+    margin-bottom: 20rem;
 }
 
 .title-four {
-    width: 80vw; text-align: center; font-size: 9rem; font-weight: 700;
+    width: 80vw; text-align: center; font-size: 6rem; font-weight: 700;
     font-family: "Sofia Sans";
-    color: #2E383F;
+    color: #ECECEB;
     margin-top: 5rem;
 }
 
 .faq-container {
-    width: 90vw;
+    width: 80vw;
     display: flex; justify-content: space-evenly;
     margin-top: 4rem;
 }
 
 @media only screen and (max-width: 1400px) {
     .faq-container {
-        width: 90vw;
+        width: 80vw;
         display: flex; align-items: center; flex-direction: column;
         margin-top: 4rem;
     }
@@ -160,4 +157,9 @@ body {
 .faq-column {
     display: flex; flex-direction: column;
     align-items: center;
+}
+
+.footer {
+    width: 100vw; height: 20rem;
+    border-top: solid #565E63 0.6rem;
 }

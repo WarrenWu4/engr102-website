@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 /* animations */
 @keyframes rotate {
@@ -10,12 +11,12 @@
 .nav-container {
     width: inherit; height: 12.6rem;
     display: flex; justify-content: space-between; align-items: center;
-    animation: fadein 1s;
+    animation: fadein 3s;
 }
 
 
 .nav-main {
-    margin-left: 1rem;
+    margin-left: 3rem;
     display: flex; justify-content: center; align-items: center;
 }
 
@@ -53,10 +54,15 @@ a.active {
     color: #F64662;
 }
 
+.logo-container {
+    width: 8rem; height:10rem;
+    display: flex; justify-content: center; align-items: center;
+}
+
 .logo {
     width: 6rem; height: 6rem;
     background-image: url("../assets/gear.png"); background-size: contain;
     background-repeat: no-repeat; background-position: center;
-    margin-left: 5rem;
     animation: rotate 2s;
+    margin-bottom: 4px;
 }
