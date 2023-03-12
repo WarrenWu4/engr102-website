@@ -1,17 +1,13 @@
-import Nav from '../components/Nav'
-import ScrollBar from '../components/ScrollBar';
 import '../styles/home.css'
+import Nav from '../components/Nav'
+// import ScrollBar from '../components/ScrollBar';
 
 export default function Home() {
-
-
     return(
         <div className="home-page">
             
-            <ScrollBar/>
 
             <div className='home-sec-one'>
-
                 <Nav/>
                 <div className='hero-container'>
 
@@ -28,6 +24,12 @@ export default function Home() {
                 </div>
 
             </div>
+
+            <div className='home-sec-two'>
+
+            </div>
+
+            {/* add mouse trail effect b/c too boring for big screens */}
 {/* 
             <div className='home-sec-two' >
                 <div className='home-sec-two-content'>

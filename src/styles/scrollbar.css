@@ -36,7 +36,7 @@
 .gear-one {
     width: 6.6rem; height: 6.6rem; z-index: 1;
     display: flex; justify-content: center; align-items: center;
-    position: absolute; top: calc(7.5vh - 3.3rem);
+    position: absolute; top: 2.5rem;
 }
 
 .rotator-top {
@@ -52,9 +52,9 @@
 
 /* bottom gear */
 .gear-two {
-    width: inherit; height: 15vh;
+    width: 6.6rem; height: 6.6rem;
     display: flex; justify-content: center; align-items: center;
-    position: absolute; top: calc(85vh);
+    position: absolute; top: calc(87vh);
 }
 .rotator-bottom {
     width: 6.6rem; height: 6.6rem;
@@ -63,8 +63,8 @@
 
 /* pulley lines */
 .lines {
-    position: sticky; top: calc(7.5vh);
-    width: 6.6rem; height: calc(85vh);
+    position: sticky; top: 5.8rem;
+    width: 6.6rem; height: calc(87vh - 3rem);
     border-left: solid white 0.35rem;
     border-right: solid white 0.35rem;
     display: flex; justify-content: center; align-items: center;

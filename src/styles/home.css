@@ -7,32 +7,37 @@
     to {opacity: 1; transform: translateY(0%);}
 }
 
+/* home page container */
 .home-page {
-    width: 100vw; height: 400vh;
-    display: flex; justify-content: space-evenly;
+    width: 100vw;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;
 }
 
 
 /* section one of home page */
 .home-sec-one {
-    width: calc(100vw - 8.95rem); height: 100vh;
+    width: 100vw; height: 100vh;
     background-color: #2E383F;
+    animation: fadein 2s;
 }
 
 
 .hero-container {
     width: inherit; height: 60vh;
-    display: flex; justify-content: flex-start; align-items: center;
-    animation: fadein 2s;
+    display: flex; justify-content: center; align-items: center;
 }
 
 .hero-header {
-    font-size: 9rem; font-weight: bold; color: #F64662; font-family: 'Sofia Sans';
+    font-size: 8rem; font-weight: bold; color: #F64662; font-family: 'Sofia Sans';
     text-align: center; margin-left: 6rem; margin-right: 6rem;
 }
 
 .hero-subheader {
     font-size: 5rem; font-weight: bold; color: #EE6177; font-family: "Sofia Sans";
+    margin-top: 2rem;
 }
 
 .hero-img {
