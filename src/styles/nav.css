@@ -7,62 +7,66 @@
     to {transform: rotate(360deg);}
 }
 
-/* main navbar stuff */
+/* nav container styling */
 .nav-container {
-    width: inherit; height: 12.6rem;
+    width: 100vw; height: 12.6rem;
     display: flex; justify-content: space-between; align-items: center;
-    animation: fadein 3s;
+    flex-direction: row;
 }
 
-
+/* main navbar stuff */
 .nav-main {
-    margin-left: 3rem;
+    margin-left: 6rem;
+    display: flex; justify-content: center; align-items: center;
+    flex-direction: row;
+}
+.logo-container, .nav-home, .nav-learn, .nav-labs, .nav-review, .nav-about {
+    width: 8rem; height: 10rem;
     display: flex; justify-content: center; align-items: center;
 }
-
-.nav-main a {
-    width: 8rem; height:10rem;
-    font-size: 2.5rem; color: #ECECEB; text-decoration: none;
-    display: flex; justify-content: center; align-items: center;
-    font-family: "Bebas Neue";
-    cursor: pointer;
-}
-
-.nav-main a:hover {
-    text-decoration: underline; text-decoration-color: inherit; text-decoration-thickness: 0.5rem;
-}
-
-a.active {
-    color: #F64662;
-}
-
-.nav-secondary {
-    margin-right: 10rem;
-    display: flex; justify-content: center; align-items: center;
-}
-
-.nav-donate {
-    margin-right: 1.5rem;
-}
-
-.nav-donate, .nav-discord {
-    font-size: 3.5rem; color:#ECECEB;
-    cursor: pointer;
-}
-
-.nav-donate:hover, .nav-discord:hover {
-    color: #F64662;
-}
-
-.logo-container {
-    width: 8rem; height:10rem;
-    display: flex; justify-content: center; align-items: center;
-}
-
 .logo {
     width: 6rem; height: 6rem;
     background-image: url("../assets/gear.png"); background-size: contain;
     background-repeat: no-repeat; background-position: center;
     animation: rotate 2s;
-    margin-bottom: 4px;
+    /* minor adjustment */
+    margin-bottom: 1px;
+}
+.nav-main a {
+    color: #ECECEB; font-family: "Bebas Neue"; font-size: 2.5rem;
+    display: flex; justify-content: center; align-items: center;
+}
+.nav-main a:hover {
+    text-decoration: underline; text-decoration-color: inherit; text-decoration-thickness: 0.5rem;
+}
+a.active {
+    color: #F64662;
+}
+
+
+/* secondary navbar stuff */
+.nav-secondary {
+    margin-right: 6rem;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.nav-donate, .nav-discord {
+    width: 6rem; height: 10rem;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.nav-donate a {
+    font-size: 3rem;color:#ECECEB;
+}
+
+.nav-discord a {
+    font-size: 3.5rem;color:#ECECEB;
+}
+
+.nav-secondary a:hover {
+    color: #F64662;
+}
+
+a.active {
+    color: #F64662
 }
