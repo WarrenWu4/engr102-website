@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 /* animations */
-
 @keyframes fadein {
     from {
         opacity: 0; 
@@ -11,155 +12,61 @@
     }
 }
 
-/* scroll bar stuff */
-body {
-    overflow-x:hidden;
-    overflow-y: overlay;
-    scrollbar-width: 1.5rem;
-    scrollbar-color: #888;
-}
-::-webkit-scrollbar {
-    width: 1.5rem;
-}
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-::-webkit-scrollbar-thumb {
-    background: #888;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
 /* home page container */
 .home-page {
-    width: 100vw;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    flex-direction: column;
+    width: 100vw; height: 100vh;
+    display: flex; align-items: center; flex-direction: column;
 }
 
-
-/* section one of home page */
-.home-sec-one {
-    width: 100vw;
-    background-color: #2E383F;
-    display: flex; justify-content: center;
-    align-items: center; flex-direction: row;
-    margin: 5rem 0 5rem 0;
+/* hero section */
+.hero-container {
+    width: 100vw; display: flex; flex-direction: row;
 }
 
-.hero-header {
-    flex-direction: column;
-    font-size: 6rem; font-weight: bold; 
-    color: #F64662; font-family: 'Sofia Sans';
-    text-align: center;
-}
-
-.hero-subheader {
-    font-size: 4rem; font-weight: bold; color: #EE6177; font-family: "Sofia Sans";
-    margin-top: 2rem;
+/* right side of hero section */
+.hero-right {
+    width: 50vw;
 }
 
 .hero-img {
-    width: 40rem; height: 40rem;
-    background-image: url("../assets/reveille.png"); background-size: contain;
-    background-repeat: no-repeat; background-position: center;
+    width: 50rem; height: 49rem;
+    background-image: url("../assets/reveille.png");
+    background-size: contain; background-position: center;
+    background-repeat: no-repeat;
+    margin: 5rem 0 0 10rem;
     transform: scaleX(-1);
 }
 
-.hero-subheader span {
-    color : #F9A828; text-decoration: underline;
+/* left side of hero section */
+.hero-left {
+    width: 50vw;
+    display: flex; justify-content: flex-end;
 }
 
-
-/* section two of home page */
-.home-sec-two {
-    width: 100vw;
-    display: flex; justify-content: flex-start; align-items: center; flex-direction: column;
-    margin-top: 10rem; margin-bottom: 20rem;
+.hero-left-wrapper {
+    margin-top: 5rem; height: 49rem;
+    display: flex; justify-content: center; align-items: center; flex-direction: column;
 }
 
-.title-two {
-    width: 80vw; text-align: center; font-size: 6rem; font-weight: 700;
-    font-family: "Sofia Sans";
-    margin-top: 6rem; color: #F9A828;
+.hero-header {
+    width: 65rem; height: 10rem;
+    color: #ECECEB; font-family: "Secular One"; font-size: 5rem;
+    display: flex; justify-content: center; align-items: center;
+    margin-bottom: 1.2rem;
+    background-color: #F64662;
 }
 
-.text-two {
-    width: 60vw; text-align: center;
-    margin-top: 4rem;
-    font-size: 4rem; font-weight: 700; font-family: "Sofia Sans"; color: #F9A828;
+.hero-subheader {
+    color: #EE6177; font-size: 4rem; font-family: "Secular One";
+    display: flex; text-align: center;
+    margin-bottom: 2.2rem;
 }
 
-.text-two span {
-    color: #F64662; text-decoration: underline; text-decoration-thickness: 0.5rem;
-}
-
-/* section three of home page */
-.home-sec-three {
-    width: 100vw;
-    display: flex; justify-content: flex-start; align-items: center; flex-direction: column;
-    margin-top: 10rem; margin-bottom: 20rem;
-}
-.home-sec-three-content {
-    width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; flex-direction: column;
-}
-.title-three {
-    width: 80vw; text-align: center; font-size: 6rem; font-weight: 700; font-family: "Sofia Sans";
-    color: #07617D
-}
-.text-three {
-    width: 80vw; text-align: center;
-    font-size: 4rem; font-weight: 700; font-family: "Sofia Sans"; color: #07617D;
-}
-
-.text-three span {
-    color: #F64662; text-decoration: underline; text-decoration-thickness: 0.5rem;
-}
-
-.py-proj-showcase {
-    width: 80vw; height: 70vh; display: flex; justify-content: center; align-items: center; flex-direction: row;
-    background-color: #565E63;
-    border-radius: 2rem;
-}
-
-/* section four of home page */
-.home-sec-four {
-    width: 100vw;
-    background-color: #2E383F;
-    display: flex; justify-content: flex-start; align-items: center; flex-direction: column;
-    margin-bottom: 20rem;
-}
-
-.title-four {
-    width: 80vw; text-align: center; font-size: 6rem; font-weight: 700;
-    font-family: "Sofia Sans";
-    color: #ECECEB;
-    margin-top: 5rem;
-}
-
-.faq-container {
-    width: 80vw;
-    display: flex; justify-content: space-evenly;
-    margin-top: 4rem;
-}
-
-@media only screen and (max-width: 1400px) {
-    .faq-container {
-        width: 80vw;
-        display: flex; align-items: center; flex-direction: column;
-        margin-top: 4rem;
-    }
-}
-
-.faq-column {
-    display: flex; flex-direction: column;
-    align-items: center;
-}
-
-.footer {
-    width: 100vw; height: 20rem;
-    border-top: solid #565E63 0.6rem;
+.start-btn {
+    width: 15rem; height: 5rem;
+    border: solid #ECECEB;
+    border-width: 0.4rem; border-radius: 1rem;
+    display: flex; justify-content: center; align-items: center;
+    color: #ECECEB; font-family: "Rubik"; font-size: 2rem; font-weight: 700;
+    cursor: pointer;
 }

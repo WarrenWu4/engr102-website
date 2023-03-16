@@ -30,7 +30,7 @@
     background-repeat: no-repeat; background-position: center;
     animation: rotate 2s;
     /* minor adjustment */
-    margin-bottom: 1px;
+    margin-bottom: 1rem;
 }
 .nav-main a {
     color: #ECECEB; font-family: "Bebas Neue"; font-size: 2.5rem;
