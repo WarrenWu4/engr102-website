@@ -64,9 +64,17 @@
 
 .start-btn {
     width: 15rem; height: 5rem;
-    border: solid #ECECEB;
-    border-width: 0.4rem; border-radius: 1rem;
+    border: 0.4rem solid #ECECEB;
     display: flex; justify-content: center; align-items: center;
     color: #ECECEB; font-family: "Rubik"; font-size: 2rem; font-weight: 700;
-    cursor: pointer;
+    cursor: pointer; transition: all 250ms;
+}
+
+.start-btn:hover, .start-btn:focus {
+    box-shadow: inset 15.8rem 0 0 0 #ECECEB;
+    color: #2E383F;
+}
+
+.start-btn a {
+    width: inherit; height: inherit;
 }

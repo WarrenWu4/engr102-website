@@ -14,12 +14,10 @@
     font-family: "Sofia Sans"; color: #f64662; font-size: 9rem; font-weight: 700;
     display: flex; justify-content: center; align-items: center;
     margin-bottom: 10rem;
-    animation: fadein 2s;
 }
 
 .about-team {
     width: 100vw;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); grid-template-rows: repeat(6, 1fr);
-    animation: fadein 2s;
 }
