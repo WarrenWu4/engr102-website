@@ -31,18 +31,6 @@ export default function Home() {
                 </div>
             </div>
 
-            {/* <div className='home-sec-one'>
-                <div className='hero-header'>
-                    Howdy Aggie Engineers
-                    <div className='hero-subheader'>
-                        Welcome to the ENGR 102 Website 
-                        <br></br>
-                        Your <span>guide</span> through the 102 course
-                    </div>
-                </div>
-                <div className='hero-img'></div>
-            </div> */}
-
             {/* add mouse trail effect b/c too boring for big screens */}
 
         </div>
