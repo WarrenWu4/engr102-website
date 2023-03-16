@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 /* animations */
 
@@ -10,14 +11,13 @@
 }
 
 .about-title {
-    width: 100vw; height: 15rem;
-    font-family: "Sofia Sans"; color: #f64662; font-size: 9rem; font-weight: 700;
+    width: 100vw; height: 21.6rem;
+    font-family: "Sofia Sans"; color: #f64662; font-size: 7rem; font-weight: 700;
     display: flex; justify-content: center; align-items: center;
-    margin-bottom: 10rem;
 }
 
 .about-team {
     width: 100vw;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); grid-template-rows: repeat(6, 1fr);
+    display: flex; justify-content: space-evenly; flex-direction: row;
+    flex-wrap: wrap; align-items: center;
 }

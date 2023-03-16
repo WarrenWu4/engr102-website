@@ -8,7 +8,8 @@ export default function About() {
     // "Any Other", "TAs and", "PTS so", "RIP ig"
     // ];
     
-    const taNames = ["Lily Tang", "Sam Bush", "Avery Last_Name", "Ryan Kabir"
+    const taNames = ["First Last", "Lily Tang", "Sam Bush", "Avery", "Rando Person",
+    "Another Rando", "some dude", "some person", "hello world", "Getting Bored"
     ];
 
     const taCards = taNames.map((taName) => <TaoCard name={taName}></TaoCard>)
