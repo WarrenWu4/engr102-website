@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap');
+
+/* reivew page css */
+.review-page {
+    width: 100vw; height: 100vh;
+    background-color: #2E383F;
+}
+
+.review-title {
+    width: 100vw; height: 21.6rem;
+    font-family: "Sofia Sans"; color: #f64662;
+    font-size: 7rem; font-weight: 700;
+    display: flex; justify-content: center; align-items: center;
+}
