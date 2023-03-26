@@ -1,24 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
 .reviewblock-container {
     display: flex; flex-direction: column;
-    justify-content: center; align-items: center;
-    width: 100vw; height: 36.9rem;
+    justify-content: flex-start; align-items: center;
+    width: 100vw; height: 27.5rem;
+    margin-bottom: 5rem;
 }
 
 .reviewblock-header {
-    width: 100vw; height: 6.15rem;
-    flex-direction: row;
+    width: 100vw; height: 5rem;
+    display: flex; flex-direction: row;
 }
 
 .reviewblock-profile {
     border-radius: 50%;
     border: 0.2rem solid #ECECEB;
-    width: 2rem; height: 2rem;
+    min-width: 5rem; min-height: 5rem;
+    background-position: center; background-size: cover;
+    background-repeat: no-repeat; margin-left: 7rem;
 }
 
 .reviewblock-bar {
-    flex-direction: column;
+    flex-direction: column; margin-left: 1rem;
+    display: flex; justify-content: space-between; align-items: flex-start;
 }
 
 .reviewblock-name {
-    color: #ECECEB;
+    color: #ECECEB; font-size: 3rem; font-family: "Rubik";
+    font-weight: 600;
+}
+
+.reviewblock-divider {
+    width: calc(100vw - 20rem); height: 4px;
+    background: #ECECEB;
+    border-radius: 1rem;
 }

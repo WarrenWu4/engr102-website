@@ -11,7 +11,20 @@
                 "gmail": "https://www.google.com/",
                 "linkedin": ""
             },
-            "info": "General information about the TA such as year, major, hobbies, or anything else they wanna put"
+            "info": "General information about the TA such as year, major, hobbies, or anything else they wanna put",
+            "videos": [{
+                    "link": "",
+                    "title": "Example Video",
+                    "date": "1/11/1111",
+                    "units": [1, 2, 3, 4]
+                },
+                {
+                    "link": "",
+                    "title": "Example Video2",
+                    "date": "2/22/2222",
+                    "units": [4, 5, 6, 7]
+                }
+            ]
         },
         {
             "userID": 2,
@@ -24,7 +37,20 @@
                 "gmail": "",
                 "linkedin": "https://www.google.com"
             },
-            "info": "ARGHHHHHH"
+            "info": "ARGHHHHHH",
+            "videos": [{
+                "link": "",
+                "title": "Example Video",
+                "date": "1/11/1111",
+                "units": [1, 2, 3, 4]
+            },
+            {
+                "link": "",
+                "title": "Example Video2",
+                "date": "2/22/2222",
+                "units": [4, 5, 6, 7]
+            }
+        ]
         },
         {
             "userID": 3,
@@ -37,7 +63,20 @@
                 "gmail": "https://www.google.com/",
                 "linkedin": "https://www.google.com"
             },
-            "info": "SAMPLE TEXT"
+            "info": "SAMPLE TEXT",
+            "videos": [{
+                "link": "",
+                "title": "Example Video",
+                "date": "1/11/1111",
+                "units": [1, 2, 3, 4]
+            },
+            {
+                "link": "",
+                "title": "Example Video2",
+                "date": "2/22/2222",
+                "units": [4, 5, 6, 7]
+            }
+        ]
         },
         {
             "userID": 4,
