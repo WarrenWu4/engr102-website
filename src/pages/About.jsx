@@ -1,18 +1,17 @@
 import "../styles/about.css"
 import Nav from "../components/Nav"
 import TaoCard from "../components/TaoCard"
+import data from "../tas.json"
 
 export default function About() {
 
-    // const taNames = ["Lily Tang", "Sam Bush", "Avery Last_Name", "Ryan Kabir", "I don't", "Really Know", 
-    // "Any Other", "TAs and", "PTS so", "RIP ig"
-    // ];
-    
-    const taNames = ["First Last", "Lily Tang", "Sam Bush", "Avery", "Rando Person",
-    "Another Rando", "some dude", "some person", "hello world", "Getting Bored"
-    ];
+    const taCards = data.tas.map((taInfo) => <TaoCard 
+        name={taInfo.name}
+        pic={taInfo.profilePic}
+        info={taInfo.info}
+        socials={taInfo.socials}
+    />);
 
-    const taCards = taNames.map((taName) => <TaoCard name={taName}></TaoCard>)
 
     return (
         <div className="about-page">

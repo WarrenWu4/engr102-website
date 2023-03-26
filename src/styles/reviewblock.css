@@ -1,0 +1,24 @@
+.reviewblock-container {
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    width: 100vw; height: 36.9rem;
+}
+
+.reviewblock-header {
+    width: 100vw; height: 6.15rem;
+    flex-direction: row;
+}
+
+.reviewblock-profile {
+    border-radius: 50%;
+    border: 0.2rem solid #ECECEB;
+    width: 2rem; height: 2rem;
+}
+
+.reviewblock-bar {
+    flex-direction: column;
+}
+
+.reviewblock-name {
+    color: #ECECEB;
+}

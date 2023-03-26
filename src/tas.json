@@ -1,0 +1,82 @@
+{
+    "tas": [
+        {
+            "userID": 1,
+            "name": "Lily Tang",
+            "profilePic": "lily_tang.png",
+            "socials": {
+                "instagram": "https://www.google.com/",
+                "github": "",
+                "discord": "https://www.google.com/",
+                "gmail": "https://www.google.com/",
+                "linkedin": ""
+            },
+            "info": "General information about the TA such as year, major, hobbies, or anything else they wanna put"
+        },
+        {
+            "userID": 2,
+            "name": "Sam Bush",
+            "profilePic": "sam_bush.png",
+            "socials": {
+                "instagram": "https://www.google.com/",
+                "github": "https://www.google.com/",
+                "discord": "",
+                "gmail": "",
+                "linkedin": "https://www.google.com"
+            },
+            "info": "ARGHHHHHH"
+        },
+        {
+            "userID": 3,
+            "name": "Avery Last",
+            "profilePic": "avery_last.png",
+            "socials": {
+                "instagram": "",
+                "github": "",
+                "discord": "https://www.google.com/",
+                "gmail": "https://www.google.com/",
+                "linkedin": "https://www.google.com"
+            },
+            "info": "SAMPLE TEXT"
+        },
+        {
+            "userID": 4,
+            "name": "First Last",
+            "profilePic": "first_last.png",
+            "socials": {
+                "instagram": "https://www.google.com/",
+                "github": "",
+                "discord": "",
+                "gmail": "",
+                "linkedin": "https://www.google.com"
+            },
+            "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+        },
+        {
+            "userID": 5,
+            "name": "Other Rando",
+            "profilePic": "",
+            "socials": {
+                "instagram": "https://www.google.com/",
+                "github": "",
+                "discord": "https://www.google.com/",
+                "gmail": "",
+                "linkedin": "https://www.google.com"
+            },
+            "info": "2055 Agricultural Artist Major. Likes to draw cows and aliens"
+        },
+        {
+            "userID": 6,
+            "name": "Another Rando",
+            "profilePic": "",
+            "socials": {
+                "instagram": "",
+                "github": "https://www.google.com/",
+                "discord": "",
+                "gmail": "https://www.google.com/",
+                "linkedin": "https://www.google.com"
+            },
+            "info": "no creative juices left"
+        }
+    ]
+}

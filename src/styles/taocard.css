@@ -14,13 +14,24 @@
 }
 
 .tao-profile {
+    position: relative;
     width: 20rem; height: 21rem;
     background-color: #2E383F;
     border: 0.5rem solid #ECECEB;
+    background-position: center; background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.tao-profile:hover {
-    background-color: black; opacity: 0.8;
+.tao-cover {
+    display:none;
+}
+
+.tao-profile:hover .tao-cover {
+    width: 20rem; height: 21rem;
+    position: absolute; top: 0; left:0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white; font-size: 1.75rem; font-family: "Rubik";
+    display: flex; justify-content: center; align-items: center; text-align: center;
 }
 
 .tao-info {
