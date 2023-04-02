@@ -19,10 +19,12 @@ export default function ReviewBlock(props) {
     };
 
     const handleClick = (link) => () => {
-        let path = "src/assets/review_videos/"+link;
-        props.SetVideo(path);
-        props.SetPlay("flex");
-        props.SetVidPlay(true);
+        if (link != "") {
+            let path = "src/assets/review_videos/"+link;
+            props.SetVideo(path);
+            props.SetPlay("flex");
+            props.SetVidPlay(true);
+        }
     }
 
     // TODO: Add gallery functions
