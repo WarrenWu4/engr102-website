@@ -28,6 +28,7 @@ export default function ReviewBlock(props) {
     }
 
     // TODO: Add gallery functions
+    // TODO: Add thumbnail to videos
     const vidGallery = props.vid.map((v) =>
         <div className="video" onClick={handleClick(v.link)}>
             <div className="video-title">{v.title}</div>

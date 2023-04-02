@@ -35,7 +35,7 @@ export default function Review() {
                     <ReactPlayer
                         url={video}
                         controls={true}
-                        volume={0.5}
+                        volume={0.2}
                         width={"100%"}
                         height={"100%"}
                         playing={vidPlay}
