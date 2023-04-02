@@ -1,6 +1,7 @@
 import "../styles/reviewblock.css"
 import UnitBlock from "./UnitBlock";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa"
+import {useRef} from "react"
 
 export default function ReviewBlock(props) {
 
@@ -22,12 +23,22 @@ export default function ReviewBlock(props) {
         if (link != "") {
             let path = "src/assets/review_videos/"+link;
             props.SetVideo(path);
-            props.SetPlay("flex");
-            props.SetVidPlay(true);
         }
+        else {
+            props.SetVideo("src/assets/review_videos/default.mp4") //default video in case error
+        }
+        props.SetPlay("flex");
+        props.SetVidPlay(true);
     }
 
-    // TODO: Add gallery functions
+    const scroller = useRef(null);
+    const leftBtn = () => {
+        scroller.current.scrollLeft -= 350;
+    }
+    const rightBtn = () => {
+        scroller.current.scrollLeft += 350;
+    }
+
     // TODO: Add thumbnail to videos
     const vidGallery = props.vid.map((v) =>
         <div className="video" onClick={handleClick(v.link)}>
@@ -56,11 +67,11 @@ export default function ReviewBlock(props) {
 
 
             <div className="reviewblock-gallery">
-                <div className="reviewblock-left-btn"><FaAngleLeft/></div>
-                <div className="reviewblock-video-container">
+                <div className="reviewblock-left-btn" onClick={leftBtn}><FaAngleLeft/></div>
+                <div className="reviewblock-video-container" ref={scroller}>
                     {vidGallery}
                 </div>
-                <div className="reviewblock-right-btn"><FaAngleRight/></div>
+                <div className="reviewblock-right-btn" onClick={rightBtn}><FaAngleRight/></div>
             </div>
 
         </div>

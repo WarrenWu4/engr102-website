@@ -62,6 +62,9 @@
 .reviewblock-video-container {
     height: inherit; display: flex; flex-direction: row;
     width: calc(100vw - 22rem);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
 }
 
 .video {
@@ -71,6 +74,8 @@
     border: #ECECEB solid 0.25rem;
     border-radius: 1rem; color: #ECECEB;
     display: flex; flex-direction: column; justify-content: space-between;
+    scroll-snap-align: center;
+
 }
 
 .video-title {

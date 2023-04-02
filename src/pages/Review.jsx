@@ -19,7 +19,6 @@ export default function Review() {
         }
     })
 
-
     const closePlayer = () => {
         SetPlay("none");
         SetVidPlay(false);
