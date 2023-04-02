@@ -16,11 +16,18 @@ export default function ReviewBlock(props) {
         6:"#D9ACF5",
         7:"#AAE3E2",
         8:"#7286D3"
+    };
+
+    const handleClick = (link) => () => {
+        let path = "../assets/review_videos/"+link;
+        // console.log(path);
+        props.SetVideo(path);
+        props.SetPlay("flex");
     }
 
-    // TODO: Add gallery functions and make sure videos are added/clickable
+    // TODO: Add gallery functions
     const vidGallery = props.vid.map((v) =>
-        <div className="video">
+        <div className="video" onClick={handleClick(v.link)}>
             <div className="video-title">{v.title}</div>
             <div className="video-date">{v.date}</div>
             <div className="video-units">Units Covered:</div>
@@ -52,7 +59,6 @@ export default function ReviewBlock(props) {
                 </div>
                 <div className="reviewblock-right-btn"><FaAngleRight/></div>
             </div>
-
 
         </div>
     )

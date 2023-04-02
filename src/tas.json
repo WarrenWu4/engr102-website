@@ -13,13 +13,13 @@
             },
             "info": "General information about the TA such as year, major, hobbies, or anything else they wanna put",
             "videos": [{
-                    "link": "",
+                    "link": "lilytang1.mp4",
                     "title": "Example Video",
                     "date": "1/11/1111",
                     "units": [1, 2, 3, 4]
                 },
                 {
-                    "link": "",
+                    "link": "lilytang2.mp4",
                     "title": "Example Video2",
                     "date": "2/22/2222",
                     "units": [4, 5, 6, 7]

@@ -4,6 +4,7 @@
 .review-page {
     width: 100vw; height: 100vh;
     background-color: #2E383F;
+    position: relative;
 }
 
 .review-title {
@@ -11,4 +12,23 @@
     font-family: "Sofia Sans"; color: #f64662;
     font-size: 7rem; font-weight: 700;
     display: flex; justify-content: center; align-items: center;
+}
+
+.video-container {
+    position: fixed; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex; justify-content: center; align-items: center;
+}
+
+.video-view {
+    width: 90vw; height: 90vh;
+    background-color: black; position: relative;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.close {
+    color: #ECECEB; font-size: 4rem;
+    position: absolute; top: 1rem; right: 1rem; cursor: pointer;
 }
