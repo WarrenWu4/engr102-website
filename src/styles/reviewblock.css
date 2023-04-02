@@ -4,12 +4,13 @@
     display: flex; flex-direction: column;
     justify-content: flex-start; align-items: center;
     width: 100vw; height: 27.5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 7rem;
 }
 
 .reviewblock-header {
-    width: 100vw; height: 5rem;
+    width: 100vw; height: 4rem;
     display: flex; flex-direction: row;
+    margin-bottom: 2.5rem;
 }
 
 .reviewblock-profile {
@@ -26,12 +27,80 @@
 }
 
 .reviewblock-name {
-    color: #ECECEB; font-size: 3rem; font-family: "Rubik";
+    color: #ECECEB; font-size: 2.5rem; font-family: "Rubik";
     font-weight: 600;
 }
 
 .reviewblock-divider {
-    width: calc(100vw - 20rem); height: 4px;
+    width: calc(100vw - 20rem); height: 0.3rem;
     background: #ECECEB;
     border-radius: 1rem;
+}
+
+.reviewblock-gallery {
+    width: 100vw; height: 20rem; position: relative;
+    display: flex; align-items: center; justify-content: center;
+}
+
+.reviewblock-left-btn, .reviewblock-right-btn{
+    color: #ECECEB; font-size: 3rem; height: inherit;
+    display: flex; align-items: center;
+}
+
+.reviewblock-left-btn svg, .reviewblock-right-btn svg {
+    cursor: pointer;
+}
+
+.reviewblock-left-btn {
+    position: absolute; left: 7rem;
+}
+
+.reviewblock-right-btn {
+    position: absolute; right: 7rem;
+}
+
+.reviewblock-video-container {
+    height: inherit; display: flex; flex-direction: row;
+    width: calc(100vw - 22rem);
+}
+
+.video {
+    width: 35rem; height: 19rem;
+    background-color: black;
+    margin: 0 1.5rem 0 1.5rem;
+    border: #ECECEB solid 0.25rem;
+    border-radius: 1rem; color: #ECECEB;
+    display: flex; flex-direction: column; justify-content: space-between;
+}
+
+.video-title {
+    width: inherit; height: 7rem;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 2rem; font-family: "Rubik"; font-weight: 600;
+}
+
+.video-date {
+    width: 33rem; height: 7rem;
+    display: flex; justify-content: flex-end; align-items: center;
+    font-size: 2rem; font-family: "Rubik"; font-weight: 600;
+}
+
+.video-units, .video-unit-container {
+    display: none;
+}
+
+.video:hover .video-units {
+    width: inherit; height: 7rem;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 2rem; font-family: "Rubik"; font-weight: 600;
+}
+
+.video:hover .video-unit-container {
+    width: inherit; height: 12rem;
+    display: flex; justify-content: center; align-items: flex-start;
+    flex-wrap:wrap;
+}
+
+.video:hover .video-title, .video:hover .video-date{
+    display:none;
 }
