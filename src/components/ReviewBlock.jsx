@@ -39,7 +39,7 @@ export default function ReviewBlock(props) {
         scroller.current.scrollLeft += 350;
     }
 
-    // TODO: Add thumbnail to videos
+    // TODO: Add thumbnail to videos make adjustments to hover to make more intuitive sense
     const vidGallery = props.vid.map((v) =>
         <div className="video" onClick={handleClick(v.link)}>
             <div className="video-title">{v.title}</div>
