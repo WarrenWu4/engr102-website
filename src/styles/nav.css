@@ -1,11 +1,3 @@
-/* TODO: seems to be a weird bug with navbar text being smaller on active? */
-
-/* animations */
-@keyframes rotate {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
-}
-
 /* nav container styling */
 .nav-container {
     width: 100vw; min-height: 12.6rem;
