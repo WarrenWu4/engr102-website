@@ -23,7 +23,9 @@
     display: flex; justify-content: center; align-items: center;
 }
 
-/* basic link styles */
+/* basic styles */
 a {
     color: inherit; text-decoration: none;
 }
+
+/* animations */
