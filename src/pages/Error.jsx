@@ -1,9 +1,20 @@
-import "../styles/error.css"
-
 export default function Error() {
+
+    const errorStyle = {
+        width: "100vw",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        color: "#ECECEB",
+        fontSize: "10rem",
+        fontFamily: "Sofia Sans",
+        fontWeight: 700,
+    }
+
     return (
-        <div className="error">
-            <div className="error-msg">Uknown Page</div>
+        <div className="basic-page">
+            <div style={errorStyle}>Uknown Page</div>
         </div>
     )
 }

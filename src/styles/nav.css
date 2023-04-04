@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-
 /* animations */
 @keyframes rotate {
     from {transform: rotate(0deg);}
