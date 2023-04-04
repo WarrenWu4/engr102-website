@@ -16,6 +16,10 @@
     color: #ECECEB; font-size: 3rem;
 }
 
+.learnview-title {
+    color: #ECECEB; font-size: 2.5rem; font-family: "Signika Negative";
+}
+
 .learnview-left-btn, .learnview-right-btn {
     cursor: pointer;
 }

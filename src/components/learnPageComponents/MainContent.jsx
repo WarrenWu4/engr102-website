@@ -17,7 +17,7 @@ export default function MainContent(props) {
             unit.objectives.map((objective) => {
                 if (unit.num === props.unit) {
                     objectives.push(
-                    <NavLink to="/learn/objectives/view">
+                    <NavLink to="/learn/objectives/view" state={{objective}}>
                     <div className="objective-container">
                         <div className="check"></div>
                         <div className="objective-text">
