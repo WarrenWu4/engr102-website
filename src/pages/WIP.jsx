@@ -1,3 +1,4 @@
+/*------------------------------------*COMPLETE*------------------------------------*/
 import {Link} from "react-router-dom"
 import { FaShare } from "react-icons/fa"
 
@@ -14,13 +15,13 @@ export default function WIP() {
     const msg1Style = {
         width: "70vw",
         color: "#F64662",
-        fontSize: "8rem",
-        marginBottom: "5rem",
+        fontSize: "4.5vw",
+        marginBottom: "2rem",
     }
 
     const msg2Style = {
         color: "#ECECEB",
-        fontSize: "6rem",
+        fontSize: "3.25vw",
     }
 
     const linkStyle = {
@@ -30,7 +31,7 @@ export default function WIP() {
     }
 
     const iconStyle = {
-        marginLeft: "2rem",
+        marginLeft: "1vw",
         display: "flex",
         alignItems: "center",
     }
