@@ -1,0 +1,188 @@
+{
+    "units": [
+        {
+            "num": 1,
+            "status": 1,
+            "title": "Introduction to Python & Setup",
+            "objectives": [
+                {
+                    "title": "Download Python",
+                    "pages": [
+                        {
+                            "content": "howdy folks",
+                            "img": ""
+                        },
+                        {
+                            "content": "this should be the 2nd page",
+                            "img": ""
+                        }
+                    ]
+                },
+                {
+                    "title": "Download VS Code",
+                    "pages": [
+                        {
+                            "content": "howdy folks",
+                            "img": ""
+                        }
+                    ]
+                },
+                {
+                    "title": "Hello World!",
+                    "pages": [
+                        {
+                            "content": "howdy folks",
+                            "img": ""
+                        }
+                    ]
+                },
+                {
+                    "title": "More Printing",
+                    "pages": [
+                        {
+                            "content": "howdy folks",
+                            "img": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "num": 2,
+            "status": 1,
+            "title": "Variables & Arithmetic Operations",
+            "objectives": [
+                {
+                    "title": "Storing Values",
+                    "pages": [
+                        {
+                            "content": "howdy folks",
+                            "img": ""
+                        }
+                    ]
+                },
+                {
+                    "title": "Math With Python",
+                    "pages": [
+                        {
+                            "content": "howdy folks",
+                            "img": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "num": 3,
+            "status": 0,
+            "title": "",
+            "objectives": [
+                {
+                    "title": "",
+                    "pages": [
+                        {
+                            "content": "",
+                            "img": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "num": 4,
+            "status": 0,
+            "title": "",
+            "objectives": [
+                {
+                    "title": "",
+                    "pages": [
+                        {
+                            "content": "",
+                            "img": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "num": 5,
+            "status": 0,
+            "title": "",
+            "objectives": [
+                {
+                    "title": "",
+                    "pages": [
+                        {
+                            "content": "",
+                            "img": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "num": 6,
+            "status": 0,
+            "title": "",
+                        "objectives": [
+                {
+                    "title": "",
+                    "pages": [
+                        {
+                            "content": "",
+                            "img": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "num": 7,
+            "status": 0,
+            "title": "",
+                        "objectives": [
+                {
+                    "title": "",
+                    "pages": [
+                        {
+                            "content": "",
+                            "img": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "num": 8,
+            "status": 0,
+            "title": "",
+                        "objectives": [
+                {
+                    "title": "",
+                    "pages": [
+                        {
+                            "content": "",
+                            "img": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "num": 9,
+            "status": 0,
+            "title": "",
+                        "objectives": [
+                {
+                    "title": "",
+                    "pages": [
+                        {
+                            "content": "",
+                            "img": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
