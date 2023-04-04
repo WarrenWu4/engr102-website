@@ -6,10 +6,10 @@ export default function Donate() {
 
     return (
         // cant wrap in form once backend stuff is figured out but leave as is for now
-        <div className="donate-page">
+        <div className="basic-page">
             <Nav/>
 
-            <div className="donate-title">Feeling Generous?</div>
+            <div className="basic-title" style={{color: "#F9A828"}}>Feeling Generous?</div>
 
             <div className="donate-body">
                 <div className="donate-container">

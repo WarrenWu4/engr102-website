@@ -1,20 +1,6 @@
-/* animations */
-
-
-/* about page css */
-.about-page {
-    width: 100vw; height: 100vh;
-    background-color: #2E383F;
-}
-
-.about-title {
-    width: 100vw; height: 21.6rem;
-    font-family: "Sofia Sans"; color: #f64662; font-size: 7rem; font-weight: 700;
-    display: flex; justify-content: center; align-items: center;
-}
-
 .about-team {
     width: 100vw;
     display: flex; justify-content: space-evenly; flex-direction: row;
     flex-wrap: wrap; align-items: center;
+    margin-top: 5rem;
 }

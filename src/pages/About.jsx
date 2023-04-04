@@ -14,9 +14,9 @@ export default function About() {
 
 
     return (
-        <div className="about-page">
+        <div className="basic-page">
             <Nav/>
-            <div className="about-title">Meet The TAs</div>
+            <div className="basic-title">Meet The TAs</div>
             <div className="about-team">
                 {taCards}
             </div>

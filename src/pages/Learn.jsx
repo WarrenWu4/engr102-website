@@ -16,11 +16,11 @@ export default function Learn() {
     const mainContent = <MainContent unit={active}/>;
 
     return(
-        <div className="learn-page">
+        <div className="basic-page">
 
             <Nav/> 
 
-            <div className="learn-title">Learning Topics</div>
+            <div className="basic-title">Learning Topics</div>
 
             <div className='learn-content'>
 

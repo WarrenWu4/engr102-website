@@ -1,3 +1,5 @@
+/* TODO: seems to be a weird bug with navbar text being smaller on active? */
+
 /* animations */
 @keyframes rotate {
     from {transform: rotate(0deg);}
@@ -6,7 +8,7 @@
 
 /* nav container styling */
 .nav-container {
-    width: 100vw; height: 12.6rem;
+    width: 100vw; min-height: 12.6rem;
     display: flex; justify-content: space-between; align-items: center;
     flex-direction: row;
 }
@@ -64,6 +66,6 @@ a.active {
     color: #F64662;
 }
 
-a.active {
+.nav-container a.active {
     color: #F64662
 }
