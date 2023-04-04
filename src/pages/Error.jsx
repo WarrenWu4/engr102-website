@@ -1,3 +1,4 @@
+/*------------------------------------*COMPLETE*------------------------------------*/
 export default function Error() {
 
     const errorStyle = {
@@ -7,7 +8,7 @@ export default function Error() {
         justifyContent: "center",
         alignItems: "center",
         color: "#ECECEB",
-        fontSize: "10rem",
+        fontSize: "5vw",
         fontFamily: "Sofia Sans",
         fontWeight: 700,
     }
