@@ -1,0 +1,25 @@
+.top-ui {
+    width: 90vw; height: 8rem;
+    border-bottom: #F9A828 solid 0.4rem;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.learnview-exit-btn a{
+    font-size: 3rem; font-weight: 500; color: #ECECEB; font-family: "Signika Negative";
+    cursor:pointer;
+}
+
+.bottom-ui {
+    width: 90vw; height: 8rem;
+    border-top: #F9A828 solid 0.4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    color: #ECECEB; font-size: 3rem;
+}
+
+.learnview-left-btn, .learnview-right-btn {
+    cursor: pointer;
+}
+
+.learnview-content {
+    width: 100vw; height: calc(100vh - 16rem);
+}

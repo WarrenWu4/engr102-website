@@ -1,5 +1,6 @@
 import "./MainContent.css";
 import units from "../../units.json";
+import { NavLink } from "react-router-dom";
 
 
 export default function MainContent(props) {
@@ -16,13 +17,15 @@ export default function MainContent(props) {
             unit.objectives.map((objective) => {
                 if (unit.num === props.unit) {
                     objectives.push(
+                    <NavLink to="/learn/objectives/view">
                     <div className="objective-container">
                         <div className="check"></div>
                         <div className="objective-text">
                             <div className="objective-title">{objective.title}</div>
                             <div className="objective-pages">{objective.pages.length} Pages</div>                   
                         </div>
-                    </div>)
+                    </div>
+                    </NavLink>)
                 }
             })
         }
