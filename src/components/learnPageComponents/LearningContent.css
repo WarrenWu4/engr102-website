@@ -1,0 +1,8 @@
+.learningcontent-container {
+    width: inherit; height: inherit;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.learningcontent-text {
+    font-size: 2rem; font-weight: 500; font-family: "Fira Code";color:#ECECEB;
+}

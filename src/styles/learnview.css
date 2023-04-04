@@ -5,12 +5,16 @@
 }
 
 .learnview-exit-btn a{
-    font-size: 3rem; font-weight: 500; color: #ECECEB; font-family: "Signika Negative";
+    font-size: 2rem; font-weight: 500; color: #ECECEB; font-family: "Signika Negative";
     cursor:pointer;
 }
 
+.learnview-page-tracker {
+    font-size: 2rem; font-weight: 500; color: #ECECEB; font-family: "Signika Negative";
+}
+
 .bottom-ui {
-    width: 90vw; height: 8rem;
+    width: 90vw; height: 8rem;  
     border-top: #F9A828 solid 0.4rem;
     display: flex; justify-content: space-between; align-items: center;
     color: #ECECEB; font-size: 3rem;

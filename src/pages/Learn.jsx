@@ -7,6 +7,9 @@ import MainContent from '../components/learnPageComponents/MainContent';
 import units from "../units.json";
 
 export default function Learn() {
+
+    // TODO: use local storage to track which button is active on session
+
     const [active, SetActive] = useState(0);
 
     const unitBlocks = units.units.map((unit) => 
