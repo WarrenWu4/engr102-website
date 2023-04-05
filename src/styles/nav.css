@@ -61,3 +61,23 @@ a.active {
 .nav-container a.active {
     color: #F64662
 }
+
+/* angle right animations */
+.angle-out {
+    display: none;
+}
+
+/* responsive navbar (hamburger/gear menu) */
+@media screen and (max-width: 641px) {
+    .nav-main, .nav-secondary {
+        display: none;
+        flex-direction: column;
+    }
+    .angle-out {
+        width: calc(100vw - 18rem); height: 10rem;
+        display: flex; justify-content: center; align-items: center;
+    }
+    .angle-out svg {
+        width: 6rem; height: 10rem;
+    }
+}

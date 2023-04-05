@@ -1,8 +1,17 @@
 .learningcontent-container {
-    width: inherit; height: inherit;
+    width: inherit; height: inherit; position: relative;
     display: flex; justify-content: center; align-items: center;
 }
 
 .learningcontent-text {
     font-size: 2rem; font-weight: 500; font-family: "Fira Code";color:#ECECEB;
+    margin: 2rem; width: 70vw;
+    white-space: pre-wrap;
+}
+
+.learningcontent-img {
+    width: 80vw; height: 20vh;
+    background-position: center; background-repeat: no-repeat;
+    background-size:contain;
+    margin: 2rem;
 }

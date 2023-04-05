@@ -1,14 +1,22 @@
 import '../styles/nav.css';
-import { FaDonate, FaDiscord } from 'react-icons/fa'
-import { NavLink } from 'react-router-dom'
+import { FaDonate, FaDiscord } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
+import { useState} from "react";
 
 export default function Nav() {
+
+    const sideBar = () => {
+        if (window.innerWidth <= 641) {
+            //sidebar pops out
+        }
+    }
+
     return (
         <div className='nav-container'>
 
             <div className='nav-main'>
 
-                <div className='logo-container'>
+                <div className='logo-container' onClick={sideBar}>
                     <div className='logo'/>
                 </div>
 
@@ -46,6 +54,10 @@ export default function Nav() {
                         <FaDiscord/>
                     </a>
                 </div>
+            </div>
+
+            <div className='angle-out'>
+
             </div>
 
         </div>

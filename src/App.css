@@ -19,9 +19,11 @@
 
 .basic-title {
     width: 100vw; min-height: 15rem;
-    font-family: "Sofia Sans"; color: #F64662; font-size: 7rem; font-weight: 700;
+    font-family: "Sofia Sans"; color: #F64662; font-size: 5rem; font-weight: 700;
     display: flex; justify-content: center; align-items: center;
 }
+
+/* font classes/sizes */
 
 /* basic styles */
 a {
