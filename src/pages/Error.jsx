@@ -2,19 +2,14 @@
 export default function Error() {
 
     const errorStyle = {
-        width: "100vw",
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        color: "#ECECEB",
+        color: "var(--contrast)",
         fontSize: "5vw",
         fontFamily: "Sofia Sans",
         fontWeight: 700,
     }
 
     return (
-        <div className="basic-page">
+        <div className="basic-page center">
             <div style={errorStyle}>Uknown Page</div>
         </div>
     )

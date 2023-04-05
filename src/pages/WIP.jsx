@@ -5,8 +5,6 @@ import { FaShare } from "react-icons/fa"
 export default function WIP() {
 
     const pageStyle = {
-        justifyContent: "center",
-        alignItems: "center",
         fontFamily: "Sofia Sans",
         fontWeight: 700,
         textAlign: "center",
@@ -14,18 +12,18 @@ export default function WIP() {
 
     const msg1Style = {
         width: "70vw",
-        color: "#F64662",
+        color: "var(--secondary)",
         fontSize: "4.5vw",
         marginBottom: "2rem",
     }
 
     const msg2Style = {
-        color: "#ECECEB",
+        color: "var(--contrast)",
         fontSize: "3.25vw",
     }
 
     const linkStyle = {
-        color: "#ECECEB",
+        color: "var(--contrast)",
         textDecoration: "none",
         display: "flex",
     }
@@ -37,7 +35,7 @@ export default function WIP() {
     }
 
     return (
-        <div className="basic-page" style={pageStyle}>
+        <div className="basic-page center" style={pageStyle}>
 
             <div style={msg1Style}>Oops, this feature hasn't been implemented yet.</div>
 

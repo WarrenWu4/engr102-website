@@ -9,15 +9,15 @@ export default function Donate() {
         <div className="basic-page">
             <Nav/>
 
-            <div className="basic-title" style={{color: "#F9A828"}}>Feeling Generous?</div>
+            <div className="basic-title" style={{color: "var(--tertiary)"}}>Feeling Generous?</div>
 
             <div className="donate-body">
                 <div className="donate-container">
                     <div className="donate-amount">$ <input name="amount" placeholder="5"/></div>
                     <div className="underline"></div>
-                    <div className='donate-btn'>
+                    <div className='donate-btn btn-font'>
                         {/* links to WIP for now b/c i need to figure out backend shit */}
-                        <NavLink to="/donate/payment">
+                        <NavLink className={'center'} to="/donate/payment">
                             Donate
                         </NavLink>
                     </div>

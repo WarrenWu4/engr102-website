@@ -7,25 +7,96 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
+/* variables/colors */
+
+:root {
+    --main: #2E383F;
+    --secondary: #F64662;
+    --tertiary: #F9A828;
+    --contrast: #ECECEB;
+}
 
 /* basic layout for most pages */
 .basic-page {
     width: 100vw; 
     height: 100vh;
-    background: #2E383F;
+    background: var(--main);
     display: flex;
     flex-direction: column;
 }
 
 .basic-title {
     width: 100vw; min-height: 15rem;
-    font-family: "Sofia Sans"; color: #F64662; font-size: 5rem; font-weight: 700;
+    font-family: "Sofia Sans"; color: var(--secondary); font-size: 5rem; font-weight: 700;
     display: flex; justify-content: center; align-items: center;
 }
 
-/* font classes/sizes */
+
+/* font styles */
+.splash-font {
+    font-family: "Secular One"; font-size: min(5rem, 4vw);
+}
+
+.subsplash-font {
+    font-family: "Secular One"; font-size: min(4rem, 3vw);
+}
+
+.btn-font {
+    font-family: "Rubik"; font-size: min(2rem, 2vw); font-weight: 700;
+}
+
+.header-font {
+    font-family: "Sofia Sans"; font-size: 5rem; font-weight: 700;
+}
+
+.subheader-font {
+
+}
+
+.nav-links-font {
+
+}
+
+.objective-title-font {
+
+}
+
+.objective-pages-font {
+
+}
+
+.unit-title-font {
+
+}
+
+.unit-font {
+
+}
+
+.ta-card-font, .review-video-date-font {
+
+}
+
+.review-name-font, .review-video-title-font, .learn-view-font {
+
+}
+
+.learn-content-font {
+    
+}
+
 
 /* basic styles */
+.center {
+    display: flex; justify-content: center; align-items: center;
+}
+
+.bg-default-style {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 a {
     color: inherit; text-decoration: none;
 }

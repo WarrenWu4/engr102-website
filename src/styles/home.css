@@ -1,69 +1,50 @@
-/* home page container */
-.home-page {
-    width: 100vw; height: 100vh;
-    display: flex; align-items: center; flex-direction: column;
-}
-
 /* hero section */
 .hero-container {
-    width: 100vw; display: flex; flex-direction: row;
+    width: 100vw; display: flex; flex-direction: row; justify-content: center; margin-top: 5rem;
 }
 
 /* right side of hero section */
-.hero-right {
-    width: 50vw;
-}
-
 .hero-img {
-    width: 50rem; height: 49rem;
-    background-image: url("../assets/reveille.png");
-    background-size: contain; background-position: center;
-    background-repeat: no-repeat;
-    margin: 5rem 0 0 10rem;
-    transform: scaleX(-1);
+    width: 50rem; height: 49rem; background-image: url("../assets/reveille.png");
+    margin-left: 10rem; transform: scaleX(-1);
 }
 
 /* left side of hero section */
-.hero-left {
-    width: 50vw;
-    display: flex; justify-content: flex-end;
-}
-
 .hero-left-wrapper {
-    margin-top: 5rem; height: 49rem;
-    display: flex; justify-content: center; align-items: center; flex-direction: column;
+    height: 49rem; flex-direction: column;
 }
 
 .hero-header {
-    width: 65rem; height: 10rem;
-    color: #ECECEB; font-family: "Secular One"; font-size: 5rem;
-    display: flex; justify-content: center; align-items: center;
+    width: min(65rem, 50vw); 
+    aspect-ratio: 6.5;
     margin-bottom: 1.2rem;
-    background-color: #F64662;
+    background-color: var(--secondary);
+    color: var(--contrast);
 }
 
 .hero-subheader {
-    color: #EE6177; font-size: 4rem; font-family: "Secular One";
-    display: flex; text-align: center;
+    color: var(--secondary);
+    text-align: center;
     margin-bottom: 2.2rem;
 }
 
 .start-btn {
-    width: 15rem; height: 5rem;
-    border: 0.4rem solid #ECECEB;
-    display: flex; justify-content: center; align-items: center;
-    color: #ECECEB; font-family: "Rubik"; font-size: 2rem; font-weight: 700;
-    cursor: pointer; transition: all 250ms;
+    width: min(15rem, 20vw); 
+    aspect-ratio: 3;
+    border: min(0.4rem, 0.5vw) solid var(--contrast);
+    color: var(--contrast);
+    cursor: pointer; 
+    transition: all 250ms;
 }
 
 .start-btn:hover, .start-btn:focus {
-    box-shadow: inset 15.8rem 0 0 0 #ECECEB;
-    color: #2E383F;
+    box-shadow: inset 15.8rem 0 0 0 var(--contrast);
+    color: var(--main);
 }
 
 .start-btn a {
-    width: inherit; height: inherit;
-    display: flex; justify-content: center; align-items: center;
+    width: min(15rem, 20vw);
+    aspect-ratio: 3;
 }
 
 /* media queries */
@@ -73,59 +54,5 @@
     }
     .hero-right, .hero-img {
         display: none;
-    }
-}
-
-@media screen and (max-width: 780px) {
-    .hero-header {
-        height: 9rem;
-        width: 70vw; font-size: 4rem;
-    }
-    .hero-subheader {
-        font-size: 3rem;
-    }
-    .start-btn {
-        width: 14rem; height: 4rem;
-        font-size: 1.75rem;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .hero-header {
-        height: 8rem;
-        font-size: 3rem;
-    }
-    .hero-subheader {
-        font-size: 2rem;
-    }
-    .start-btn {
-        width: 13rem; height: 4.5rem;
-        font-size: 1.5rem; border-width: 0.3rem;
-    }
-}
-
-@media screen and (max-width: 575px) {
-    .hero-header {
-        height: 6rem; font-size: 2rem;
-    }
-    .hero-subheader {
-        font-size: 1.5rem;
-    }
-    .start-btn {
-        width: 10rem; height: 3rem;
-        font-size: 1rem; border-width: 0.2rem;
-    }
-}
-
-@media screen and (max-width: 330px) {
-    .hero-header {
-        height: 4rem; font-size: 1.5rem;
-    }
-    .hero-subheader {
-        font-size: 1rem;
-    }
-    .start-btn {
-        width: 8rem; height: 2.5rem;
-        font-size: 0.75rem; border-width: 0.2rem;
     }
 }
