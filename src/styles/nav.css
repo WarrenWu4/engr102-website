@@ -1,6 +1,6 @@
 /* nav container styling */
 .nav-container {
-    width: 100vw; min-height: 12.6rem;
+    width: 100vw; min-height: 10rem;
     display: flex; justify-content: space-between; align-items: center;
     flex-direction: row;
 }
@@ -12,11 +12,11 @@
     flex-direction: row;
 }
 .logo-container, .nav-home, .nav-learn, .nav-labs, .nav-review, .nav-about {
-    width: 8rem; height: 10rem;
+    width: 6rem; height: 10rem;
     display: flex; justify-content: center; align-items: center;
 }
 .logo {
-    width: 6rem; height: 6rem;
+    width: 4rem; height: 4rem;
     background-image: url("../assets/gear.png"); background-size: contain;
     background-repeat: no-repeat; background-position: center;
     animation: rotate 2s;
@@ -24,7 +24,7 @@
     margin-bottom: 1rem;
 }
 .nav-main a {
-    color: #ECECEB; font-family: "Bebas Neue"; font-size: 2.5rem;
+    color: #ECECEB; font-family: "Bebas Neue"; font-size: 2rem;
     display: flex; justify-content: center; align-items: center;
 }
 .nav-main a:hover {
@@ -42,16 +42,16 @@ a.active {
 }
 
 .nav-donate, .nav-discord {
-    width: 6rem; height: 10rem;
+    width: 4.5rem; height: 10rem;
     display: flex; justify-content: center; align-items: center;
 }
 
 .nav-donate a {
-    font-size: 3rem;color:#ECECEB;
+    font-size: 2rem;color:#ECECEB;
 }
 
 .nav-discord a {
-    font-size: 3.5rem;color:#ECECEB;
+    font-size: 2.5rem;color:#ECECEB;
 }
 
 .nav-secondary a:hover {
