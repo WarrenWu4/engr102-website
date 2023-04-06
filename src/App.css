@@ -11,6 +11,8 @@
 
 :root {
     --main: #2E383F;
+    --main80: #565E63; 
+    --mainb: rgba(0, 0, 0, 0.85);
     --secondary: #F64662;
     --tertiary: #F9A828;
     --contrast: #ECECEB;
@@ -20,6 +22,7 @@
     --nav-height: 10rem;
     --nav-font-size: 2.25rem;
     --nav-logo-size: 4.5rem;
+    --nav-sidebar-size: 20rem;
 }
 
 /* basic layout for most pages */

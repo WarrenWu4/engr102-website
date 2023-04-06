@@ -48,36 +48,70 @@
     display: none;
 }
 
-@media screen and (max-width: 641px) {
+@media screen and (max-width: 650px) {
     .nav-links {
         display: var(--show-nav);
         flex-direction: column;
         justify-content: flex-start;
-        position: absolute; right: 0; top: 0;
-        width: 20rem; height:100vh; padding-top: 8rem;
-        background: rgba(0, 0, 0, 0.8); 
-        backdrop-filter: blur(1rem); 
+        position: fixed; right: 0; top: 0;
+        width: var(--nav-sidebar-size); 
+        height: calc(100vh - 10rem); 
+        padding-top: 10rem;
+        background: var(--mainb); 
+        backdrop-filter: blur(2rem); 
         z-index: 1000;
     }
 
     .nav-ham {
         display: flex;
-        position: absolute; right: 4rem;
+        position: fixed; 
+        right: 4rem;
         color: var(--contrast); 
-        font-size: calc(var(--nav-font-size) + 0.5rem);
+        font-size: var(--nav-font-size);
         z-index: 9999; 
         cursor: pointer;
         margin-bottom: 0.3rem;
+        width: 4rem; aspect-ratio: 1;
+        justify-content: center; align-items: center;
+        border-radius: 50%;
+        background-color: var(--main80);
+        border: 0.3rem solid var(--contrast);
+        transition: all 400ms;
+    }
+
+    .nav-ham:hover, .nav-ham:active {
+        background-color: var(--contrast);
+        border-color: var(--main80);
+        color: var(--main80);
+    }
+
+    .nav-links a, .nav-secondary-shrunk a {
+        width: 80%;
+        height: 4rem;
+        display: flex; justify-content: center; align-items: center;
+        margin: 0.25em 0 0.25em 0;
+        border-radius: 0.2em;
+    }
+
+    .nav-links a:hover, .nav-secondary-shrunk a:hover {
+        background-color: var(--main80);
+        text-decoration: none;
     }
 
     .nav-secondary-shrunk {
         align-items: center;
         display: flex; flex-direction: column;
+        width: inherit;
+    }
+
+    .nav-secondary-shrunk a.active {
+        color: var(--secondary);
     }
 
     .separator {
         width: 70%; 
         height: 0.3rem;
+        margin: 0.75rem 0 0.75rem 0;
         background: var(--contrast);
     }
     .nav-secondary {
