@@ -1,127 +1,86 @@
-/* nav container styling */
-.nav-container {
-    width: 100vw; min-height: 10rem;
-    display: flex; justify-content: space-between; align-items: center;
+.nav {
+    width: 100vw; 
+    min-height: var(--nav-height);
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
     flex-direction: row;
 }
 
-/* main navbar stuff */
-.nav-main {
-    margin-left: 6rem;
-    display: flex; justify-content: center; align-items: center;
-    flex-direction: row;
+.nav-main, .nav-secondary {
+    margin: 0 4rem 0 4rem;
 }
 
-.nav-links {
-    flex-direction: row; display: flex;
-}
-
-.logo-container, .nav-home, .nav-learn, .nav-labs, .nav-review, .nav-about {
-    width: 6rem; height: 10rem;
-    display: flex; justify-content: center; align-items: center;
-}
-
-.nav-ham {
-    display: none;
+.nav a, .logo {
+    color: var(--contrast); 
+    font-family: "Bebas Neue"; 
+    font-size: var(--nav-font-size);
+    margin: 0 1.25rem 0 1.25rem;
 }
 
 .logo {
-    width: 4rem; height: 4rem;
-    background-image: url("../assets/gear.png"); background-size: contain;
-    background-repeat: no-repeat; background-position: center;
+    width: var(--nav-logo-size);
+    aspect-ratio: 1;
+    background-image: url("../assets/gear.png");
     animation: rotate 2s;
-    /* minor adjustment */
-    margin-bottom: 1rem;
+    margin-bottom: 0.3rem;
 }
-.nav-main a {
-    color: #ECECEB; font-family: "Bebas Neue"; font-size: 2rem;
-    display: flex; justify-content: center; align-items: center;
-}
+
 .nav-main a:hover {
-    text-decoration: underline; text-decoration-color: inherit; text-decoration-thickness: 0.5rem;
-}
-a.active {
-    color: #F64662;
+    text-decoration: underline; 
+    text-decoration-color: inherit; 
+    text-decoration-thickness: 0.5rem;
 }
 
+.nav-main a.active {
+    color: var(--secondary); margin-top: 0.1rem;
+}
 
-/* secondary navbar stuff */
-.nav-secondary-shrunk {
+.nav-secondary a {
+    font-size: calc(var(--nav-font-size) + 0.5rem)
+}
+
+.nav-secondary a:hover, .nav-secondary a.active {
+    color: var(--secondary);
+}
+
+.nav-ham, .nav-secondary-shrunk {
     display: none;
 }
 
-.nav-secondary {
-    margin-right: 6rem;
-    display: flex; justify-content: center; align-items: center;
-}
-
-.nav-donate, .nav-discord {
-    width: 4.5rem; height: 10rem;
-    display: flex; justify-content: center; align-items: center;
-}
-
-.nav-donate a {
-    font-size: 2rem;color:#ECECEB;
-}
-
-.nav-discord a {
-    font-size: 2rem;color:#ECECEB;
-}
-
-.nav-secondary a:hover {
-    color: #F64662;
-}
-
-.nav-container a.active {
-    color: #F64662
-}
-
-/* responsive navbar (hamburger/gear menu) */
 @media screen and (max-width: 641px) {
-    .nav-secondary {
-        display: none;
-        flex-direction: column;
-    }
     .nav-links {
         display: var(--show-nav);
-        z-index: 1000;
         flex-direction: column;
-        position: absolute;
-        align-items: center;
-        right: 0; top: 0;
-        width: 20rem; height:100vh;
-        background: rgba(0, 0, 0, 0.8); 
-        overflow-y: auto;
-        backdrop-filter: blur(1rem); 
-    }
-    .nav-learn, .nav-labs, .nav-review, .nav-about, .nav-donate, .nav-discord {
-        width: fit-content; height: fit-content;
-        padding: 3em 0 0 0;
-    }
-    .nav-donate a, .nav-discord a {
-        font-size: 2rem;
-    }
-    .nav-home {
-        width: fit-content; height: fit-content;
-        padding: 8em 0 0 0;
-    }
-    .nav-main {
-        margin-left: 1rem;
-    }
-    .nav-ham {
-        width: 6rem; height: 10rem;
-        display: flex; align-items: center;
+        justify-content: flex-start;
         position: absolute; right: 0; top: 0;
-        color: var(--contrast); font-size: 2.5rem;
-        z-index: 9999; cursor: pointer;
+        width: 20rem; height:100vh; padding-top: 8rem;
+        background: rgba(0, 0, 0, 0.8); 
+        backdrop-filter: blur(1rem); 
+        z-index: 1000;
     }
+
+    .nav-ham {
+        display: flex;
+        position: absolute; right: 4rem;
+        color: var(--contrast); 
+        font-size: calc(var(--nav-font-size) + 0.5rem);
+        z-index: 9999; 
+        cursor: pointer;
+        margin-bottom: 0.3rem;
+    }
+
     .nav-secondary-shrunk {
         align-items: center;
         display: flex; flex-direction: column;
     }
+
     .separator {
-        margin-top: 3rem;
-        width: 70%; height: 0.4rem;
-        background: #ECECEB;
+        width: 70%; 
+        height: 0.3rem;
+        background: var(--contrast);
+    }
+    .nav-secondary {
+        display: none;
     }
 }

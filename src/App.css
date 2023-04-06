@@ -14,7 +14,12 @@
     --secondary: #F64662;
     --tertiary: #F9A828;
     --contrast: #ECECEB;
+
+    /* nav property variables */
     --show-nav: none;
+    --nav-height: 10rem;
+    --nav-font-size: 2.25rem;
+    --nav-logo-size: 4.5rem;
 }
 
 /* basic layout for most pages */
@@ -70,4 +75,17 @@ a {
 @keyframes rotate {
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
+}
+
+/* global media queries */
+@media screen and (max-width: 319px) {
+    .basic-page {
+        display: none;
+    }
+    body::before {
+        content: "screen size not supported";
+        font-family: "Sofia Sans";
+        font-size: 1rem; 
+        color: var(--contrast);
+    }
 }

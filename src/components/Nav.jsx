@@ -16,48 +16,33 @@ export default function Nav() {
     }
 
     return (
-        <div className='nav-container'>
+        <div className='nav'>
 
-            <div className='nav-main'>
+            <div className='nav-main center'>
 
-                <div className='logo-container'>
-                    <div className='logo'/>
+                <div className='logo-container center'>
+                    <div className='logo bg-default-style'/>
                 </div>
 
-                <div className='nav-links'>
-                    <div className='nav-home'>
-                        <NavLink to="/">Home</NavLink>
-                    </div>
+                <div className='nav-links center'>
 
-                    <div className='nav-learn'>
-                        <NavLink to="/learn">Learn</NavLink>
-                    </div>
+                    <NavLink to="/">Home</NavLink>
 
-                    <div className='nav-labs'>
-                        <NavLink to="/labs">Labs</NavLink>
-                    </div>
+                    <NavLink to="/learn">Learn</NavLink>
 
-                    <div className='nav-review'>
-                        <NavLink to="/review">Review</NavLink>
-                    </div>
+                    <NavLink to="/labs">Labs</NavLink>
 
-                    <div className='nav-about'>
-                        <NavLink to="/about">About</NavLink>
-                    </div>
+                    <NavLink to="/review">Review</NavLink>
+
+                    <NavLink to="/about">About</NavLink>
 
                     <div className='separator'></div>
 
                     <div className='nav-secondary-shrunk'>
-                        <div className='nav-donate'>
-                            <NavLink to="/donate">
-                                Donate
-                            </NavLink>
-                        </div>
-                        <div className='nav-discord'>
-                            <a href="https://tx.ag/216server" target="_blank" rel="noopener noreferrer">
-                                Discord
-                            </a>
-                        </div>
+
+                        <NavLink to="/donate">Donate</NavLink>
+                        <a href="https://tx.ag/216server" target="_blank" rel="noopener noreferrer">Discord</a>
+
                     </div>
 
                 </div>
@@ -68,18 +53,16 @@ export default function Nav() {
 
             </div> 
 
-            <div className='nav-secondary'>
-                <div className='nav-donate'>
-                    <NavLink to="/donate">
-                        <FaDonate/>
-                    </NavLink>
-                </div>
-                
-                <div className='nav-discord'>
-                    <a href="https://tx.ag/216server" target="_blank" rel="noopener noreferrer">
-                        <FaDiscord/>
-                    </a>
-                </div>
+            <div className='nav-secondary center'>
+
+                <NavLink to="/donate" className={'center'}>
+                    <FaDonate/>
+                </NavLink>
+            
+                <a href="https://tx.ag/216server" target="_blank" rel="noopener noreferrer" className='center'>
+                    <FaDiscord/>
+                </a>
+
             </div>
 
         </div>
