@@ -11,10 +11,20 @@
     display: flex; justify-content: center; align-items: center;
     flex-direction: row;
 }
+
+.nav-links {
+    flex-direction: row; display: flex;
+}
+
 .logo-container, .nav-home, .nav-learn, .nav-labs, .nav-review, .nav-about {
     width: 6rem; height: 10rem;
     display: flex; justify-content: center; align-items: center;
 }
+
+.nav-ham {
+    display: none;
+}
+
 .logo {
     width: 4rem; height: 4rem;
     background-image: url("../assets/gear.png"); background-size: contain;
@@ -36,6 +46,10 @@ a.active {
 
 
 /* secondary navbar stuff */
+.nav-secondary-shrunk {
+    display: none;
+}
+
 .nav-secondary {
     margin-right: 6rem;
     display: flex; justify-content: center; align-items: center;
@@ -51,7 +65,7 @@ a.active {
 }
 
 .nav-discord a {
-    font-size: 2.5rem;color:#ECECEB;
+    font-size: 2rem;color:#ECECEB;
 }
 
 .nav-secondary a:hover {
@@ -62,22 +76,52 @@ a.active {
     color: #F64662
 }
 
-/* angle right animations */
-.angle-out {
-    display: none;
-}
-
 /* responsive navbar (hamburger/gear menu) */
 @media screen and (max-width: 641px) {
-    .nav-main, .nav-secondary {
+    .nav-secondary {
         display: none;
         flex-direction: column;
     }
-    .angle-out {
-        width: calc(100vw - 18rem); height: 10rem;
-        display: flex; justify-content: center; align-items: center;
+    .nav-links {
+        display: var(--show-nav);
+        z-index: 1000;
+        flex-direction: column;
+        position: absolute;
+        align-items: center;
+        right: 0; top: 0;
+        width: 20rem; height:100vh;
+        background: rgba(0, 0, 0, 0.8); 
+        overflow-y: auto;
+        backdrop-filter: blur(1rem); 
     }
-    .angle-out svg {
+    .nav-learn, .nav-labs, .nav-review, .nav-about, .nav-donate, .nav-discord {
+        width: fit-content; height: fit-content;
+        padding: 3em 0 0 0;
+    }
+    .nav-donate a, .nav-discord a {
+        font-size: 2rem;
+    }
+    .nav-home {
+        width: fit-content; height: fit-content;
+        padding: 8em 0 0 0;
+    }
+    .nav-main {
+        margin-left: 1rem;
+    }
+    .nav-ham {
         width: 6rem; height: 10rem;
+        display: flex; align-items: center;
+        position: absolute; right: 0; top: 0;
+        color: var(--contrast); font-size: 2.5rem;
+        z-index: 9999; cursor: pointer;
+    }
+    .nav-secondary-shrunk {
+        align-items: center;
+        display: flex; flex-direction: column;
+    }
+    .separator {
+        margin-top: 3rem;
+        width: 70%; height: 0.4rem;
+        background: #ECECEB;
     }
 }

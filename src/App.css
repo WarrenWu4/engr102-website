@@ -14,6 +14,7 @@
     --secondary: #F64662;
     --tertiary: #F9A828;
     --contrast: #ECECEB;
+    --show-nav: none;
 }
 
 /* basic layout for most pages */
@@ -47,42 +48,6 @@
 
 .header-font {
     font-family: "Sofia Sans"; font-size: 5rem; font-weight: 700;
-}
-
-.subheader-font {
-
-}
-
-.nav-links-font {
-
-}
-
-.objective-title-font {
-
-}
-
-.objective-pages-font {
-
-}
-
-.unit-title-font {
-
-}
-
-.unit-font {
-
-}
-
-.ta-card-font, .review-video-date-font {
-
-}
-
-.review-name-font, .review-video-title-font, .learn-view-font {
-
-}
-
-.learn-content-font {
-    
 }
 
 

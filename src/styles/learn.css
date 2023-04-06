@@ -5,15 +5,15 @@
 .learn-sidebar {
     width: 20vw; height: calc(100vh - 34.2rem);
     display: flex; align-items: center; flex-direction: column;
-    color: #ECECEB; font-size: 3rem; font-weight: bold; font-family: "IBM Plex Mono";
+    color: var(--contrast); font-size: 3rem; font-weight: bold; font-family: "IBM Plex Mono";
     overflow-y:scroll; position: relative;
 }
 
 .sidebar-title {
     position: sticky; top:0;left:0;
-    background-color: #2E383F;
+    background-color: var(--main);
     height: 5rem; margin-bottom: 2rem;
-    width: 80%; border-bottom: #ECECEB solid 0.4rem; text-align: center;
+    width: 80%; border-bottom: var(--contrast) solid 0.4rem; text-align: center;
 }
 
 .learn-main {
