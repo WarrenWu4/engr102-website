@@ -1,9 +1,10 @@
 import "../styles/reviewblock.css";
 import UnitBlock from "./UnitBlock";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
-import {useRef } from "react";
+import {useRef, useState } from "react";
 import VideoThumbnail from "react-video-thumbnail";
 import { BsFillPlayFill, BsFillCaretRightFill } from "react-icons/bs";
+import { IoClose } from "react-icons/io5";
 
 export default function ReviewBlock(props) {
 
@@ -33,6 +34,8 @@ export default function ReviewBlock(props) {
         props.SetVidPlay(true);
     }
 
+    let videoPlaying = (props.vidPlay) ? "none": "flex";
+
     const scroller = useRef(null);
     const leftBtn = () => {
         scroller.current.scrollLeft -= 350;
@@ -41,29 +44,53 @@ export default function ReviewBlock(props) {
         scroller.current.scrollLeft += 350;
     }
 
-    // TODO: make adjustments to hover to make more intuitive sense
+    const displayUnits = (id) => () => {
+        let vidID = document.getElementById(id);
+        let children = vidID.children;
+        if (children[0].style.display === "none") {
+            children[0].style.display = "flex";
+            children[1].style.display = "flex";
+            children[2].style.display = "none";
+            children[3].style.display = "none";
+            children[4].style.display = "none";
+        }
+        else {
+            children[0].style.display = "none";
+            children[1].style.display = "none";
+            children[2].style.display = "flex";
+            children[3].style.display = "flex";
+            children[4].style.display = "flex";
+
+        }
+
+    }
+
     const vidGallery = props.vid.map((v) =>
 
-        <div className="video" onClick={handleClick(v.link)}>
+        <div className="video" style={{display:videoPlaying}}>
 
-            <div className="video-content">
+            <div className="video-content" id={v.link}>
 
                 <div className="video-content-top">
                     <div className="video-title">{v.title}</div>
-                    <div className="video-play-btn"><BsFillPlayFill/></div>
+                    <div className="video-play-btn"><BsFillPlayFill onClick={handleClick(v.link)} /></div>
                 </div>
 
-                <div className="video-content-bottom">
+                <div className="video-content-bottom" onClick={displayUnits(v.link)}>
                     <div className="video-units-btn"><BsFillCaretRightFill/>Units</div>
                     <div className="video-date">{v.date}</div>
                 </div>
 
-                {/* <div className="video-units">Units Covered:</div>
-                <div className="video-unit-container">
+                <div className="video-units">Units Covered:</div>
+                <div className="video-unit-container ">
                     {v.units.map((unit) => 
                         <UnitBlock num={unit} color={unitNumToColor[unit]}/>
                         )}
-                </div> */}
+                </div>
+                <div className="video-units-close">
+                    <IoClose onClick={displayUnits(v.link)} />
+                </div>
+
             </div>
 
             <div className="video-thumbnail">

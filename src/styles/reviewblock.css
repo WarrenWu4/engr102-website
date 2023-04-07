@@ -1,3 +1,5 @@
+/* fuck i need to clean this shit up ;-; */
+
 .reviewblock-container {
     display: flex; flex-direction: column;
     justify-content: flex-start; align-items: center;
@@ -159,4 +161,27 @@
 
 .video-play-btn svg {
     cursor: pointer;
+}
+
+.video-units {
+    width: 100%; height: 35%;
+    display: flex; justify-content: center; align-items: center;
+    font-size: var(--rev-taname-font);
+    font-family: var(--fs-secondary);
+}
+
+.video-unit-container {
+    width: 90%; height: 65%;
+    flex-wrap: wrap;
+    display: flex; justify-content: center; align-items: flex-start;
+}
+
+.video-units-close {
+    position: absolute; top: 1.75rem; right: 1rem;
+    color: var(--contrast); font-size: 3rem;
+    cursor: pointer;
+}
+
+.video-units-close, .video-units, .video-unit-container {
+    display: none;
 }
