@@ -8,7 +8,7 @@ import ReactPlayer from "react-player"
 
 export default function Review() {
     
-    const [video,SetVideo] = useState("src/assets/review_videos/default.mp4");
+    const [video,SetVideo] = useState("src/assets/default.mp4");
     const [play, SetPlay] = useState("none");
     const [vidPlay, SetVidPlay] = useState(false);
 

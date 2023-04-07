@@ -8,7 +8,7 @@ import { IoClose } from "react-icons/io5";
 
 export default function ReviewBlock(props) {
 
-    const profile_img = (props.pic === "") ? "src/assets/tao_card_imgs/default.jpg":"src/assets/tao_card_imgs/"+props.pic;
+    const profile_img = (props.pic === "") ? "./src/assets/default.jpg":"./src/assets/"+props.pic;
 
     // TODO: change color for some units b/c hard to see w/ white text
     const unitNumToColor = {
@@ -24,11 +24,11 @@ export default function ReviewBlock(props) {
 
     const handleClick = (link) => () => {
         if (link != "") {
-            let path = "src/assets/review_videos/"+link;
+            let path = "src/assets/"+link;
             props.SetVideo(path);
         }
         else {
-            props.SetVideo("src/assets/review_videos/default.mp4") //default video in case error
+            props.SetVideo("src/assets/default.mp4") //default video in case error
         }
         props.SetPlay("flex");
         props.SetVidPlay(true);
@@ -95,7 +95,7 @@ export default function ReviewBlock(props) {
 
             <div className="video-thumbnail">
                 <VideoThumbnail
-                    videoUrl={"src/assets/review_videos/"+v.link}
+                    videoUrl={"src/assets/"+v.link}
                 />
             </div>
 
