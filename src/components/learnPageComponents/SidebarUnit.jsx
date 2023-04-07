@@ -1,12 +1,10 @@
-// TODO:make sure linking works
 import './SidebarUnit.css';
-import { FaUnlock, FaLock } from "react-icons/fa";
-import { useState } from "react";
+import { FaLockOpen, FaLock } from "react-icons/fa";
 
 
 export default function SidebarUnit(props) {
     
-    const icon = (props.unlock === 1) ? <FaUnlock/>:<FaLock/>;
+    const icon = (props.unlock === 1) ? <FaLockOpen/>:<FaLock/>;
     let iconColor = "rgba(246, 70, 98, 1)";
     let unitColor = "rgba(236, 236, 235, 1)";
     let pointStatus = "pointer";
