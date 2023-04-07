@@ -99,42 +99,64 @@
     z-index: 3; display: flex; 
     flex-direction: column;
     justify-content: space-between; align-items: center;
-    background-color: var(--mainb);
+    background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(0.5rem);
     border-radius: 1rem;
 }
 
-.video-title {
-    width: inherit; height: 7rem;
+.video-content-bottom {
+    width: 100%; height: 30%;
+    display: flex; flex-direction: row;
+    justify-content: space-between; align-items: center;
+}
+
+.video-units-btn {
     display: flex; justify-content: center; align-items: center;
+    border: 0.3rem solid var(--contrast);
+    width: 10rem;
+    aspect-ratio: 3;
+    font-family: var(--fs-btn);
     font-size: var(--rev-taname-font);
-    font-family: var(--fs-secondary);
+    margin: 0 0 0 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 400ms;
+}
+
+.video-units-btn svg {
+    margin-right: 0.5rem;
+}
+
+.video-units-btn:hover {
+    box-shadow: inset 12rem 0 0 0 var(--contrast);
+    color: var(--main);
 }
 
 .video-date {
-    width: 33rem; height: 7rem;
-    display: flex; justify-content: flex-end; align-items: center;
     font-size: var(--rev-taname-font);
     font-family: var(--fs-secondary);
+    margin: 0 1rem 0 0;
 }
 
-.video-units, .video-unit-container {
-    display: none;
+.video-content-top {
+    width: 100%; height: 70%;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
 }
 
-.video:hover .video-units {
-    width: 33rem; height: 7rem;
+.video-title {
+    width: 100%; height: 50%;
     display: flex; justify-content: center; align-items: center;
     font-size: var(--rev-taname-font);
     font-family: var(--fs-secondary);
 }
 
-.video:hover .video-unit-container {
-    width: 33rem; height: 12rem;
-    display: flex; justify-content: center; align-items: flex-start;
-    flex-wrap:wrap;
+.video-play-btn {
+    width: 100%; height: 50%;
+    font-size: 5rem;
+    display: flex; justify-content: center; align-items: center;
 }
 
-.video:hover .video-title, .video:hover .video-date{
-    display:none;
+.video-play-btn svg {
+    cursor: pointer;
 }

@@ -1,8 +1,9 @@
 import "../styles/reviewblock.css";
 import UnitBlock from "./UnitBlock";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
-import {useRef, useEffect} from "react";
+import {useRef } from "react";
 import VideoThumbnail from "react-video-thumbnail";
+import { BsFillPlayFill, BsFillCaretRightFill } from "react-icons/bs";
 
 export default function ReviewBlock(props) {
 
@@ -42,23 +43,37 @@ export default function ReviewBlock(props) {
 
     // TODO: make adjustments to hover to make more intuitive sense
     const vidGallery = props.vid.map((v) =>
+
         <div className="video" onClick={handleClick(v.link)}>
+
             <div className="video-content">
-                <div className="video-title">{v.title}</div>
-                <div className="video-date">{v.date}</div>
-                <div className="video-units">Units Covered:</div>
+
+                <div className="video-content-top">
+                    <div className="video-title">{v.title}</div>
+                    <div className="video-play-btn"><BsFillPlayFill/></div>
+                </div>
+
+                <div className="video-content-bottom">
+                    <div className="video-units-btn"><BsFillCaretRightFill/>Units</div>
+                    <div className="video-date">{v.date}</div>
+                </div>
+
+                {/* <div className="video-units">Units Covered:</div>
                 <div className="video-unit-container">
                     {v.units.map((unit) => 
                         <UnitBlock num={unit} color={unitNumToColor[unit]}/>
                         )}
-                </div>
+                </div> */}
             </div>
+
             <div className="video-thumbnail">
                 <VideoThumbnail
                     videoUrl={"src/assets/review_videos/"+v.link}
                 />
             </div>
+
         </div>
+
     )
 
     return (
