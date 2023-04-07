@@ -6,23 +6,44 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');
 
 /* variables/colors */
 
 :root {
+    /* colors */
     --main: #2E383F;
     --main80: #565E63; 
     --mainb: rgba(0, 0, 0, 0.85);
     --secondary: #F64662;
+    --secondary80: #EE6177;
     --tertiary: #F9A828;
     --contrast: #ECECEB;
 
+    /* font styles */
+    --fs-main: "Sofia Sans";
+    --fs-secondary: "Secular One", sans-serif;
+    --fs-btn: "Rubik";
+    --fs-text: "Fira Code";
+    --fs-text80: "IBM Plex Mono";
+    --fs-text60: "Bitter";
+    --fs-text40: "Signika Negative";
+    
     /* nav property variables */
     --show-nav: none;
     --nav-height: 10rem;
     --nav-font-size: 2.25rem;
+    --nav-font-style: "Bebas Neue";
     --nav-logo-size: 4.5rem;
     --nav-sidebar-size: 20rem;
+
+    /* home property variables */
+    --home-header-font: min(5rem, calc(5 / 70 * 100vw));
+    --home-header-width: min(65rem, calc(65 / 70 * 100vw));
+    --home-subheader-font: min(4rem, calc(4 / 70 * 100vw));
+    --home-btn-font: min(2rem, calc(2 / 70 * 100vw));
+    --home-btn-width: min(15rem, calc(15 / 70 * 100vw));
+    --home-btn-border: min(0.4rem, calc(0.4 / 70 * 100vw));
 }
 
 /* basic layout for most pages */
@@ -36,28 +57,10 @@
 
 .basic-title {
     width: 100vw; min-height: 15rem;
-    font-family: "Sofia Sans"; color: var(--secondary); font-size: 5rem; font-weight: 700;
+    font-family: var(--fs-main); color: var(--secondary); font-size: 5rem;
+    font-weight: 700;
     display: flex; justify-content: center; align-items: center;
 }
-
-
-/* font styles */
-.splash-font {
-    font-family: "Secular One"; font-size: min(5rem, 4vw);
-}
-
-.subsplash-font {
-    font-family: "Secular One"; font-size: min(4rem, 3vw);
-}
-
-.btn-font {
-    font-family: "Rubik"; font-size: min(2rem, 2vw); font-weight: 700;
-}
-
-.header-font {
-    font-family: "Sofia Sans"; font-size: 5rem; font-weight: 700;
-}
-
 
 /* basic styles */
 .center {

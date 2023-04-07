@@ -1,21 +1,36 @@
 /* hero section */
 .hero-container {
-    width: 100vw; display: flex; flex-direction: row; justify-content: center; margin-top: 5rem;
+    width: 100vw; display: flex; flex-direction: row; justify-content: center; 
 }
 
 /* right side of hero section */
+.hero-right {
+    width: 50vw;
+    flex-direction: row; align-items: center;
+    display: flex; justify-content: flex-start;
+}
+
 .hero-img {
-    width: 50rem; height: 49rem; background-image: url("../assets/reveille.png");
-    margin-left: 10rem; transform: scaleX(-1);
+    width: 50rem;
+    aspect-ratio: 1;
+    background-image: url("../assets/reveille.png");
+    transform: scaleX(-1);
+    margin-left: 10rem;
 }
 
 /* left side of hero section */
-.hero-left-wrapper {
-    height: 49rem; flex-direction: column;
+.hero-left {
+    width: 50vw;
+    display: flex; justify-content: center; align-items: flex-end;
+    flex-direction: column;
+}
+
+.hero-left-container {
+    height: 50rem;
 }
 
 .hero-header {
-    width: min(65rem, 50vw); 
+    width: var(--home-header-width); 
     aspect-ratio: 6.5;
     margin-bottom: 1.2rem;
     background-color: var(--secondary);
@@ -23,15 +38,15 @@
 }
 
 .hero-subheader {
-    color: var(--secondary);
+    color: var(--secondary80);
     text-align: center;
     margin-bottom: 2.2rem;
 }
 
 .start-btn {
-    width: min(15rem, 20vw); 
+    width: var(--home-btn-width); 
     aspect-ratio: 3;
-    border: min(0.4rem, 0.5vw) solid var(--contrast);
+    border: var(--home-btn-border) solid var(--contrast);
     color: var(--contrast);
     cursor: pointer; 
     transition: all 250ms;
@@ -43,15 +58,41 @@
 }
 
 .start-btn a {
-    width: min(15rem, 20vw);
+    width: inherit;
     aspect-ratio: 3;
+}
+
+/* font styles */
+.home-font-header {
+    color: var(--contrast);
+    font-size: var(--home-header-font);
+    font-family: var(--fs-main);
+    font-weight: bold;
+
+}
+
+.home-font-subheader {
+    color: var(--secondary80);
+    font-size: var(--home-subheader-font);
+    font-family: var(--fs-main);
+    font-weight: bold;
+
+}
+
+.home-font-btn {
+    color: var(--contrast);
+    font-size: var(--home-btn-font);
+    font-family: var(--fs-btn);
+    font-weight:bold;
 }
 
 /* media queries */
 @media screen and (max-width: 1300px) {
-    .hero-container, .hero-left {
-        justify-content: center;
+    .hero-left {
+        width: 100vw;
+        align-items: center;
     }
+
     .hero-right, .hero-img {
         display: none;
     }

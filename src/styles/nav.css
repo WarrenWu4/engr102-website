@@ -13,7 +13,7 @@
 
 .nav a, .logo {
     color: var(--contrast); 
-    font-family: "Bebas Neue"; 
+    font-family: var(--nav-font-style); 
     font-size: var(--nav-font-size);
     margin: 0 1.25rem 0 1.25rem;
 }
