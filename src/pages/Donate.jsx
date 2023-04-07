@@ -5,11 +5,11 @@ import {Routes, Route, NavLink} from 'react-router-dom';
 export default function Donate() {
 
     return (
-        // cant wrap in form once backend stuff is figured out but leave as is for now
+        // can wrap in form once backend stuff is figured out but leave as is for now
         <div className="basic-page">
             <Nav/>
 
-            <div className="basic-title" style={{color: "var(--tertiary)"}}>Feeling Generous?</div>
+            <div className="donate-title">Feeling Generous?</div>
 
             <div className="donate-body">
                 <div className="donate-container">

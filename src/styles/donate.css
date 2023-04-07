@@ -9,14 +9,15 @@
 }
 
 .donate-amount {
-    color: var(--contrast); font-size: 5rem;
-    width: 81.2rem; height: 7.5rem;
+    color: var(--contrast);
+    font-size: var(--home-subheader-font);
     font-family: "Secular One";
 }
 
 input {
     background: var(--main);
-    color: var(--contrast); font-size: 5rem; height: 7.5rem;
+    color: var(--contrast); 
+    font-size: var(--home-subheader-font); 
     font-family: "Secular One";
     border: 0; padding: 0; outline: none;
 }
@@ -35,18 +36,22 @@ input {
 }
 
 .underline {
-    width: 81.2rem; height: 0.6rem;
+    width: min(50rem, calc(50/70*100vw)); 
+    height: min(0.6rem, calc(0.6/70*100vw));
     background: var(--contrast); border-radius: 1rem;
-    margin-bottom: 8rem;
+    margin-bottom: min(8rem, calc(8/70*100vw));
 }
 
 .donate-btn {
-    width: min(15rem, 20vw); 
+    width: var(--home-btn-width); 
     aspect-ratio: 3;
-    border: min(0.4rem, 0.5vw) solid var(--tertiary);
+    border: var(--home-btn-border) solid var(--tertiary);
     color: var(--tertiary);
     cursor: pointer; 
     transition: all 250ms;
+    font-size: var(--home-btn-font);
+    font-family: var(--fs-btn);
+    font-weight: bold;
 }
 
 .donate-btn:hover, .donate-btn:focus {
@@ -55,6 +60,14 @@ input {
 }
 
 .donate-btn a {
-    width: min(15rem, 20vw);
+    width: var(--home-btn-width);
     aspect-ratio: 3;
+}
+
+.donate-title {
+    width: 100vw; min-height: 15rem;
+    font-family: var(--fs-main); color: var(--tertiary); 
+    font-size: var(--home-header-font);
+    font-weight: bold;
+    display: flex; justify-content: center; align-items: center;
 }
