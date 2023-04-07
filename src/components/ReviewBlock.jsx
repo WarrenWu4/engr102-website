@@ -1,8 +1,8 @@
-import "../styles/reviewblock.css"
+import "../styles/reviewblock.css";
 import UnitBlock from "./UnitBlock";
-import { FaAngleRight, FaAngleLeft } from "react-icons/fa"
-import {useRef, useEffect} from "react"
-import ReactPlayer from "react-player";
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
+import {useRef, useEffect} from "react";
+import VideoThumbnail from "react-video-thumbnail";
 
 export default function ReviewBlock(props) {
 
@@ -40,28 +40,22 @@ export default function ReviewBlock(props) {
         scroller.current.scrollLeft += 350;
     }
 
-    // TODO: Add thumbnail to videos make adjustments to hover to make more intuitive sense
-    // TODO: adding thumnail
-
+    // TODO: make adjustments to hover to make more intuitive sense
     const vidGallery = props.vid.map((v) =>
         <div className="video" onClick={handleClick(v.link)}>
             <div className="video-content">
-                {/* <div className="video-title">{v.title}</div>
+                <div className="video-title">{v.title}</div>
                 <div className="video-date">{v.date}</div>
                 <div className="video-units">Units Covered:</div>
                 <div className="video-unit-container">
                     {v.units.map((unit) => 
                         <UnitBlock num={unit} color={unitNumToColor[unit]}/>
                         )}
-                </div> */}
+                </div>
             </div>
             <div className="video-thumbnail">
-                <ReactPlayer
-                    url={"src/assets/review_videos/"+v.link}
-                    muted={true}
-                    width={"100%"}
-                    height={"100%"}
-                    light={true}
+                <VideoThumbnail
+                    videoUrl={"src/assets/review_videos/"+v.link}
                 />
             </div>
         </div>
