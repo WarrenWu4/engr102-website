@@ -23,7 +23,7 @@ export default function Learn() {
 
             <Nav/> 
 
-            <div className="basic-title">Learning Topics</div>
+            <div className="basic-title">Learn Topics</div>
 
             <div className='learn-content'>
 

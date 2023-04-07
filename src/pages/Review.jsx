@@ -27,7 +27,7 @@ export default function Review() {
     return (
         <div className="basic-page" style={{position: "relative"}}>
             <Nav/>
-            <div className="basic-title">Review Sessions</div>
+            <div className="basic-title">Review Videos</div>
             {reviewBlocks}
             <div className="video-container" style={{display: play}}>
                 <div className="video-view">
