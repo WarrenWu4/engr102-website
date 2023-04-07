@@ -44,6 +44,10 @@
     --home-btn-font: min(2rem, calc(2 / 70 * 100vw));
     --home-btn-width: min(15rem, calc(15 / 70 * 100vw));
     --home-btn-border: min(0.4rem, calc(0.4 / 70 * 100vw));
+
+    /* review property variables */
+    --rev-taname-font: 2rem; 
+
 }
 
 /* basic layout for most pages */

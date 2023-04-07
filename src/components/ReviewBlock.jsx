@@ -1,7 +1,8 @@
 import "../styles/reviewblock.css"
 import UnitBlock from "./UnitBlock";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa"
-import {useRef} from "react"
+import {useRef, useEffect} from "react"
+import ReactPlayer from "react-player";
 
 export default function ReviewBlock(props) {
 
@@ -40,15 +41,28 @@ export default function ReviewBlock(props) {
     }
 
     // TODO: Add thumbnail to videos make adjustments to hover to make more intuitive sense
+    // TODO: adding thumnail
+
     const vidGallery = props.vid.map((v) =>
         <div className="video" onClick={handleClick(v.link)}>
-            <div className="video-title">{v.title}</div>
-            <div className="video-date">{v.date}</div>
-            <div className="video-units">Units Covered:</div>
-            <div className="video-unit-container">
-                {v.units.map((unit) => 
-                    <UnitBlock num={unit} color={unitNumToColor[unit]}/>
-                )}
+            <div className="video-content">
+                {/* <div className="video-title">{v.title}</div>
+                <div className="video-date">{v.date}</div>
+                <div className="video-units">Units Covered:</div>
+                <div className="video-unit-container">
+                    {v.units.map((unit) => 
+                        <UnitBlock num={unit} color={unitNumToColor[unit]}/>
+                        )}
+                </div> */}
+            </div>
+            <div className="video-thumbnail">
+                <ReactPlayer
+                    url={"src/assets/review_videos/"+v.link}
+                    muted={true}
+                    width={"100%"}
+                    height={"100%"}
+                    light={true}
+                />
             </div>
         </div>
     )
@@ -58,7 +72,7 @@ export default function ReviewBlock(props) {
 
 
             <div className="reviewblock-header">
-                <div className="reviewblock-profile" style={{backgroundImage:`url(${profile_img}`}}></div>
+                <div className="reviewblock-profile bg-default-style" style={{backgroundImage:`url(${profile_img}`}}></div>
                 <div className="reviewblock-bar">
                     <div className="reviewblock-name">{props.name}</div>
                     <div className="reviewblock-divider"></div>

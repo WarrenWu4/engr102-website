@@ -28,7 +28,8 @@
     width: 20rem; height: 21rem;
     position: absolute; top: 0; left:0;
     background-color: rgba(0, 0, 0, 0.8);
-    color: white; font-size: 1.75rem; font-family: "Rubik";
+    color: white; font-size: 1.75rem; 
+    font-family: var(--fs-secondary);
     display: flex; justify-content: center; align-items: center; text-align: center;
 }
 
@@ -41,7 +42,7 @@
 
 .tao-name {
     width: 20rem; height: 60%;
-    color: #ECECEB; font-size: 2rem; font-family: "Rubik"; font-weight: 700;
+    color: #ECECEB; font-size: 2rem; font-family: var(--fs-secondary);
     display: flex; justify-content: center; align-items: center; text-align: center;
 }
 
