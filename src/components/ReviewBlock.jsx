@@ -14,11 +14,11 @@ export default function ReviewBlock(props) {
     const unitNumToColor = {
         1:"#6096B4",
         2:"#93BFCF",
-        3:"#EAC7C7",
-        4:"#E5FDD1",
-        5:"#C9F4AA",
+        3:"#D39191",
+        4:"#84C051",
+        5:"#5F7053",
         6:"#D9ACF5",
-        7:"#AAE3E2",
+        7:"#3E6968",
         8:"#7286D3"
     };
 
