@@ -2,21 +2,22 @@
     margin: 0.5rem;
     width: 7.5rem; height: 3rem;
     border-radius: 0.6rem; display: flex; flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .unit-tag {
-    width: 2.2rem; height: 3rem;
-    display: flex; justify-content: center; align-items: center;
+    height: 3rem;
+    display: flex; align-items: center;
 }
 
 .unit-circle {
     width: 1rem; height: 1rem;
-    border-radius: 50%; background-color: #ECECEB;
+    border-radius: 50%; background-color: var(--contrast);
 }
 
 .unit-num {
-    width: 5.3rem; height: 3rem;
-    display: flex; align-items: center; justify-content: center;
-    color: #ECECEB;
-    font-family: "Rubik"; font-size: 1.5rem; font-weight: 600;
+    height: 3rem;
+    display: flex; align-items: center; justify-content: flex-start;
+    color: var(--contrast);
+    font-family: var(--fs-btn); font-size: 1.5rem; font-weight: 600;
 }
