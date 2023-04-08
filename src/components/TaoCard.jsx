@@ -6,7 +6,7 @@ export default function TaoCard(props) {
 
     // find links to socials else nothing
     // link to profile picture
-    const profile_img = (props.pic === "") ? "./src/assets/default.jpg":"./src/assets/"+props.pic;
+    const profile_img = (props.pic === "") ? "../assets/default.jpg":"../assets/"+props.pic;
 
     return (
         <div className="tao-container">
