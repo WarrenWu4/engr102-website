@@ -12,7 +12,7 @@ export default function LearningContent(props) {
     if (props.pageNum === 0) {
         cardOrientation = 
         <div className="learningcontent-container" style={{flexDirection:align}}>
-            <div className="learningcontent-img" style={{display:showImage, backgroundImage:`url(../assets/${props.pages[props.pageNum].img}`, position:"absolute", top: "5rem"}}></div>
+            <div className="learningcontent-img" style={{display:showImage, backgroundImage:`url(/learn_pages/${props.pages[props.pageNum].img}`, position:"absolute", top: "5rem"}}></div>
             <div className="learningcontent-text">{props.pages[props.pageNum].content}</div>
         </div>;
     }
@@ -21,7 +21,7 @@ export default function LearningContent(props) {
         cardOrientation =
         <div className="learningcontent-container" style={{flexDirection:align}}>
             <div className="learningcontent-text" style={{width:"40vw"}}>{props.pages[props.pageNum].content}</div>
-            <div className="learningcontent-img" style={{width: "40vw", height:"60vh", display:showImage, backgroundImage:`url(../assets/${props.pages[props.pageNum].img}`}}></div>
+            <div className="learningcontent-img" style={{width: "40vw", height:"60vh", display:showImage, backgroundImage:`url(/learn_pages/${props.pages[props.pageNum].img}`}}></div>
         </div>;
     }
 
