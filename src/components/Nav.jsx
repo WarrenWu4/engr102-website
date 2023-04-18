@@ -1,5 +1,6 @@
 import '../styles/nav.css';
-import { FaDonate, FaDiscord } from 'react-icons/fa';
+import { FaDiscord } from 'react-icons/fa';
+import { RiMoneyDollarCircleFill } from "react-icons/ri"
 import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLink } from 'react-router-dom';
 import { useEffect, useRef } from "react";
@@ -78,7 +79,7 @@ export default function Nav() {
             <div className='nav-secondary center'>
 
                 <NavLink to="/donate" className={'center'}>
-                    <FaDonate/>
+                    <RiMoneyDollarCircleFill/>
                 </NavLink>
             
                 <a href="https://tx.ag/216server" target="_blank" rel="noopener noreferrer" className='center'>
