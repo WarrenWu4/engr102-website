@@ -80,61 +80,49 @@
     z-index: -1;
 }
 
-
-/* faqs section */
-.faq-cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 @media (min-width: 475px) {
-    .home {
-        width: 47.5rem;
-    }
     .home-container {
         max-width: 47.5rem;
     }
     .home-hero-header {
-        width: 43.7rem;
+        width: 41.7rem;
+        height: 21.2rem;
         font-size: 4.4rem;
     }
     .home-hero-subheader {
         width: 43.7rem;
-        font-size: 2.4rem;
-    }
-    .home-title {
-        font-size: 4.4rem;
+        height: 9.3rem;
+        font-size: 2.6rem;
     }
 }
 
 @media (min-width: 640px) {
-    .home {
-        width: 64rem;
-    }
     .home-container {
         max-width: 64rem;
     }
     .home-hero-header {
-        width: 58rem;
+        width: 55.6rem;
+        height: 17.4rem;
         font-size: 4.8rem;
     }
     .home-hero-subheader {
-        width: 58rem;
-        font-size: 2.8rem;
+        width: 55.6rem;
+        height: 11.7rem;
+        font-size: 3.2rem;
     }
     .res-cards {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
     }
+    .home-hero-blob {
+        width: 24rem;
+        height: 24rem;
+        background-size: cover;
+    }
 }
 
 @media (min-width: 768px) {
-    .home {
-        width: 76.8rem;
-    }
     .home-container {
         max-width: 76.8rem;
     }
@@ -146,20 +134,10 @@
         width: 68rem;
         font-size: 3.2rem;
     }
-    .faq-cards {
-        width: 76.8rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: flex-start;
-        flex-wrap: wrap;
-    }
+
 }
 
 @media (min-width: 1024px) {
-    .home {
-        width: 102.4rem;
-    }
     .home-container {
         max-width: 102.4rem;
     }
@@ -176,16 +154,17 @@
         display: flex;
         justify-content: space-evenly;
     }
-    /* TODO fix spacing */
     .faq-cards {
         width: 102.4rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        flex-wrap: wrap;
     }
 }
 
 @media (min-width: 1280px) {
-    .home {
-        width: 128rem;
-    }
     .home-container {
         max-width: 128rem;
     }
@@ -202,6 +181,10 @@
     }
     .res-cards {
         width: 128rem;
+    }
+    .faq-cards {
+        width: 128rem;
+        justify-content: center;
     }
 }
 
