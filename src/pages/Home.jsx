@@ -8,7 +8,6 @@ import FaqCard from '../components/homePageComponents/FaqCard';
 import Footer from '../components/homePageComponents/Footer';
 
 export default function Home() {
-
     return(
         <div className='home'>
 

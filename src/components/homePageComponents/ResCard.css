@@ -52,4 +52,8 @@
     font-family: "Sofia Sans";
     font-weight: 800;
     margin-bottom: 1rem;
+    transition: all 500ms;
+}
+.res-btn:hover {
+    box-shadow: inset 0 0 0 15rem var(--secondary80);
 }

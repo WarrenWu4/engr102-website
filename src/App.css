@@ -90,7 +90,7 @@ a {
 
 /* global media queries */
 @media screen and (max-width: 374px) {
-    .basic-page, .home {
+    .basic-page {
         display: none;
     }
     body::before {

@@ -68,12 +68,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 500ms;
 }
+.home-hero-btn:hover {
+    box-shadow: 0 0 1.5rem 0.5rem var(--contrast);
+}
+
 .home-hero-blob {
     background: url("../assets/hero-blob.svg");
     background-repeat: no-repeat;
     width: 18rem;
-    height: 18rem;
+    aspect-ratio: 1;
     position: absolute;
     left: 1rem;
     top: 9rem;
@@ -127,12 +132,14 @@
         max-width: 76.8rem;
     }
     .home-hero-header {
-        width: 68rem;
-        font-size: 5.4rem;
+        width: 66.2rem;
+        height: 18.9rem;
+        font-size: 5.2rem;
     }
     .home-hero-subheader {
-        width: 68rem;
-        font-size: 3.2rem;
+        width: 66.2rem;
+        height: 8.8rem;
+        font-size: 3.6rem;
     }
 
 }
@@ -142,12 +149,14 @@
         max-width: 102.4rem;
     }
     .home-hero-header {
-        width: 94.4rem;
-        font-size: 6.4rem;
+        width: 87.6rem;
+        height: 21.9rem;
+        font-size: 6rem;
     }
     .home-hero-subheader {
-        width: 94.4rem;
-        font-size: 3.6rem;
+        width: 87.6rem;
+        height: 9.6rem;
+        font-size: 4rem;
     }
     .res-cards {
         width: 102.4rem;
@@ -162,6 +171,10 @@
         align-items: flex-start;
         flex-wrap: wrap;
     }
+    .home-hero-blob {
+        width: 30rem;
+        height: 30rem;
+    }
 }
 
 @media (min-width: 1280px) {
@@ -169,15 +182,13 @@
         max-width: 128rem;
     }
     .home-hero-header {
-        width: 112rem;
-        font-size: 7.4rem;
+        width: 108.8rem;
+        height: 26.1rem;
+        font-size: 7.2rem;
     }
     .home-hero-subheader {
-        width: 112rem;
-        font-size: 4rem;
-    }
-    .faq-cards {
-        width: 128rem;
+        width: 108.8rem;
+        height: 9.6rem;
     }
     .res-cards {
         width: 128rem;
@@ -186,8 +197,35 @@
         width: 128rem;
         justify-content: center;
     }
+    .home-hero-blob {
+        width: 35rem;
+        height: 35rem;
+        left: 10rem;
+    }
 }
 
 @media (min-width: 1536px) {
+    .home-container {
+        max-width: 153.6rem;
+    }
+    .home-hero-header {
+        width: 127.7rem;
+        height: fit-content;
+    }
+    .home-hero-subheader {
+        width: 127.7rem;
+        height: fit-content;
+    }
+    .home-hero-blob {
+        width: 40rem;
+        height: 40rem;
+        left: 30rem;
+        top: 3rem;
+    }
+}
 
+@media (max-width: 374px) {
+    .home {
+        display:none;
+    }
 }
