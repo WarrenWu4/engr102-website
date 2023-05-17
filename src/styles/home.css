@@ -217,10 +217,8 @@
         height: fit-content;
     }
     .home-hero-blob {
-        width: 40rem;
-        height: 40rem;
-        left: 30rem;
-        top: 3rem;
+        top: 2rem;
+        left: 12rem;
     }
 }
 
