@@ -1,99 +1,3 @@
-/*
-.hero-container {
-    width: 100vw; display: flex; flex-direction: row; justify-content: center; 
-}
-
-.hero-right {
-    width: 50vw;
-    flex-direction: row; align-items: center;
-    display: flex; justify-content: flex-start;
-}
-
-.hero-img {
-    width: 50rem;
-    aspect-ratio: 1;
-    background-image: url("../assets/reveille.png");
-    transform: scaleX(-1);
-    margin-left: 10rem;
-}
-
-.hero-left {
-    width: 50vw;
-    display: flex; justify-content: center; align-items: flex-end;
-    flex-direction: column;
-}
-
-.hero-left-container {
-    height: 50rem;
-}
-
-.hero-header {
-    width: var(--home-header-width); 
-    aspect-ratio: 6.5;
-    margin-bottom: 1.2rem;
-    background-color: var(--secondary);
-    color: var(--contrast);
-}
-
-.hero-subheader {
-    color: var(--secondary80);
-    text-align: center;
-    margin-bottom: 2.2rem;
-}
-
-.start-btn {
-    width: var(--home-btn-width); 
-    aspect-ratio: 3;
-    border: var(--home-btn-border) solid var(--contrast);
-    color: var(--contrast);
-    cursor: pointer; 
-    transition: all 250ms;
-}
-
-.start-btn:hover, .start-btn:focus {
-    box-shadow: inset 15.8rem 0 0 0 var(--contrast);
-    color: var(--main);
-}
-
-.start-btn a {
-    width: inherit;
-    aspect-ratio: 3;
-}
-
-.home-font-header {
-    color: var(--contrast);
-    font-size: var(--home-header-font);
-    font-family: var(--fs-main);
-    font-weight: bold;
-
-}
-
-.home-font-subheader {
-    color: var(--secondary80);
-    font-size: var(--home-subheader-font);
-    font-family: var(--fs-main);
-    font-weight: bold;
-
-}
-
-.home-font-btn {
-    color: var(--contrast);
-    font-size: var(--home-btn-font);
-    font-family: var(--fs-btn);
-    font-weight:bold;
-}
-
-@media screen and (max-width: 1300px) {
-    .hero-left {
-        width: 100vw;
-        align-items: center;
-    }
-
-    .hero-right, .hero-img {
-        display: none;
-    }
-}
-*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@800&display=swap');
@@ -102,7 +6,6 @@
 
 /* general */
 .home {
-    width: 37.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -117,7 +20,8 @@
 }
 
 .home-container {
-    max-width: 37.5rem;
+    width: 100%;
+    max-width: 37.5rem; /*default max width*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -127,17 +31,16 @@
 .home-title {
     font-family: "Inter", sans-serif;
     font-size: 4rem;
-    color: #ECECEB;
+    color: var(--contrast);
     font-weight: 900;
-    margin-bottom: 1.6rem;
 }
+
 /* hero section */
 .home-hero-header {
-    width: 33.7rem;
-    color: #ECECEB;
-    font-family: "Inter", sans-serif;
-    font-size: 4rem;
-    font-weight: 900;
+    width: 33.5rem;
+    height: 19.2rem;
+    color: var(--contrast);
+    font: 900 4rem "Inter";
     text-align: center;
     margin-bottom: 1.6rem;
 }
@@ -148,23 +51,20 @@
     color: transparent;
 }
 .home-hero-subheader {
-    width: 33.7rem;
-    color: #ECECEB;
+    width: 33.5rem;
+    height: 8.1rem;
+    color: var(--contrast);
     opacity: 0.8;
-    font-family: "Inter", sans-serif;
-    font-size: 2.2rem;
-    font-weight: 700;
+    font: 700 2.2rem "Inter";
     text-align: center;
     margin-bottom: 2rem;
 }
 .home-hero-btn {
     width: 10rem;
     height: 4rem;
-    background-color: #ECECEB;
-    color: #2E383F;
-    font-family: "Sofia Sans";
-    font-size: 2rem;
-    font-weight: 800;
+    background-color: var(--contrast);
+    color: var(--main);
+    font: 800 2rem "Sofia Sans";
     display: flex;
     justify-content: center;
     align-items: center;
@@ -180,116 +80,13 @@
     z-index: -1;
 }
 
-/* resources section */
-.res-card {
-    width: 28.1rem;
-    height: 28rem;
-    background: #ECECEB;
-    margin-bottom: 3.6rem;
-    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.25);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.res-title {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Inter", sans-serif;
-    font-size: 2.2rem;
-    color: #2E383F;
-    font-weight: 700;
-}
-.res-title svg {
-    margin-right: 0.8rem;
-    font-size: 3rem;
-}
-.res-divider {
-    width: 24.5rem;
-    height: 0.4rem;
-    border-radius: 1rem;
-    background: #2E383F;
-}
-.res-points {
-    height: 12.8rem;
-    margin: 0;
-    padding-left: 2rem;
-    color: #2E383F;
-    font-size: 2rem;
-    font-family: "Sofia Sans";
-    font-weight: 800;
-    line-height: 3rem;
-}
-.res-btn {
-    width: 10rem;
-    height: 4rem;
-    background: #2E383F;
-    color: #ECECEB;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    font-family: "Sofia Sans";
-    font-weight: 800;
-    margin-bottom: 1rem;
-}
+
 /* faqs section */
 .faq-cards {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-/* footer section */
-.footer {
-    width: 100vw;
-    height: 11.8rem;
-    background: #2B3C46;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.footer-title {
-    color: #ECECEB; 
-    margin-top: 1.4rem;
-    font: 2.2rem "Inter";
-    font-weight: 700;
-    margin-bottom: 0.8rem;
-}
-.footer-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1.6rem;
-}
-.vertical-divider {
-    width: 0.1rem;
-    height: 1.5rem;
-    background: #ECECEB;
-    margin: 0 1rem 0 1rem;
-}
-.privacy-policy, .honor-code {
-    color: #ECECEB;
-    font: 1.4rem "Inter";
-    cursor: pointer;
-}
-.privacy-policy:hover {
-    text-decoration: underline;
-}
-.honor-code:hover {
-    text-decoration: underline;
-}
-.footer-socials {
-    font-size: 2.2rem;
-    color: #ECECEB;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
 }
 
 @media (min-width: 475px) {

@@ -1,4 +1,4 @@
-import '../styles/nav.css';
+import './nav.css';
 import { ImCross } from "react-icons/im";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLink } from 'react-router-dom';

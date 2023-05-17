@@ -1,0 +1,55 @@
+/* resources section */
+.res-card {
+    width: 28.1rem;
+    height: 28rem;
+    background: #ECECEB;
+    margin-top: 1.6rem;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.res-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-size: 2.2rem;
+    color: #2E383F;
+    font-weight: 700;
+}
+.res-title svg {
+    margin-right: 0.8rem;
+    font-size: 3rem;
+}
+.res-divider {
+    width: 24.5rem;
+    height: 0.4rem;
+    border-radius: 1rem;
+    background: #2E383F;
+}
+.res-points {
+    height: 12.8rem;
+    margin: 0;
+    padding-left: 2rem;
+    color: #2E383F;
+    font-size: 2rem;
+    font-family: "Sofia Sans";
+    font-weight: 800;
+    line-height: 3rem;
+}
+.res-btn {
+    width: 10rem;
+    height: 4rem;
+    background: #2E383F;
+    color: #ECECEB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-family: "Sofia Sans";
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
