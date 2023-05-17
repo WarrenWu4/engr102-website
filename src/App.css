@@ -7,6 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 /* variables/colors */
 
@@ -14,7 +15,7 @@
     /* colors */
     --main: #2E383F;
     --main80: #565E63; 
-    --mainb: rgba(0, 0, 0, 0.85);
+    --mainb: rgba(0, 0, 0, 0.8);
     --secondary: #F64662;
     --secondary80: #EE6177;
     --tertiary: #F9A828;
@@ -53,10 +54,10 @@
 /* basic layout for most pages */
 .basic-page {
     width: 100vw; 
-    height: 100vh;
     background: var(--main);
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .basic-title {
@@ -88,8 +89,8 @@ a {
 }
 
 /* global media queries */
-@media screen and (max-width: 319px) {
-    .basic-page {
+@media screen and (max-width: 374px) {
+    .basic-page, .home {
         display: none;
     }
     body::before {

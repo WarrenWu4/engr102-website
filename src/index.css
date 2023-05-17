@@ -10,6 +10,9 @@ body {
   overflow-y: overlay;
   scrollbar-width: 1.5rem;
   scrollbar-color: #888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 ::-webkit-scrollbar {
