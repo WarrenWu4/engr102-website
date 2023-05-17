@@ -4,7 +4,7 @@ import { BsInstagram, BsFillEnvelopeFill } from "react-icons/bs";
 import {FaDiscord} from "react-icons/fa"
 import { useState } from 'react';
 import Nav from '../components/Nav'
-import FaqCard from '../components/FaqCard';
+import FaqCard from '../components/homePageComponents/FaqCard';
 import { NavLink } from 'react-router-dom'
 
 export default function Home() {
@@ -85,12 +85,12 @@ export default function Home() {
             <div className='home-container'>
                 <div className='home-title'>FAQs</div>
                 <div className='faq-cards'>
-                    <FaqCard width="35rem" question="How is the course strucutred?" answer="Check the syllabus bruh"/>
-                    <FaqCard width="35rem" question="How do I fix my grade ;-;?" answer="Use this website :D"/>
-                    <FaqCard width="35rem" question="Are the exams hard?" answer="Not if you a CS major \_(ツ)_/¯. But fr as long as you study you'll be fine"/>
-                    <FaqCard width="35rem" question="What is Python?" answer="Google it, that's what the internet is for"/>
-                    <FaqCard width="35rem" question="Why do I have to take this class?" answer="Ask the department head"/>
-                    <FaqCard width="35rem" question="Is coding fun?" answer="Coding is actually really fun because you can create some really cool applications with just your computer and a bit of knowledge."/>
+                    <FaqCard question="How is the course strucutred?" answer="Check the syllabus bruh"/>
+                    <FaqCard question="How do I fix my grade ;-;?" answer="Use this website :D"/>
+                    <FaqCard question="Are the exams hard?" answer="Not if you a CS major \_(ツ)_/¯. But fr as long as you study you'll be fine"/>
+                    <FaqCard question="What is Python?" answer="Google it, that's what the internet is for"/>
+                    <FaqCard question="Why do I have to take this class?" answer="Ask the department head"/>
+                    <FaqCard question="Is coding fun?" answer="Coding is actually really fun because you can create some really cool applications with just your computer and a bit of knowledge."/>
                 </div>
             </div>
 

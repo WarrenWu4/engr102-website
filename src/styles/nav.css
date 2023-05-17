@@ -59,8 +59,9 @@
     margin-top: 0.8rem;
 }
 
+/* TODO fix height mismatch on hover */
 .nav-links a:hover {
-    background: var(--main80)
+    background: var(--main80);
 }
 
 .close-btn {
