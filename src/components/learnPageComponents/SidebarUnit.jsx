@@ -1,37 +1,62 @@
 import './SidebarUnit.css';
-import { FaLockOpen, FaLock } from "react-icons/fa";
 
+// icons
+import { RxTriangleDown } from "react-icons/rx";
+import { TiLockClosed, TiLockOpen } from "react-icons/ti";
+
+// data
+import units from "../../units.json";
+
+// react
+import { useState } from "react";
+import { NavLink } from 'react-router-dom';
 
 export default function SidebarUnit(props) {
     
-    const icon = (props.unlock === 1) ? <FaLockOpen/>:<FaLock/>;
-    let iconColor = "rgba(246, 70, 98, 1)";
-    let unitColor = "rgba(236, 236, 235, 1)";
-    let pointStatus = "pointer";
-    let bgColor = "#2E383F";
-    if (props.unlock === 0) {
-        iconColor = "rgba(246, 70, 98, 0.25)";
-        unitColor = "rgba(236, 236, 235, 0.25)";
-        pointStatus = "default";
-    }
-    if (props.active === props.num) {
-        bgColor = "#F9A828";
-    }
+    const [show, setShow] = useState("none");
+    const [rot, setRot] = useState("0deg");
+    const opac = (props.unlock === 1) ? 1:0.6;
+    const curs = (props.unlock === 1) ? "pointer":"";
+    const icon = (props.unlock === 1) ? <TiLockOpen id="lock"/>:<TiLockClosed id="lock"/>;
 
-    const clickEvent = () => {
+    let lessons = []
+    units.units.map((unit) => {
+        unit.objectives.map((objective) => {
+            if (unit.num === props.num) {
+                lessons.push(
+                    <NavLink to="/learn/objectives/view" state={{objective}} style={{display:show}}>
+                        <div className='learn-lesson-block' style={{display:show}}>
+                            <div className='learn-circle-icon'></div>
+                            {objective.title}
+                        </div>
+                    </NavLink>
+                )
+            }
+        })
+    })
+
+    const showContent = () => {
         if (props.unlock === 1) {
-            props.SetActive(props.num);
+            if (show === "flex") {
+                setShow("none");
+                setRot("0deg");
+            }
+            else {
+                setRot("180deg");
+                setShow("flex");
+            }
         }
     }
 
     return(
-        <a className="unit-container" onClick={clickEvent} style={{backgroundColor:bgColor, cursor:pointStatus}}>
-            <div className='icon-container' style={{color:iconColor}}>
+        <div className='learn-sidebar-unitblock' style={{opacity: opac}}>
+            <div className="learn-sidebar-unitblock-g2">
+                <div className='learn-sidebar-unitblock-g1' style={{cursor: curs}} onClick={() => showContent()}><RxTriangleDown style={{rotate: rot, transition: "rotate 250ms"}} id="collapse"/>UNIT {props.num}</div>
                 {icon}
             </div>
-            <div className='unit-num' style={{color:unitColor}}>
-                Unit {props.num}
+            <div className='learn-sidebar-unitblock-g3'>
+                {lessons}
             </div>
-        </a>
+        </div>
     );
 }

@@ -1,8 +1,8 @@
-import "../styles/learnview.css";
+import "./learnview.css";
 import { useState, useRef, useEffect } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from "react-icons/fa";
-import LearningContent from "../components/learnPageComponents/LearningContent";
+import LearningContent from "./LearningContent";
 
 export default function LearnView() {
 

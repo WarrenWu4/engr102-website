@@ -1,0 +1,52 @@
+.learn-sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.learn-sidebar-header {
+    width: 83%;
+    height: 3.3rem;
+    color: var(--contrast80);
+    font: 900 2.2rem "Inter";
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.6rem;
+}
+
+.learn-sidebar-header-g1 {
+    display: flex;
+    align-items: center;
+}
+
+.learn-sidebar-header-g1 svg {
+    margin-right: 0.4rem;
+}
+
+.learn-maindivider {
+    width: 83%;
+    height: 0.2rem;
+    background: var(--contrast80);
+    margin-bottom: 1.6rem;
+    border-radius: 1rem;
+}
+
+.learn-sidebar-b-container {
+    width: 83%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.learn-divider {
+    margin: 1.5rem 0 1.5rem 0;
+    width: 93.2%;
+    height: 0.2rem;
+    border-radius: 1rem;
+    background: var(--green);
+    align-self: flex-end;
+}

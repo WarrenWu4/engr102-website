@@ -20,6 +20,11 @@
     --secondary80: #EE6177;
     --tertiary: #F9A828;
     --contrast: #ECECEB;
+    --contrast80: #CBE4DE;
+    --green: #5F7053;
+    --babyblue: #93BFCF;
+    --darkerblue: #6096B4;
+    --purpleblue: #7286D3;
 
     /* font styles */
     --fs-main: "Sofia Sans";

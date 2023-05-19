@@ -1,10 +1,13 @@
 import '../styles/learn.css'
-import Nav from '../components/Nav'
 import { NavLink } from 'react-router-dom'
 import {useState} from "react";
+import units from "../units.json";
+
+// components
+import Nav from '../components/Nav'
+import Sidebar from '../components/learnPageComponents/Sidebar';
 import SidebarUnit from '../components/learnPageComponents/SidebarUnit';
 import MainContent from '../components/learnPageComponents/MainContent';
-import units from "../units.json";
 
 export default function Learn() {
 
@@ -19,25 +22,44 @@ export default function Learn() {
     const mainContent = <MainContent unit={active}/>;
 
     return(
-        <div className="basic-page">
+        <div className='learn-page'>
 
-            <Nav/> 
+            <Nav/>
 
-            <div className="basic-title">Learn Topics</div>
+            <div className='learn-container'>
 
-            <div className='learn-content'>
+                <div className='learn-title'>Learn Topics</div>
 
-                <div className='learn-sidebar'>
-                    <div className='sidebar-title'>UNITS</div>
-                    {unitBlocks}
-                </div>
+                <Sidebar/>
 
-                <div className='learn-main'>
-                    {mainContent}
-                </div>
-                
             </div>
 
         </div>
+        // <div className="learn-page">
+
+        //     <Nav/> 
+
+        //     <div className="learn-title">Learn Topics</div>
+
+        //     <div className='learn-content'>
+
+        //         <div className='learn-sidebar'>
+        //             <div className='sidebar-title'>
+        //                 <div className='learn-sidebar-left'>
+        //                     <RxCube/>
+        //                     UNITS
+        //                 </div>
+        //                 <FaPython/>
+        //             </div>
+        //             {unitBlocks}
+        //         </div>
+
+        //         <div className='learn-main'>
+        //             {mainContent}
+        //         </div>
+                
+        //     </div>
+
+        // </div>
     );
 }

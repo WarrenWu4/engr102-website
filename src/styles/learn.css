@@ -1,5 +1,65 @@
-.learn-content {
+.learn-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+}
+
+.learn-container {
+    width: 100%;
+    max-width: 37.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.learn-title {
+    font: 900 4rem "Inter";
+    color: var(--contrast);
+    margin-bottom: 1.6rem;
+}
+
+@media (min-width: 475px) {
+    .learn-container {
+        max-width: 47.5rem;
+    }
+}
+@media (min-width: 640px) {
+    .learn-container {
+        max-width: 64rem;
+    }
+}
+@media (min-width: 768px) {
+    .learn-container {
+        max-width: 76.8rem;
+    }
+}
+@media (min-width: 1024px) {
+    .learn-container {
+        max-width: 102.4rem;
+    }
+}
+@media (min-width: 1280px) {
+    .learn-container {
+        max-width: 128rem;
+    }
+}
+@media (min-width: 1536px) {
+    .learn-container {
+        max-width: 153.6rem;
+    }
+}
+
+@media (max-width: 374px) {
+    .learn-page {
+        display: none;
+    }
+}
+
+/* .learn-content {
     display: flex; flex-direction: row;
+
 }
 
 .learn-sidebar {
@@ -19,4 +79,4 @@
 
 .learn-main {
     margin-left: min(6rem, calc(6/70*100vw));
-}
+} */
