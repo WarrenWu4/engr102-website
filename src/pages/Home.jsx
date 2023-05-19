@@ -8,6 +8,13 @@ import FaqCard from '../components/homePageComponents/FaqCard';
 import Footer from '../components/homePageComponents/Footer';
 
 export default function Home() {
+
+    // Future adjustments:
+    // TODO - add more spacing between dividers as screen size increases
+    // TODO - resource card spacing is off for 768px
+    // TODO - increase height for footer
+    // TODO - blend in footer color with gradient to it doesn't look as weird
+
     return(
         <div className='home'>
 
