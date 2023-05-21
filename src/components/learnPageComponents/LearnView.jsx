@@ -27,7 +27,7 @@ export default function LearnView(props) {
             SetMaxPage(props.lesson.pages.length);
             SetCurrPage(0);
             SetContent(
-                <div className="learn-viewpage-content">
+                <div className="learn-viewpage-content" style={{flexDirection: "column"}}>
                     <div className="learn-viewpage-img" style={{backgroundImage: `url(/learn_pages/${props.lesson.pages[0].img}`}}></div>
                     <div className="learn-viewpage-text">{props.lesson.pages[0].content}</div>
                 </div>
@@ -37,8 +37,9 @@ export default function LearnView(props) {
 
     useEffect(() => {
         if (props.lesson !== null) {
+            const firstPage = (currPage === 0) ? {flexDirection: "column"} : {};
             SetContent(
-                <div className="learn-viewpage-content">
+                <div className="learn-viewpage-content" style={firstPage}>
                     <div className="learn-viewpage-img" style={{backgroundImage: `url(/learn_pages/${props.lesson.pages[currPage].img}`}}></div>
                     <div className="learn-viewpage-text">{props.lesson.pages[currPage].content}</div>
                 </div>

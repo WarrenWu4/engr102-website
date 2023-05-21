@@ -9,7 +9,7 @@
                     "title": "Download Python",
                     "pages": [
                         {
-                            "content": "Welcome to ENGR 102! We're going to be working with the Python programming language so first things first, we need to set some stuff up so our programming experience is flawless.",
+                            "content": "Yikes, this isn't going to be fun...",
                             "img": "intro.svg"
                         },
                         {
@@ -42,7 +42,7 @@
                     "title": "Download VS Code",
                     "pages": [
                         {
-                            "content": "howdy folks",
+                            "content": "VS CODE SUPREMACY!!!!",
                             "img": "intro.svg"
                         }
                     ]
@@ -51,7 +51,7 @@
                     "title": "Hello World!",
                     "pages": [
                         {
-                            "content": "howdy folks",
+                            "content": "Every programmer's first program 😄",
                             "img": "intro.svg"
                         }
                     ]
@@ -60,7 +60,7 @@
                     "title": "More Printing",
                     "pages": [
                         {
-                            "content": "howdy folks",
+                            "content": "Basically putting words on screen (console)",
                             "img": "intro.svg"
                         }
                     ]
@@ -76,7 +76,7 @@
                     "title": "Storing Values",
                     "pages": [
                         {
-                            "content": "howdy folks",
+                            "content": "Just download more RAM bro.",
                             "img": "intro.svg"
                         }
                     ]
@@ -85,7 +85,7 @@
                     "title": "Math With Python",
                     "pages": [
                         {
-                            "content": "howdy folks",
+                            "content": "Isn't that what my calculator is for?",
                             "img": "intro.svg"
                         }
                     ]
