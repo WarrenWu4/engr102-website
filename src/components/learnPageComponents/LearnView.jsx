@@ -34,6 +34,17 @@ export default function LearnView(props) {
             )
         }
     }, [props.lesson])
+
+    useEffect(() => {
+        if (props.lesson !== null) {
+            SetContent(
+                <div className="learn-viewpage-content">
+                    <div className="learn-viewpage-img" style={{backgroundImage: `url(/learn_pages/${props.lesson.pages[currPage].img}`}}></div>
+                    <div className="learn-viewpage-text">{props.lesson.pages[currPage].content}</div>
+                </div>
+            )
+        }
+    }, [currPage])
     
     return (
         <div className="learn-viewpage-container">
