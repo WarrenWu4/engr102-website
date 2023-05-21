@@ -1,25 +1,24 @@
 import '../styles/learn.css'
-import { NavLink } from 'react-router-dom'
-import {useState} from "react";
-import units from "../units.json";
 
 // components
 import Nav from '../components/Nav'
 import Sidebar from '../components/learnPageComponents/Sidebar';
-import SidebarUnit from '../components/learnPageComponents/SidebarUnit';
-import MainContent from '../components/learnPageComponents/MainContent';
+import LearnView from '../components/learnPageComponents/LearnView';
+
+// react
+import { useState, useEffect } from "react";
 
 export default function Learn() {
 
-    // TODO: use local storage to track which button is active on session
+    // TODO: use local storage to track session progression
+    // TODO: add video format to learnview
 
-    const [active, SetActive] = useState(0);
+    // TODO: fix image size in learnview (add flexibility)
+    // TODO: be able to change orientation depending on screen size (brainstorm more about)
+    // TOdo: add learnview for mobile
+    // TODO: add style change for active lesson
 
-    const unitBlocks = units.units.map((unit) => 
-        <SidebarUnit num={unit["num"]} unlock={unit["status"]} active={active} SetActive={SetActive}/>
-    )
-
-    const mainContent = <MainContent unit={active}/>;
+    const [lesson, SetLesson] = useState(null); //state passed on to sidebar -> sidebare1 -> sidebare2 to get lesson  
 
     return(
         <div className='learn-page'>
@@ -30,36 +29,14 @@ export default function Learn() {
 
                 <div className='learn-title'>Learn Topics</div>
 
-                <Sidebar/>
+                <div className='learn-wrapper'>
+                    <Sidebar SetLesson={SetLesson}/>
+
+                    <div className='learn-view'><LearnView lesson={lesson}/></div>
+                </div>
 
             </div>
 
         </div>
-        // <div className="learn-page">
-
-        //     <Nav/> 
-
-        //     <div className="learn-title">Learn Topics</div>
-
-        //     <div className='learn-content'>
-
-        //         <div className='learn-sidebar'>
-        //             <div className='sidebar-title'>
-        //                 <div className='learn-sidebar-left'>
-        //                     <RxCube/>
-        //                     UNITS
-        //                 </div>
-        //                 <FaPython/>
-        //             </div>
-        //             {unitBlocks}
-        //         </div>
-
-        //         <div className='learn-main'>
-        //             {mainContent}
-        //         </div>
-                
-        //     </div>
-
-        // </div>
     );
 }

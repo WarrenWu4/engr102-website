@@ -93,6 +93,12 @@ a {
     to {transform: rotate(360deg);}
 }
 
+@keyframes fadeinout {
+    0% {opacity: 1}
+    50% {opacity: 0.5}
+    100% {opacity: 1}
+}
+
 /* global media queries */
 @media screen and (max-width: 374px) {
     .basic-page {

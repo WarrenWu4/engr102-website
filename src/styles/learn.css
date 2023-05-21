@@ -5,13 +5,14 @@
     width: 100vw;
 }
 
-.learn-container {
+.learn-container, .learn-wrapper {
     width: 100%;
     max-width: 37.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    user-select: none;
 }
 
 .learn-title {
@@ -20,18 +21,24 @@
     margin-bottom: 1.6rem;
 }
 
+.learn-view {
+    width: 60rem;
+    height: 61.5rem;
+    display: none;
+}
+
 @media (min-width: 475px) {
-    .learn-container {
+    .learn-container, .learn-wrapper {
         max-width: 47.5rem;
     }
 }
 @media (min-width: 640px) {
-    .learn-container {
+    .learn-container, .learn-wrapper {
         max-width: 64rem;
     }
 }
 @media (min-width: 768px) {
-    .learn-container {
+    .learn-container, .learn-wrapper {
         max-width: 76.8rem;
     }
 }
@@ -39,15 +46,30 @@
     .learn-container {
         max-width: 102.4rem;
     }
+    .learn-wrapper {
+        max-width: 102.4rem;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .learn-view {
+        display: flex;
+    }
 }
 @media (min-width: 1280px) {
-    .learn-container {
+    .learn-container, .learn-wrapper {
         max-width: 128rem;
+    }
+    .learn-view {
+        width: 85.6rem;
     }
 }
 @media (min-width: 1536px) {
-    .learn-container {
+    .learn-container, .learn-wrapper {
         max-width: 153.6rem;
+    }
+    .learn-view {
+        width: 111.2rem;
     }
 }
 
@@ -56,27 +78,3 @@
         display: none;
     }
 }
-
-/* .learn-content {
-    display: flex; flex-direction: row;
-
-}
-
-.learn-sidebar {
-    width: 20vw; height: calc(100vh - 34.2rem);
-    display: flex; align-items: center; flex-direction: column;
-    color: var(--contrast); font-size: min(3rem, calc(3/70*100vw)); font-weight: bold; font-family: "IBM Plex Mono";
-    overflow-y:scroll; position: relative;
-}
-
-.sidebar-title {
-    position: sticky; top:0;left:0;
-    background-color: var(--main);
-    height: min(5rem, calc(5/70*100vw)); 
-    margin-bottom: min(2rem, calc(2/70*100vw));
-    width: 80%; border-bottom: var(--contrast) solid min(0.4rem, calc(0.4/70*100vw)); text-align: center;
-}
-
-.learn-main {
-    margin-left: min(6rem, calc(6/70*100vw));
-} */

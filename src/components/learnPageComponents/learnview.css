@@ -1,33 +1,67 @@
-.top-ui {
-    width: 90vw; height: 8rem;
-    border-bottom: #F9A828 solid 0.4rem;
-    display: flex; justify-content: space-between; align-items: center;
+.learn-viewpage-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background: #1f2930;
 }
 
-.learnview-exit-btn a{
-    font-size: 2rem; font-weight: 500; color: #ECECEB; font-family: "Signika Negative";
-    cursor:pointer;
+.learn-viewpage-controls {
+    width: 100%;
+    height: 6rem;
+    color: var(--contrast);
+    font: 700 1.8rem "Inter";
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    user-select: none;
 }
 
-.learnview-page-tracker {
-    font-size: 2rem; font-weight: 500; color: #ECECEB; font-family: "Signika Negative";
-}
-
-.bottom-ui {
-    width: 90vw; height: 8rem;  
-    border-top: #F9A828 solid 0.4rem;
-    display: flex; justify-content: space-between; align-items: center;
-    color: #ECECEB; font-size: 3rem;
-}
-
-.learnview-title {
-    color: #ECECEB; font-size: 2.5rem; font-family: "Signika Negative";
-}
-
-.learnview-left-btn, .learnview-right-btn {
+.learn-viewpage-btns {
+    margin-left: 2rem;
+    width: 6rem;
+    display: flex;
+    justify-content: space-between;
     cursor: pointer;
+    font-size: 2.2rem;
 }
 
-.learnview-content {
-    width: 100vw; height: calc(100vh - 16rem);
+.learn-viewpage-pages {
+    margin-right: 2rem;
+}
+
+.learn-viewpage-content, .learn-viewpage-opening {
+    width: 85%;
+    height: calc(100% - 6rem);
+    color: var(--contrast);
+    font: 1.8rem "Sofia Sans";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.learn-viewpage-opening {
+    font: 900 4rem "Inter";
+    color: var(--secondary80);
+    display: flex; text-align: center;
+    animation: fadeinout 1.5s ease-in-out infinite;
+}
+
+.learn-viewpage-img {
+    width: 100%; height: 20rem;
+    background-position: center; background-repeat: no-repeat;
+    background-size:contain;
+    margin: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .learn-viewpage-content {
+        flex-direction: column;
+    }
 }

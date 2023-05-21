@@ -8,13 +8,16 @@ import { FaPython } from "react-icons/fa";
 import units from "../../units.json";
 
 // components
-import SidebarUnit from "./SidebarUnit";
+import SidebarE1 from "./SidebarE1";
 
-export default function Sidebar() {
+export default function Sidebar(props) {
+
+    // *all sidebar related elements' styles are in Sidebar.css
+    // *sidebar heiarachy based on E(number) 1 === units 2 === lessons
 
     let unitBlocks = [];
     units.units.map((unit) => {
-        unitBlocks.push(<SidebarUnit num={unit["num"]} unlock={unit["status"]}/>)
+        unitBlocks.push(<SidebarE1 unlock={unit.status} num={unit.num} SetLesson={props.SetLesson}/>)
         unitBlocks.push(<div className="learn-divider"></div>)
     })
 
