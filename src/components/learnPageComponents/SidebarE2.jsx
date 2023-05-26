@@ -8,6 +8,9 @@ export default function SidebarE2(props) {
     const activeLesson = () => {
         props.SetLesson(props.objective);
         SetBg("var(--secondary80)");
+        if (window.innerWidth <= 768) {
+            window.scrollTo(0, 0);
+        }
     }
 
     useEffect(() => {

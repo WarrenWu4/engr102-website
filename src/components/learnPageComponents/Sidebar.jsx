@@ -1,13 +1,12 @@
 import "./Sidebar.css";
 
 // icons
+import { TbLayoutSidebarLeftCollapse } from "react-icons/tb";
 import { RxCube } from "react-icons/rx";
 import { FaPython } from "react-icons/fa";
 
-// data
 import units from "../../units.json";
 
-// components
 import SidebarE1 from "./SidebarE1";
 
 export default function Sidebar(props) {
@@ -24,8 +23,8 @@ export default function Sidebar(props) {
     return (
     <div className='learn-sidebar'>
         <div className='learn-sidebar-header'>
-            <div className='learn-sidebar-header-g1'><RxCube/>UNITS</div>
-            <FaPython/>
+            <div className='learn-sidebar-header-g1'><FaPython/>UNITS</div>
+            <RxCube id="learn-sidebar-collapse"/>
         </div>
 
         <div className='learn-maindivider'></div>

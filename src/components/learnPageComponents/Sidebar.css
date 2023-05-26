@@ -17,6 +17,10 @@
     margin-bottom: 0.6rem;
 }
 
+#learn-sidebar-collapse {
+    font-size: 2.8rem;
+}
+
 .learn-sidebar-header-g1 {
     display: flex;
     align-items: center;
