@@ -1,5 +1,5 @@
 import "./learnview.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from "react-icons/fa";
 
 export default function LearnView(props) {
@@ -18,6 +18,23 @@ export default function LearnView(props) {
         }
     }
 
+    // ! really buggy and laggy for some reason (maybe too many rerenders)
+    // useEffect(() =>{
+
+    //     const handleKeyDown = (e) => {
+    //         if (e.key === "ArrowRight") {
+    //             moveRight();
+    //         }
+    //         if (e.key === "ArrowLeft") {
+    //             moveLeft();
+    //         }
+    //     }
+
+    //     document.addEventListener("keydown", handleKeyDown);
+
+    //     return () => window.removeEventListener("keydown", handleKeyDown);
+    // })
+
     // *orientation rules (1536px)
     // *don't show image if blank
     // *horizontal: default orientation
@@ -26,6 +43,7 @@ export default function LearnView(props) {
     const [currPage, SetCurrPage] = useState(0);
     const [maxPage, SetMaxPage] = useState(1);
     const [content, SetContent] = useState(<div className="learn-viewpage-opening">Choose a unit to start learning!</div>)
+    const ref = useRef(null);
 
     // when navigating to a new lesson
     useEffect(() => {
@@ -39,6 +57,7 @@ export default function LearnView(props) {
                 </div>
             )
         }
+        ref.current.focus();
     }, [props.lesson])
 
     // when changing pages within the current lesson
@@ -104,8 +123,17 @@ export default function LearnView(props) {
         }
     }, [currPage])
     
+    const move = (e) => {
+        if (e.key === "ArrowRight") {
+            moveRight();
+        }
+        if (e.key === "ArrowLeft") {
+            moveLeft();
+        }
+    }
+
     return (
-        <div className="learn-viewpage-container">
+        <div className="learn-viewpage-container" ref={ref} tabIndex={-1} onKeyDown={move}>
 
             {content}
 

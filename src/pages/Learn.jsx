@@ -14,7 +14,7 @@ export default function Learn() {
     // TODO: add video format to learnview
 
     const [lesson, SetLesson] = useState(null); //state passed on to sidebar -> sidebare1 -> sidebare2 to get lesson  
-    
+
     return(
         <div className='learn-page'>
 

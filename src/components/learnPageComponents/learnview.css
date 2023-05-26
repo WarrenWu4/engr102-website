@@ -10,6 +10,7 @@
     align-items: center;
     position: relative;
     background: #1f2930;
+    outline:0;
 }
 
 .learn-viewpage-controls {
