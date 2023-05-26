@@ -1,4 +1,4 @@
-import "../styles/taocard.css"
+import "../styles/about.css";
 import { BsInstagram, BsLinkedin, BsGithub, BsFillEnvelopeFill } from "react-icons/bs"
 import {FaDiscord} from "react-icons/fa"
 
@@ -11,7 +11,7 @@ export default function TaoCard(props) {
     return (
         <div className="tao-container">
             <div className="tao-card">
-                <div className="tao-profile" style={{backgroundImage:`url(${profile_img})`}}><div className="tao-cover">{props.info}</div></div>
+                <div className="tao-profile" style={{backgroundImage:`url(${profile_img})`}}><div className="tao-cover"><div className="tao-desc">{props.info}</div></div></div>
                 <div className="tao-info">
                     <div className="tao-name">{props.name}</div>
                     <div className="tao-socials">

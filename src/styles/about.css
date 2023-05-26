@@ -1,6 +1,142 @@
-.about-team {
+.about-page{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100vw;
+}
+
+.about-container {
+    width: 100%;
+    max-width: 37.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-title {
+    font: 900 4rem "Inter";
+    color: var(--contrast);
+    margin-bottom: 1.6rem;
+}
+
+.about-mission {
+    width: 80%;
+    padding: 2.4rem;
+    border-radius: 1rem;
+    font: bold 1.8rem "Inter";
+    color: var(--contrast);
+    border: solid 0.4rem var(--contrast);
+}
+
+.about-team {
+    width: 100%;
     display: flex; justify-content: space-evenly; flex-direction: row;
     flex-wrap: wrap; align-items: center;
     margin-top: 5rem;
+}
+
+/* TAO card styling */
+.tao-container {
+    width: 21rem; height: 31.5rem;
+    margin-left: 3rem; margin-right: 3rem;
+    margin-bottom: 5rem;
+    box-sizing: border-box;
+}
+
+.tao-card {
+    min-width: 20rem; min-height: 30rem;
+    background-color: var(--contrast);
+    display: flex; flex-direction: column;
+}
+
+.tao-profile {
+    position: relative;
+    width: 20rem; height: 21rem;
+    background-color: var(--main);
+    border: 0.5rem solid var(--contrast);
+    background-position: center; background-repeat: no-repeat;
+    background-size: cover;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.tao-cover, .tao-desc {
+    display:none;
+}
+
+.tao-profile:hover .tao-cover {
+    display: flex; justify-content: center; align-items: center; text-align: center;
+    width: 100%; height: 100%;
+    position: absolute; top: 0; left:0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--contrast);
+    font: bold 1.8rem "Inter";
+    overflow-wrap: anywhere;
+}
+
+.tao-profile:hover .tao-desc {
+    display: flex; width: 85%; height: 100%;
+    justify-content: center; align-items: center; text-align: center;
+}
+
+.tao-info {
+    width: 20rem; height: 9rem;
+    background-color: #2E383F;
+    border: 0.5rem solid #ECECEB;
+    border-top: 0;
+}
+
+.tao-name {
+    width: 20rem; height: 60%;
+    color: #ECECEB; 
+    font: bold 2rem "Inter";
+    display: flex; justify-content: center; align-items: center; text-align: center;
+}
+
+.tao-socials {
+    width: 20rem; height: 40%;
+    display: flex; justify-content: space-evenly; align-items: flex-start;
+    color: var(--contrast); font-size: 2.5rem;
+}
+
+.tao-socials a:hover {
+    color: var(--secondary);
+}
+
+/* media queries */
+@media (min-width: 475px) {
+    .about-container {
+        max-width: 47.5rem;
+    }
+}
+@media (min-width: 640px) {
+    .about-container {
+        max-width: 64rem;
+    }
+}
+@media (min-width: 768px) {
+    .about-container {
+        max-width: 76.8rem;
+    }
+}
+@media (min-width: 1024px) {
+    .about-container {
+        max-width: 102.4rem;
+    }
+}
+@media (min-width: 1280px) {
+    .about-container {
+        max-width: 128rem;
+    }
+}
+@media (min-width: 1536px) {
+    .about-container {
+        max-width: 153.6rem;
+    }
+}
+
+@media (max-width: 374px) {
+    .about-page {
+        display: none;
+    }
 }
