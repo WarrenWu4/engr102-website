@@ -11,30 +11,6 @@
                         {
                             "content": "Yikes, this isn't going to be fun...",
                             "img": "intro.svg"
-                        },
-                        {
-                            "content": "For window laptops:\nGo to https://www.python.org/downloads/windows/ and download the first stable \"Windows installer\" you see\n\nTo check which system to download:\nGo to your computer settings -> system (on the left sidebar) -> about (scroll to bottom) -> should be under \"System type\"",
-                            "img": "u1p2.png"
-                        },
-                        {
-                            "content": "Once the .exe file finished downloading, open it up. You should see something similar to what's shown On the right.\n\nCheck the \"Admin privilege\" and \"Add python.exe to PATH\" boxes\n\nThen click \"Install Now\" to finish installation",
-                            "img": "u1p3.png"
-                        },
-                        {
-                            "content": "To confirm that Python was downloaded, open up a command prompt (Windows Key -> type \"cmd\") then type in \"python --version\"\n\nDepending on how you installed Python you may need to replace \"python\" with \"py\" or \"python3\" or \"py3\"",
-                            "img": "u1p4.png"
-                        },
-                        {
-                            "content": "For Mac laptops: Go to https://www.python.org/downloads/macos/ and download the first stable release",
-                            "img": "u1p5.png"
-                        },
-                        {
-                            "content": "If you have a Linux laptop (for some weird reason :/) you should be smart enough to figure out how to download Python by yourself",
-                            "img": ""
-                        },
-                        {
-                            "content": "And there you have it! You should have Python downloaded now.\nIf you're having any issues, contact a TA for assistance",
-                            "img": ""
                         }
                     ]
                 },
