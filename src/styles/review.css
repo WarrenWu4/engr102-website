@@ -1,19 +1,178 @@
-.video-container {
-    position: fixed; top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100vw; height: 100vh;
+.review-page {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.review-container {
+    width: 100%;
+    max-width: 37.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-title {
+    font: 900 4rem "Inter";
+    color: var(--contrast);
+    margin-bottom: 1.6rem;
+}
+
+.review-videos {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-video {
+    min-width: 35rem;
+    height: 20rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    color: var(--contrast);
+    margin: 3rem;
+    background: var(--mainb);
+    border: 0.25rem solid var(--contrast);
+}
+
+/* .react-thumbnail-generator {
+    top: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 1rem;
+}
+.react-thumbnail-generator img {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 35rem;
+    height: 20rem;
+    object-fit: contain;
+    border-radius: 1rem;
+}
+
+.react-thumbnail-generator::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 1rem;
+    content:"";
+    width: 35rem;
+    height: 20rem;
+    background: rgba(0, 0, 0, 0.85);
+} */
+
+.review-video:hover {
+    box-shadow: 0 0 2rem 0.2rem var(--babyblue);
+}
+
+.review-video-title {
+    font: 700 2.2rem "Inter";
+    position: absolute;
+    top: 1.6rem;
+}
+
+.review-video svg {
+    z-index: 2;
+    font-size: 5rem;
+    cursor: pointer;
+}
+
+.review-video-author {
+    font: 700 1.8rem "Inter";
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 1.6rem;
+    bottom: 1.6rem;
+}
+
+.review-video-author-profile {
+    border-radius: 50%;
+    width: 3.6rem;
+    aspect-ratio: 1;
+    background: var(--secondary80);
+    margin-right: 0.8rem;
+    background-size: cover;
+}
+
+.review-video-time {
+    font: 700 1.8rem "Inter";
+    position: absolute;
+    bottom: 2.3rem;
+    right: 1.6rem;
+}
+
+.review-play-video-wrapper {
+    width: 90vw;
+    height: 90vh;
+    background-color: black;
+    left: 5vw;
+    top: 5vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-play-video {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
     background-color: rgba(0, 0, 0, 0.6);
-    display: flex; justify-content: center; align-items: center;
-    z-index: 1001;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
 }
 
-.video-view {
-    width: 90vw; height: 90vh;
-    background-color: black; position: relative;
-    display: flex; justify-content: center; align-items: center;
+.review-play-video-wrapper svg{
+    font-size: 4rem;
+    color: var(--contrast);
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    cursor: pointer;
 }
 
-.close {
-    color: #ECECEB; font-size: 4rem;
-    position: absolute; top: 1rem; right: 1rem; cursor: pointer;
+@media (min-width: 475px) {
+    .review-container {
+        max-width: 47.5rem;
+    }
+}
+@media (min-width: 640px) {
+    .review-container {
+        max-width: 64rem;
+    }
+}
+@media (min-width: 768px) {
+    .review-container {
+        max-width: 76.8rem;
+    }
+}
+@media (min-width: 1024px) {
+    .review-container {
+        max-width: 102.4rem;
+    }
+}
+@media (min-width: 1280px) {
+    .review-container {
+        max-width: 128rem;
+    }
+}
+@media (min-width: 1536px) {
+    .review-container {
+        max-width: 153.6rem;
+    }
 }

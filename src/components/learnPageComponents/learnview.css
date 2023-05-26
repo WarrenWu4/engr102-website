@@ -36,38 +36,80 @@
     margin-right: 2rem;
 }
 
-.learn-viewpage-content, .learn-viewpage-opening {
+.learn-viewpage-opening {
     width: 85%;
     height: calc(100% - 6rem);
-    color: var(--contrast);
-    font: 1.8rem "Sofia Sans";
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.learn-viewpage-opening {
     font: 900 4rem "Inter";
     color: var(--secondary80);
-    display: flex; text-align: center;
+    display: flex; justify-content: center; align-items: center;
     animation: fadeinout 1.5s ease-in-out infinite;
 }
 
-.learn-viewpage-img {
-    width: 100%; height: 20rem;
-    background-position: center; background-repeat: no-repeat;
-    background-size:contain;
-    margin: 2rem;
+/* viewpage stuff that actually matters */
+.learn-viewpage-1, .learn-viewpage-v, .learn-viewpage-h, .learn-viewpage-default, .learn-viewpage-solo {
+    width: 100%;
+    height: calc(100% - 6rem);
+    display: flex;
+    align-items: center;
+    color: var(--contrast);
 }
 
-@media (min-width: 1024px) {
-    .learn-viewpage-content {
-        flex-direction: column;
-    }
+.learn-viewpage-1-img, .learn-viewpage-v-img, .learn-viewpage-h-img, .learn-viewpage-default-img {
+    background-position: center; background-repeat: no-repeat; background-size: contain;
+}
+
+.learn-viewpage-v {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.learn-viewpage-h {
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.learn-viewpage-1 {
+    flex-direction: column; justify-content: space-evenly; text-align: center;
+}
+.learn-viewpage-1-img {
+    width: 100%; height: 25%;
+}
+.learn-viewpage-1-text {
+    width: 90%;
+    font: 600 2.4rem "Sofia Sans";
+}
+
+.learn-viewpage-solo {
+    width: 85%; text-align: center;
+    justify-content: center;
+    font: 2.4rem "Sofia Sans";
+}
+
+.learn-viewpage-h-text, .learn-viewpage-h-img {
+    display: flex; justify-content: center; align-items: center;
+    width: 40%; height: 90%; font: 2.4rem "Sofia Sans";
+}
+
+.learn-viewpage-v-text, .learn-viewpage-v-img {
+    width: 85%; height: 40%; font: 2.4rem "Sofia Sans";
+    display: flex; justify-content: center; align-items: center;
+}
+
+.learn-viewpage-default {
+    flex-direction: column; justify-content: space-evenly;
+}
+
+.learn-viewpage-default-img, .learn-viewpage-default-text {
+    width: 90%; height: 40%;
+    font: 2.4rem "Sofia Sans";
+    display: flex; justify-content: center; align-items: center;
 }
 
 @media (min-width: 1536px) {
-    .learn-viewpage-content {
-        flex-direction: row;
+    .learn-viewpage-default {
+        flex-direction: row; justify-content: space-evenly;
+    }
+    .learn-viewpage-default-img, .learn-viewpage-default-text {
+        width: 40%; height: 90%;
     }
 }

@@ -22,9 +22,9 @@
 }
 
 .learn-view {
-    width: 60rem;
-    height: 61.5rem;
-    display: none;
+    width: 36rem; height: 37.5rem;
+    display: flex;
+    margin-bottom: 4rem;
 }
 
 @media (min-width: 475px) {
@@ -41,6 +41,11 @@
     .learn-container, .learn-wrapper {
         max-width: 76.8rem;
     }
+    .learn-view {
+        width: 70rem;
+        height: 61.5rem;
+        display: flex;
+    }
 }
 @media (min-width: 1024px) {
     .learn-container {
@@ -53,6 +58,8 @@
         justify-content: center;
     }
     .learn-view {
+        width: 60rem;
+        height: 61.5rem;
         display: flex;
     }
 }

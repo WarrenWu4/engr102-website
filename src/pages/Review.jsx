@@ -1,56 +1,76 @@
 import "../styles/review.css"
-import Nav from "../components/Nav"
 import ReviewBlock from "../components/ReviewBlock"
-import data from "../tas.json"
-import { useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import {IoCloseCircle} from "react-icons/io5"
 import ReactPlayer from "react-player"
 
+import data from "../tas.json"
+import Nav from "../components/Nav"
+import ReviewVideo from "../components/reviewPageComponents/ReviewVideo"
+
 export default function Review() {
     
-    const [video,SetVideo] = useState("src/assets/default.mp4");
-    const [play, SetPlay] = useState("none");
-    const [vidPlay, SetVidPlay] = useState(false);
+    const [vid, SetVid] = useState(null);
+    const [showVid, SetShowVid] = useState("none");
 
-    let reviewBlocks = [];
+    // sort by most recent
+    let vidGallery = [];
     data.tas.map((ta) => {
-        if(typeof(ta.videos)!="undefined") {
-            reviewBlocks.push(<ReviewBlock vid={ta.videos} pic={ta.profilePic} name={ta.name} SetVideo={SetVideo} SetPlay={SetPlay} SetVidPlay={SetVidPlay} vidPlay={vidPlay}/>);
+        if (typeof(ta.videos)!="undefined") {
+            ta.videos.map((video) => {
+                vidGallery.push(
+                    <ReviewVideo author={ta.name} title={video.title} pic={ta.profilePic} SetVid={SetVid} vidID={video.link}/>
+                )
+            })
         }
     })
 
-    const closePlayer = () => {
-        SetPlay("none");
-        SetVidPlay(false);
-    }
-
-    const ref = useRef(null)
-    const keyPress = (event) => {
-        if(event.key === "Escape") {
-            closePlayer();
+    useEffect(() => {
+        if (vid === null) {
+            SetShowVid("none");
         }
+        else {
+            SetShowVid("flex");
+        }
+        console.log(vid);
+    }, [vid])
+
+    const closeVid = () => {
+        SetVid(null);
     }
 
     return (
-        <div className="basic-page" style={{position: "relative"}} ref={ref} tabIndex={-1} onKeyDown={keyPress}>
+        <div className="review-page">
+
             <Nav/>
-            <div className="basic-title">Review Videos</div>
-            {reviewBlocks}
-            <div className="video-container" style={{display: play}}>
-                <div className="video-view">
-                    <ReactPlayer
-                        url={video}
-                        controls={true}
-                        volume={0.2}
-                        width={"100%"}
-                        height={"100%"}
-                        playing={vidPlay}
-                    />
-                    <div className="close" onClick={closePlayer}>
-                        <IoCloseCircle/>
-                    </div>
+
+            <div className="review-container">
+                <div className="review-title">Review Videos</div>
+
+                <div className="review-videos">
+                    {vidGallery}
+                </div>
+
+            </div>
+            
+            <div className="review-play-video" style={{display:showVid}}>
+                <div className="review-play-video-wrapper">
+                    {
+                        (vid !== null) &&
+                        <ReactPlayer
+                            url={"/review_videos/"+vid}
+                            controls={true}
+                            volume={0.2}
+                            width={"100%"}
+                            height={"100%"}
+                            playing={(showVid === "flex")}
+                        />
+
+                    }
+                    <IoCloseCircle onClick={closeVid}/>
                 </div>
             </div>
+
         </div>
     )
 }
