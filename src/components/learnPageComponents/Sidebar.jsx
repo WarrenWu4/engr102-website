@@ -17,7 +17,7 @@ export default function Sidebar(props) {
 
     let unitBlocks = [];
     units.units.map((unit) => {
-        unitBlocks.push(<SidebarE1 unlock={unit.status} num={unit.num} SetLesson={props.SetLesson}/>)
+        unitBlocks.push(<SidebarE1 unlock={unit.status} num={unit.num} SetLesson={props.SetLesson} lesson={props.lesson}/>)
         unitBlocks.push(<div className="learn-divider"></div>)
     })
 

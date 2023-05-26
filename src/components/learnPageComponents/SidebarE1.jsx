@@ -43,7 +43,7 @@ export default function SidebarE1(props) {
     units.units.map((unit) => {
         unit.objectives.map((objective) => {
             if (unit.num === props.num) {
-                lessons.push(<SidebarE2 objective={objective} show={show} SetLesson={props.SetLesson}/>)
+                lessons.push(<SidebarE2 objective={objective} show={show} SetLesson={props.SetLesson} lesson={props.lesson}/>)
             }
         })
     })

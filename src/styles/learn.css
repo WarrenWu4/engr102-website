@@ -25,16 +25,25 @@
     width: 36rem; height: 37.5rem;
     display: flex;
     margin-bottom: 4rem;
+    order: -1;
 }
 
 @media (min-width: 475px) {
     .learn-container, .learn-wrapper {
         max-width: 47.5rem;
     }
+    .learn-view {
+        width: 46rem;
+        height: 47.5rem;
+    }
 }
 @media (min-width: 640px) {
     .learn-container, .learn-wrapper {
         max-width: 64rem;
+    }
+    .learn-view {
+        width: 56rem;
+        height: 58rem;
     }
 }
 @media (min-width: 768px) {
@@ -44,7 +53,6 @@
     .learn-view {
         width: 70rem;
         height: 61.5rem;
-        display: flex;
     }
 }
 @media (min-width: 1024px) {
@@ -61,6 +69,7 @@
         width: 60rem;
         height: 61.5rem;
         display: flex;
+        order: 1;
     }
 }
 @media (min-width: 1280px) {

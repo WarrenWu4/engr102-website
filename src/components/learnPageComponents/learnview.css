@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
 .learn-viewpage-container {
     width: 100%;
     height: 100%;
@@ -76,22 +79,20 @@
 }
 .learn-viewpage-1-text {
     width: 90%;
-    font: 600 2.4rem "Sofia Sans";
 }
 
 .learn-viewpage-solo {
     width: 85%; text-align: center;
     justify-content: center;
-    font: 2.4rem "Sofia Sans";
 }
 
 .learn-viewpage-h-text, .learn-viewpage-h-img {
     display: flex; justify-content: center; align-items: center;
-    width: 40%; height: 90%; font: 2.4rem "Sofia Sans";
+    width: 40%; height: 90%;
 }
 
 .learn-viewpage-v-text, .learn-viewpage-v-img {
-    width: 85%; height: 40%; font: 2.4rem "Sofia Sans";
+    width: 85%; height: 40%;
     display: flex; justify-content: center; align-items: center;
 }
 
@@ -101,8 +102,39 @@
 
 .learn-viewpage-default-img, .learn-viewpage-default-text {
     width: 90%; height: 40%;
-    font: 2.4rem "Sofia Sans";
     display: flex; justify-content: center; align-items: center;
+}
+
+.learn-viewpage-1-text {
+    font: bold 1.6rem "Fira Code";
+}
+
+.learn-viewpage-h-text, .learn-viewpage-v-text, .learn-viewpage-default-text, .learn-viewpage-solo {
+    font: 1.2rem "Fira Code";
+    overflow-wrap: anywhere;
+}
+
+@media (min-width: 475px) {
+    .learn-viewpage-1-text {
+        font: bold 2rem "Fira Code";
+    }
+}
+
+@media (min-width: 640px) {
+    .learn-viewpage-1-text {
+        font: bold 2.4rem "Fira Code";
+    }
+    .learn-viewpage-h-text, .learn-viewpage-v-text, .learn-viewpage-default-text, .learn-viewpage-solo {
+        font: 1.6rem "Fira Code";
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (min-width: 1280px) {
+    .learn-viewpage-h-text, .learn-viewpage-v-text, .learn-viewpage-default-text, .learn-viewpage-solo {
+        font: 2rem "Fira Code";
+        overflow-wrap: anywhere;
+    }
 }
 
 @media (min-width: 1536px) {
@@ -111,5 +143,12 @@
     }
     .learn-viewpage-default-img, .learn-viewpage-default-text {
         width: 40%; height: 90%;
+    }
+    .learn-viewpage-1-text {
+        font: bold 2.8rem "Fira Code";
+    }
+    .learn-viewpage-h-text, .learn-viewpage-v-text, .learn-viewpage-default-text, .learn-viewpage-solo {
+        font: 2.4rem "Fira Code";
+        overflow-wrap: anywhere;
     }
 }
