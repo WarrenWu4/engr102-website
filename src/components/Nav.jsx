@@ -1,6 +1,7 @@
 import { CgMenuRight } from "react-icons/cg";
 import { NavLink } from 'react-router-dom';
 import { useEffect, useRef, useState } from "react";
+import logo from "/gear.png";
 
 export default function Nav() {
 
@@ -36,8 +37,9 @@ export default function Nav() {
 
     return (
         <>
-            <div className='max-w-[131.2] w-full h-[10rem] mt-[1.6rem] mb-[6.4rem] flex row justify-between items-center'>
-                <img src="./gear.png" alt="logo" className='w-[4rem] h-[4rem] bg-cover animate-rotate' />
+            <div className='max-w-[1440px] w-full h-[10rem] mt-[1.6rem] mb-[6.4rem] flex row justify-between items-center px-[1.6rem] md:px-[3.2rem] xl:px-[6.4rem]'>
+
+                <img src={logo} alt="logo" className='w-[4rem] h-[4rem] bg-cover animate-rotate' />
 
                 <CgMenuRight className='text-h3 text-neutral-100 cursor-pointer z-[101] lg:hidden' ref={refBtn} onClick={() => setMenu((menu === "flex") ? "none":"flex")}/>
 
