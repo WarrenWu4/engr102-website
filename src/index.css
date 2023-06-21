@@ -1,20 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-family: "Rubik";
+  box-sizing: border-box;
+}
+
 html {
   font-size: 10px;
 }
 
 body {
-  margin: 0; padding: 0; border: 0;
-  background-color: #2E383F;
-  /* scroll bar stuff */
-  overflow-x:hidden;
-  overflow-y: overlay;
-  scrollbar-width: 1.5rem;
-  scrollbar-color: #888;
-  display: flex;
-  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex; 
+  flex-direction: column; 
   align-items: center;
+  background: linear-gradient(180deg, #2D2D2D 0%, rgba(45, 45, 45, 0.96) 100%);
 }
 
+.navlink {
+  @apply current:text-orange-400 hover:text-blue-400 p-[1.2rem] mt-[0.8rem]
+}
+
+/* scrollbar */
 ::-webkit-scrollbar {
   width: 1.5rem;
 }
@@ -26,4 +42,10 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/* animations */
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
 }

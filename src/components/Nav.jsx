@@ -1,6 +1,4 @@
-import './nav.css';
-import { ImCross } from "react-icons/im";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { CgMenuRight } from "react-icons/cg";
 import { NavLink } from 'react-router-dom';
 import { useEffect, useRef, useState } from "react";
 
@@ -8,21 +6,21 @@ export default function Nav() {
 
     const ref = useRef(null);
     const refBtn = useRef(null);
-    const [side, setSide] = useState((window.innerWidth > 767) ? "flex":"none");
+    const [menu, setMenu] = useState((window.innerWidth > 767) ? "flex":"none");
 
     useEffect(() => {
         const checkExit = e => {
-            if (side === "flex" && ref.current && !ref.current.contains(e.target) && refBtn.current && !refBtn.current.contains(e.target) && window.innerWidth < 768) {
-                setSide("none");
+            if (menu === "flex" && ref.current && !ref.current.contains(e.target) && refBtn.current && !refBtn.current.contains(e.target) && window.innerWidth < 768) {
+                setMenu("none");
             }
         }
         const checkSize = () => {
             if (window.innerWidth > 767) {
-                setSide("flex");
+                setMenu("flex");
             }
             else {
-                if (side === "flex") {
-                    setSide("none");
+                if (menu === "flex") {
+                    setMenu("none");
                 }
             }
         }
@@ -37,17 +35,24 @@ export default function Nav() {
     })
 
     return (
-        <div className='nav'>
-            <div className='logo'></div>
-            <div className='menu-btn' ref={refBtn} onClick={() => setSide("flex")}><GiHamburgerMenu/> Menu</div>
-            <div className="nav-links" style={{display: side}} ref={ref}>
-                <div className='close-btn' onClick={() => setSide("none")}><ImCross/> Close</div>
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="/learn">Learn</NavLink>
-                <NavLink to="/labs">Labs</NavLink>
-                <NavLink to="/review">Review</NavLink>
-                <NavLink to="/about">About</NavLink>
+        <>
+            <div className='max-w-[131.2] w-full h-[10rem] mt-[1.6rem] mb-[6.4rem] flex row justify-between items-center'>
+                <img src="./gear.png" alt="logo" className='w-[4rem] h-[4rem] bg-cover animate-rotate' />
+
+                <CgMenuRight className='text-h3 text-neutral-100 cursor-pointer z-[101] lg:hidden' ref={refBtn} onClick={() => setMenu((menu === "flex") ? "none":"flex")}/>
+
+                <div ref={ref} style={{display: menu}} className='flex flex-col justify-start items-center fixed right-0 top-0 w-[40vw] h-screen bg-[rgba(45,45,45,0.8)] backdrop-blur-[2rem] z-[100] text-neutral-100 font-medium text-h8 py-[12rem] lg:w-[auto] lg:h-[auto] lg:flex lg:relative lg:bg-[transparent] lg:p-0 lg:flex-row lg:mr-[3rem] lg:backdrop-filter-none'>
+
+                    <NavLink className={"navlink"} to="/">Home</NavLink>
+                    <NavLink className={"navlink"} to="/learn">Learn</NavLink>
+                    <NavLink className={"navlink"} to="/review">Review</NavLink>
+                    <NavLink className={"navlink"} to="/about">About</NavLink>
+                    <NavLink className={"navlink"} to="/merch">Merch</NavLink>
+
+                </div>
+            
             </div>
-        </div>
+        
+        </>
     )
 }
