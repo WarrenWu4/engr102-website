@@ -27,17 +27,6 @@ export default function ReviewPage() {
                 <div className="w-[10.8rem] h-[3.6rem] rounded-t-[0.8rem] bg-neutral-800 left-0 top-[-3.6rem] absolute flex justify-center items-center font-medium text-neutral-100 text-h8"></div>
 
                 <ReviewCard tag={{"color": "red", "text":"review video"}} link={"/"} ta={{"name":"taLily", "profile":"/ta_profile/lily_tang.png"}} title={"Exam 1 Comprehensive Review"}/>
-                <ReviewCard tag={{"color": "orange", "text":"practice test"}} link={"/"} ta={{"name":"taLily", "profile":"/ta_profile/lily_tang.png"}} title={"Exam 1 Practice Test 1.1"}/>
-                <ReviewCard tag={{"color": "red", "text":"review video"}} link={"/"} ta={{"name":"taLily", "profile":"/ta_profile/lily_tang.png"}} title={"Cute cat"}/>
-                <ReviewCard tag={{"color": "blue", "text":"cheat sheet"}} link={"/"} ta={{"name":"taLily", "profile":"/ta_profile/lily_tang.png"}} title={"Matplotlib cheat sheet"}/>
-                <ReviewCard tag={{"color": "blue", "text":"cheat sheet"}} link={"/"} ta={{"name":"taLily", "profile":"/ta_profile/lily_tang.png"}} title={"Matplotlib cheat sheet"}/>
-                <ReviewCard tag={{"color": "blue", "text":"cheat sheet"}} link={"/"} ta={{"name":"taLily", "profile":"/ta_profile/lily_tang.png"}} title={"Matplotlib cheat sheet"}/>
-                <ReviewCard tag={{"color": "blue", "text":"cheat sheet"}} link={"/"} ta={{"name":"taLily", "profile":"/ta_profile/lily_tang.png"}} title={"Matplotlib cheat sheet"}/>
-                <ReviewCard tag={{"color": "blue", "text":"cheat sheet"}} link={"/"} ta={{"name":"taLily", "profile":"/ta_profile/lily_tang.png"}} title={"Matplotlib cheat sheet"}/>
-                <ReviewCard tag={{"color": "blue", "text":"cheat sheet"}} link={"/"} ta={{"name":"taLily", "profile":"/ta_profile/lily_tang.png"}} title={"Matplotlib cheat sheet"}/>
-                <ReviewCard tag={{"color": "blue", "text":"cheat sheet"}} link={"/"} ta={{"name":"taLily", "profile":"/ta_profile/lily_tang.png"}} title={"Matplotlib cheat sheet"}/>
-                <ReviewCard tag={{"color": "blue", "text":"cheat sheet"}} link={"/"} ta={{"name":"taLily", "profile":"/ta_profile/lily_tang.png"}} title={"Matplotlib cheat sheet"}/>
-                <ReviewCard tag={{"color": "blue", "text":"cheat sheet"}} link={"/"} ta={{"name":"taLily", "profile":"/ta_profile/lily_tang.png"}} title={"Matplotlib cheat sheet"}/>
 
             </div>
 

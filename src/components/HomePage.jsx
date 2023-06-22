@@ -34,31 +34,6 @@ export default function HomePage() {
                     question="How is the course structured?" 
                     answer="Lorem ipsum dolor sit amet consectetur. Ultrices ipsum consectetur elit mauris commodo curabitur. Aliquam eleifend pellentesque mauris sed pretium magna. Orci tristique et sit condimentum condimentum tortor. Viverra ullamcorper"
                 />
-                
-                <FAQCard 
-                    question="How is the course structured?" 
-                    answer="Lorem ipsum dolor sit amet consectetur. Ultrices ipsum consectetur elit mauris commodo curabitur. Aliquam eleifend pellentesque mauris sed pretium magna. Orci tristique et sit condimentum condimentum tortor. Viverra ullamcorper"
-                />
-
-                <FAQCard 
-                    question="How is the course structured?" 
-                    answer="Lorem ipsum dolor sit amet consectetur. Ultrices ipsum consectetur elit mauris commodo curabitur. Aliquam eleifend pellentesque mauris sed pretium magna. Orci tristique et sit condimentum condimentum tortor. Viverra ullamcorper"
-                />
-
-                <FAQCard 
-                    question="How is the course structured?" 
-                    answer="Lorem ipsum dolor sit amet consectetur. Ultrices ipsum consectetur elit mauris commodo curabitur. Aliquam eleifend pellentesque mauris sed pretium magna. Orci tristique et sit condimentum condimentum tortor. Viverra ullamcorper"
-                />
-
-                <FAQCard 
-                    question="How is the course structured?" 
-                    answer="Lorem ipsum dolor sit amet consectetur. Ultrices ipsum consectetur elit mauris commodo curabitur. Aliquam eleifend pellentesque mauris sed pretium magna. Orci tristique et sit condimentum condimentum tortor. Viverra ullamcorper"
-                />
-
-                <FAQCard 
-                    question="How is the course structured?" 
-                    answer="Lorem ipsum dolor sit amet consectetur. Ultrices ipsum consectetur elit mauris commodo curabitur. Aliquam eleifend pellentesque mauris sed pretium magna. Orci tristique et sit condimentum condimentum tortor. Viverra ullamcorper"
-                />
 
             </div>
 
