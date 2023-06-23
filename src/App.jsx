@@ -1,8 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 
-import LearnPage from './components/LearnPage';
 import Nav from './components/Nav';
+import Footer from "./components/Footer";
 import HomePage from './components/HomePage';
+import LearnPage from './components/LearnPage';
 import ReviewPage from './components/ReviewPage';
 import AboutPage from './components/AboutPage';
 import MerchPage from './components/MerchPage';
@@ -17,21 +18,27 @@ export default function App() {
 
       <Route path="/" element={<HomePage/>}/>
 
-      <Route path="/learn" element={<LearnPage/>}/>
+      <Route path="/learn" element={<InProgressPage/>}/>
 
       <Route path="/learn/:id" element={<InProgressPage/>}/>
 
-      <Route path="/review" element={<ReviewPage/>}/>
+      <Route path="/review" element={<InProgressPage/>}/>
 
       <Route path="/review/:id" element={<InProgressPage/>}/>
 
-      <Route path="/about" element={<AboutPage/>}/>
+      <Route path="/about" element={<InProgressPage/>}/>
 
-      <Route path='/merch' element={<MerchPage/>}/>
+      <Route path='/merch' element={<InProgressPage/>}/>
 
-      <Route path='*' element={<ErrorPage/>}/>
+      <Route path='/tou' element={<InProgressPage/>}/>
+      <Route path='/pp' element={<InProgressPage/>}/>
+      <Route path='/as' element={<InProgressPage/>}/>
+
+      <Route path='*' element={<InProgressPage/>}/>
 
     </Routes>
+
+    <Footer/>
     </>
 
   )
@@ -58,7 +65,7 @@ const InProgressPage = () => {
     <div className='w-full h-full flex justify-center items-center flex-col text-center px-[1.6rem] md:px-[3.2rem] xl:px-[6.4rem]'>
 
       <div className="font-bold text-h1 text-neutral-100 flex justify-center text-center">
-        OOps, this feature hasn't been implemented yet
+        Oops, this feature hasn't been implemented yet
       </div>
 
       <div className='text-h7 text-neutral-200 font-medium'>

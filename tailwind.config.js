@@ -15,6 +15,9 @@ export default {
         'rotate': 'rotate 2s',
       },
     },
+    fontFamily: {
+      'rubik': 'Rubik',
+    },
     screens: {
       'md': '768px',
       'lg': '1024px',
