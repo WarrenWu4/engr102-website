@@ -42,21 +42,20 @@ export default function Nav() {
             const { displayName, email, photoURL, uid } = result.user
             
             console.log(displayName, email, photoURL, uid);
+            // ? might be better to use firebase cloud functions in the future
+            // split email at @ and verify that it's an A&M email
+
+            handleDialog()
         }
         catch (e) {
             console.log("error", e)
         }
     }
 
-    const handleEmailSignIn = async (e) => {
-        e.preventDefault();
-        console.log("test")
-    }
-
 
     return (
         <>
-            <div className="w-full h-[5.6rem] px-[1.6rem] mt-[1.6rem] flex justify-between items-center">
+            <div className="max-w-[128rem] w-full h-[5.6rem] px-[1.6rem] mt-[1.6rem] flex justify-between items-center sm:px-[6.4rem] lg:px-[12.8rem]">
 
                 <img src={logo} alt="logo" className="w-[4rem] h-[4rem]"/>
 
@@ -83,11 +82,6 @@ export default function Nav() {
 
                 <div className="p-[1.6rem] bg-neutral-800 rounded-[0.4rem] m-auto absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col">
                     <IoMdClose onClick={handleDialog} className="w-[3.6rem] h-[3.6rem] mb-[1.6rem] cursor-pointer"/>
-                    
-                    <form onSubmit={handleEmailSignIn}>
-
-                        <button type="submit" className="w-[20rem] h-[4.8rem] bg-orange-900"></button>
-                    </form>
 
                     <button type="button" onClick={handleSignIn} className="text-h8 flex justify-center items-center w-[24rem] h-[4.8rem] rounded-[0.4rem] bg-primary-600">
                         <FcGoogle className="mr-[1.2rem]"/>

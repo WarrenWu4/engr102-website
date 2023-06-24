@@ -33,9 +33,9 @@ export default function Footer() {
     )
 
     return (
-        <div className="w-full bg-neutral-800 mt-[5.6rem]">
+        <div className="w-full bg-neutral-800 mt-[auto] flex flex-col items-center">
 
-            <div className="flex w-full px-[1.6rem] justify-between mt-[2.4rem]">
+            <div className="max-w-[128rem] flex w-full px-[1.6rem] justify-between mt-[2.4rem] sm:px-[6.4rem] lg:px-[12.8rem]">
                 <NavLink to="/" className="flex items-center font-bold text-[1.6rem]">
 
                     <img src={logo} alt="logo" className="w-[2.4rem] h-[2.4rem] mr-[0.8rem]" />
