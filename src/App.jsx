@@ -18,7 +18,7 @@ export default function App() {
 
       <Route path="/" element={<HomePage/>}/>
 
-      <Route path="/learn" element={<InProgressPage/>}/>
+      <Route path="/learn" element={<LearnPage/>}/>
 
       <Route path="/learn/:id" element={<InProgressPage/>}/>
 
