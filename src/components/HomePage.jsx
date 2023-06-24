@@ -3,8 +3,6 @@ import { useRef, useState } from "react";
 import { GoLightBulb } from "react-icons/go";
 import hero from "/hero-img.svg";
 
-
-
 export default function HomePage() {
 
     return(

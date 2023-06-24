@@ -14,15 +14,16 @@ html {
 body {
   width: 100%;
   min-height: 100vh;
+  position: relative;
   background: linear-gradient(180deg, #2D2D2D 0%, rgba(45, 45, 45, 0.90) 100%);
 }
 
 #root {
-  @apply w-full relative flex flex-col items-center
+  @apply w-full flex flex-col items-center
 }
 
 .navlink {
-  @apply current:text-orange-400 hover:text-blue-400 p-[1.2rem] mt-[0.8rem]
+  @apply current:text-orange-400 hover:text-blue-400 mt-[1.6rem] text-h8 font-medium
 }
 
 /* scrollbar */
