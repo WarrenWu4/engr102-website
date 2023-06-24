@@ -26,7 +26,7 @@ export default function App() {
 
       <Route path="/review/:id" element={<InProgressPage/>}/>
 
-      <Route path="/about" element={<InProgressPage/>}/>
+      <Route path="/about" element={<AboutPage/>}/>
 
       <Route path='/merch' element={<InProgressPage/>}/>
 
