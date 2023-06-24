@@ -1,95 +1,55 @@
-import { useEffect, useState } from "react";
-import { CiStar } from "react-icons/ci"
+import { NavLink } from "react-router-dom";
+import { FaRegStar } from "react-icons/fa";
 
 export default function ReviewPage() {
 
-    const [content, setContent] = useState();
+    return(
+        <div className="w-full px-[1.6rem] flex flex-col items-center">
 
-    // on load -> populate content with review cards
-    useEffect(() => {
-         
-        const getData = () => {
-            // fetches data from firebase backend
-            console.log("WIP")
+            <div className="w-full mt-[2.4rem] font-bold text-[3.6rem]">REVIEW</div>
 
-            // loops through content and 
-        }
+            <div className="w-full mt-[2rem] gap-[2rem] grid grid-cols-1 place-items-center">
 
-        getData()
-
-    }, [])
-
-    return (
-        <div className="max-w-[1440px] w-full px-[1.6rem] md:px-[3.2rem] xl:px-[6.4rem] flex flex-col items-center pb-[10.8rem]">
-
-            <div className="bg-neutral-800 p-[3.2rem] grid grid-cols-1 gap-[3.2rem] place-items-center relative rounded-[0.8rem] rounded-tl-[0] xl:grid-cols-3 lg:grid-cols-2">
-
-                <div className="w-[10.8rem] h-[3.6rem] rounded-t-[0.8rem] bg-neutral-800 left-0 top-[-3.6rem] absolute flex justify-center items-center font-medium text-neutral-100 text-h8"></div>
-
-                <ReviewCard tag={{"color": "red", "text":"review video"}} link={"/"} ta={{"name":"taLily", "profile":"/ta_profile/lily_tang.png"}} title={"Exam 1 Comprehensive Review"}/>
+                <ReviewCard thumbnail="/test.jpg" title="OMG EXAM 1 REVIEW" author={{"profile":"/ta_profile/lily_tang.png", "name":"taLily"}} type={{"color":"#C74B4B", "text":"review video"}} stars={20} link="/"/>
 
             </div>
 
         </div>
-    )
+    );
 }
 
-const Tag = ({color, text}) => {
-
-    const [colorText, setColorText] = useState("black");
-
-
-    useEffect(() => {
-        // color code: orange, red, blue
-        switch (color) {
-            case "red":
-                setColorText("#C74B4B");
-                break;
-            case "blue":
-                setColorText("#2B92E6");
-                break;
-            case "orange":
-                setColorText("#E66F4C");
-                break;
-        }
-    }, [])
-
-
+const ReviewCard = ({thumbnail, title, author, type, stars, link}) => {
     return (
-        <div className="flex rounded-[0.4rem] py-[0.5rem] px-[0.8rem] w-fit h-[2.4rem] font-medium text-neutral-100 text-h10 items-center" style={{backgroundColor: colorText}}>
-            <div className="w-[0.8rem] h-[0.8rem] rounded-[50%] bg-neutral-100 mr-[0.4rem]"></div>
-            {text}
-        </div>
-    )
-}
+        <div className="w-[28.8rem] h-[38.6rem] bg-neutral-800 rounded-[0.8rem] flex flex-col">
 
-const ReviewCard = ({tag, link, ta, title}) => {
+            <img src={thumbnail} alt="thumbanil" className="w-full aspect-video rounded-t-[0.8rem]" />
 
-    return (
-        <div className="w-[36rem] h-[12rem] rounded-[0.8rem] shadow-review-card bg-neutral-700 cursor-pointer hover:scale-[102%] transition-all duration-[0.4s] flex flex-col justify-center">
+            <div className="w-full px-[1.6rem] flex flex-col">
 
-                <div className="w-[full] h-[3.6rem] flex mx-[2rem]">
+                <div className="font-medium text-[2.4rem] mt-[2.4rem]">{title}</div>
 
-                    <img className="w-[3.6rem] h-[3.6rem] rounded-[0.4rem] bg-center bg-contain mr-[0.8rem]" src={ta["profile"]} alt="TA Picture" />
+                <div className="text-[1.6rem] text-neutral-200 leading-[1.5] mt-[0.8rem] flex items-center">
+                    
+                    by
+                    <img className="ml-[0.8rem] mr-[0.4rem] w-[1.6rem] h-[1.6rem] rounded-[0.4rem]" src={author["profile"]} alt="author profile" />
+                    {author["name"]}
 
-                    <div className="h-[3.6rem] flex flex-col justify-between">
+                </div>
 
-                        <div className="text-neutral-100 font-bold text-h9 text-ellipsis whitespace-nowrap h-[1.9rem]">
-                            {title}
-                        </div>
-
-                        <div className="text-neutral-200 font-medium text-h10 text-ellipsis whitespace-nowrap h-[1.4rem]">
-                            {ta["name"]}
-                        </div>
-
+                <div className="w-full flex justify-between items-center mt-[1.2rem]">
+                    
+                    <div style={{background: type["color"]}} className="px-[0.8rem] py-[0.5rem] flex justify-center items-center rounded-[0.4rem]">
+                        <div className="bg-neutral-100 rounded-[50%] w-[0.8rem] h-[0.8rem] mr-[0.4rem]"></div>
+                        <div className="text-h10 font-medium">{type["text"]}</div>
                     </div>
 
+                    <div className="flex items-end text-[1.6rem] text-neutral-200">{stars} <span className="cursor-pointer text-[2.4rem] ml-[0.2rem]"><FaRegStar/></span></div>
+
                 </div>
 
-                <div className="w-[full] mx-[2rem] flex justify-between items-center mt-[1.6rem]">
-                    <Tag color={tag["color"]} text={tag["text"]} />
-                    <CiStar className="text-neutral-100 text-[2.4rem] stroke-[0.1rem]"/>
-                </div>
+                <NavLink to={link} className="w-full h-[4.7rem] my-[2rem] rounded-[0.8rem] font-medium text-[1.6rem] bg-primary-600 hover:bg-primary-500 flex justify-center items-center">START</NavLink>
+            
+            </div>
 
         </div>
     )

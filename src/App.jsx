@@ -22,7 +22,7 @@ export default function App() {
 
       <Route path="/learn/:id" element={<InProgressPage/>}/>
 
-      <Route path="/review" element={<InProgressPage/>}/>
+      <Route path="/review" element={<ReviewPage/>}/>
 
       <Route path="/review/:id" element={<InProgressPage/>}/>
 
