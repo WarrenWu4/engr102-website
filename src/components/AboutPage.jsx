@@ -32,7 +32,7 @@ export default function LearnPage() {
 
 const TaCard = ({profile, name, special, desc, socials}) => {
     return (
-        <div className="w-full h-[6.8rem] bg-neutral-700 rounded-[0.8rem] flex justify-between p-[1.6rem]">
+        <div className="w-full h-[6.8rem] bg-neutral-700 rounded-[0.8rem] flex justify-between p-[1.6rem] cursor-pointer">
 
             <div className="flex font-medium text-h7 leading-[1.5]">
                 <img src={profile} alt="ta profile" className="w-[3.6rem] h-[3.6rem] rounded-[0.4rem] mr-[0.8rem]"/>

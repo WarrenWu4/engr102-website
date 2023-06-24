@@ -7,6 +7,16 @@ export default {
   ],
   theme: {
     extend: {
+      dropShadow: {
+        'light': [
+          '0px 0px 5.760000228881836px #FFF',
+          '0px 0px 11.520000457763672px #FFF',
+          '0px 0px 40.31999969482422px #FFF',
+          '0px 0px 80.63999938964844px #FFF', 
+          '0px 0px 138.24000549316406px #FFF', 
+          '0px 0px 241.9199981689453px #FFF;',
+        ],
+      },
       boxShadow: {
         'review-card': '0 4px 4px 2px rgba(0, 0, 0, 0.2)',
         'btn-highlight': 'inset 0 0 300px 2px #4CA230',

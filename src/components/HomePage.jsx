@@ -1,11 +1,17 @@
 import { NavLink } from "react-router-dom";
 import { useRef, useState } from "react";
+import { GoLightBulb } from "react-icons/go";
 import hero from "/hero-img.svg";
+
+
 
 export default function HomePage() {
 
     return(
         <div className="w-full px-[1.6rem] flex flex-col items-center">
+
+            <GoLightBulb className="absolute top-[12rem] left-[20rem] rotate-180 text-h6" id="light"/>
+
             <img src={hero} alt="hero-img" className="w-[28.8rem] h-[25.4rem] mt-[2.4rem]"/>
 
             <div className="w-full font-bold text-h3 leading-[105%] text-center mt-[2.4rem]">engr102 made <span className="text-primary-500">simple</span></div>
