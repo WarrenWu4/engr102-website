@@ -33,7 +33,7 @@ export default function Footer() {
     )
 
     return (
-        <div className="w-full bg-neutral-800">
+        <div className="w-full bg-neutral-800 mt-[6.4rem]">
 
             <div className="flex w-full px-[1.6rem] justify-between mt-[2.4rem]">
                 <NavLink to="/" className="flex items-center font-bold text-[1.6rem]">

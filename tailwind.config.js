@@ -10,6 +10,7 @@ export default {
       boxShadow: {
         'review-card': '0 4px 4px 2px rgba(0, 0, 0, 0.2)',
         'btn-highlight': 'inset 0 0 300px 2px #4CA230',
+        'get_start': '0 0 6rem 1.2rem rgba(221, 123, 123, 0.4)'
       },
       animation: {
         'rotate': 'rotate 2s',
