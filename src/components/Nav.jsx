@@ -31,7 +31,6 @@ export default function Nav() {
             signup.current.showModal()
         }
     }
-
     // ! MAKE SURE TO REMOVE LOCALHOST AS AUTHORIZED DOMAIN IN FIREBASE CONSOLE
     const handleSignIn = async () => {
 
