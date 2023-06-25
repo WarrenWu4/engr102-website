@@ -1,5 +1,5 @@
 import { useEffect, useState, Suspense } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams, useNavigate } from "react-router-dom";
 import { db } from "../firebase";
 import { collection, getDocs, doc, getDoc } from "firebase/firestore";
 import { FaLongArrowAltRight, FaLongArrowAltLeft, FaDiscord } from "react-icons/fa";
@@ -25,7 +25,7 @@ export default function LearnPage() {
     return(
         <div className="max-w-[128rem] w-full px-[1.6rem] flex flex-col items-center sm:px-[6.4rem] lg:px-[12.8rem] ">
 
-            <div className="w-full mt-[2.4rem] font-bold text-[3.6rem] md:mt-[5.6rem] xl:mt-[6.4rem] ">UNITS</div>
+            <div className="w-full mt-[2.4rem] font-bold text-[3.6rem] md:mt-[5.6rem] xl:mt-[6.4rem]">UNITS</div>
 
             <div className="w-full mt-[2rem] gap-x-[2rem] gap-y-[2rem] grid grid-cols-1 place-items-center mb-[6.4rem] md:gap-y-[3.2rem] lg:gap-y-[6.4rem] md:mb-[12.8rem] md:grid-cols-2 xl:grid-cols-3">
         
@@ -43,16 +43,21 @@ export const LearnView = () => {
     // based on the route, get the lesson documents
     const unitNum = useParams()["unit_id"];
     const lessonNum = useParams()["lesson_id"];
-
+    const nav = useNavigate();
     const [vid, setVid] = useState();
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         // get data from lesson number
         const getData = async () => {
-            const lessonInfo = await getDoc(doc(db, "units", unitNum, "lessons", lessonNum));
-            setVid(lessonInfo.data()["video"]);
-            setLoading(false);
+            try {
+                const lessonInfo = await getDoc(doc(db, "units", unitNum, "lessons", lessonNum));
+                setVid(lessonInfo.data()["video"]);
+                setLoading(false);
+            }
+            catch {
+                nav("/error");
+            }
         }
 
         getData();

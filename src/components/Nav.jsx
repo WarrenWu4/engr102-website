@@ -43,10 +43,9 @@ export default function Nav() {
                 const docInfo = await getDoc(doc(db, "users", uid))
                 if (docInfo.exists()) {
                     setUserState(   
-                        <div className="flex font-medium text-h8 mt-[1.6rem] items-center">
-                            <img src={docInfo.data()["profile"]} alt="user profile" className="w-[2rem] h-[2rem] rounded-[50%] mr-[0.8rem]"/>
-                            Profile
-                        </div>
+                        <NavLink to={"/profile/"+uid} className="mt-[1.6rem] items-center">
+                            <img src={docInfo.data()["profile"]} alt="user profile" className="w-[4rem] h-[4rem] rounded-[50%] mr-[0.8rem]"/>
+                        </NavLink>
                     )
                     setIsLoading(false);
                 }
