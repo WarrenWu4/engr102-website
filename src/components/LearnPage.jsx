@@ -2,7 +2,7 @@ import { useEffect, useState, Suspense } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { db } from "../firebase";
 import { collection, getDocs, doc, getDoc } from "firebase/firestore";
-import { FaLongArrowAltRight, FaLongArrowAltLeft } from "react-icons/fa";
+import { FaLongArrowAltRight, FaLongArrowAltLeft, FaDiscord } from "react-icons/fa";
 
 export default function LearnPage() {
 
@@ -72,6 +72,19 @@ export const LearnView = () => {
 
             <LessonSideBar />
 
+            <div className="flex flex-col items-center my-[6.4rem]">
+
+                <div className="font-bold text-h7">QUESTIONS?</div>
+
+                <a href="https://tx.ag/216server" target="_blank" className="flex bg-blue-600 px-[1.6rem] py-[0.8rem] my-[0.8rem] rounded-[0.4rem] font-bold text-h9">
+                    <FaDiscord className="text-h7 mr-[0.8rem]"/>
+                    DISCORD
+                </a>
+
+                <div className="font-medium text-h9">ping a TA/PT</div>
+
+            </div>
+
         </div>
     )
 }
@@ -98,7 +111,7 @@ const LessonSideBar = () => {
         
     }, [])
     return (
-        <div className="w-full p-[1.6rem] bg-neutral-800 rounded-[0.8rem] mb-[6.4rem]">
+        <div className="w-full p-[1.6rem] bg-neutral-800 rounded-[0.8rem]">
                     
             <div className="font-medium text-h7">{title}</div>
 
