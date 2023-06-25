@@ -56,7 +56,7 @@ const Terminal = () => {
 
 
     return (
-        <div className="max-w-[102.4rem] w-full min-h-[4.8rem] bg-[black] rounded-[0.8rem] p-[1.6rem] mt-[5.6rem] mb-[6.4rem] sm:mt-[6rem] xl:mt-[7.2rem]">
+        <div className="max-w-[102.4rem] w-full min-h-[4.8rem] bg-[black] rounded-[0.8rem] p-[1.6rem] mt-[5.6rem] mb-[6.4rem] sm:mt-[6rem] xl:mt-[7.2rem] md:mb-[25.6rem]">
             <form className="w-full flex [&>*]:font-medium [&>*]:text-[1.6rem]">
 
                 <label className="mr-[0.8rem]">&gt;_</label>

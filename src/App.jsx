@@ -8,6 +8,8 @@ import ReviewPage from './components/ReviewPage';
 import AboutPage from './components/AboutPage';
 import MerchPage from './components/MerchPage';
 
+import { LearnView } from "./components/LearnPage";
+
 export default function App() {
   
   return (
@@ -20,7 +22,7 @@ export default function App() {
 
       <Route path="/learn" element={<LearnPage/>}/>
 
-      <Route path="/learn/:id" element={<InProgressPage/>}/>
+      <Route path="/learn/:id/:lesson_id" element={<LearnView/>}/>
 
       <Route path="/review" element={<ReviewPage/>}/>
 
