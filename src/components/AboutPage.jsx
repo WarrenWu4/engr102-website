@@ -30,7 +30,7 @@ export default function LearnPage() {
 
             <div className="w-full mt-[2rem] gap-[2rem] grid grid-cols-1 place-items-center p-[1.6rem] rounded-[0.8rem] bg-neutral-800 md:grid-cols-2 xl:grid-cols-3">
 
-                {!isLoading && taData.docs.map((doc) => <TaCard profile={doc.data()["profile"]} name={doc.data()["name"]}  special={doc.data()["special"]} desc={doc.data()["desc"]} socials={doc.data()["socials"]} />)}
+                {!isLoading && taData.docs.map((doc, index) => <TaCard key={index} profile={doc.data()["profile"]} name={doc.data()["name"]}  special={doc.data()["special"]} desc={doc.data()["desc"]} socials={doc.data()["socials"]} />)}
 
             </div>
 

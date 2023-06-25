@@ -11,40 +11,75 @@ import ProfilePage from './components/ProfilePage';
 
 import { LearnView } from "./components/LearnPage";
 
+import { useEffect, useState, createContext } from 'react';
+import { db } from "./firebase";
+import { getDoc, doc } from "firebase/firestore";
+
+export const AuthContext = createContext({"uid": null,"userData": null});
+
 export default function App() {
   
+  const [user, setUser] = useState({"uid": null,"userData": null});
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+
+    // check if user is already logged in
+    const validateUser = async() => {
+
+      const uid = localStorage.getItem("uid")
+      if (uid !== null) {
+        // cross check with database that this user does in fact exist
+        const docInfo = await getDoc(doc(db, "users", uid))
+        if (docInfo.exists()) {
+          setUser({"uid":uid, "userData":docInfo.data()});
+        }
+      }
+      setIsLoading(false);
+    }
+
+    validateUser()
+
+  }, [])
+
   return (
     <>
-    <Nav />
 
-    <Routes>
+    {!isLoading && <AuthContext.Provider value={user}>
 
-      <Route path="/" element={<HomePage/>}/>
+      <Nav />
 
-      <Route path="/learn" element={<LearnPage/>}/>
+      <Routes>
 
-      <Route path="/learn/:unit_id/:lesson_id" element={<LearnView/>}/>
+        <Route path="/" element={<HomePage/>}/>
 
-      <Route path="/review" element={<ReviewPage/>}/>
+        <Route path="/learn" element={<LearnPage/>}/>
 
-      <Route path="/review/:review_id" element={<InProgressPage/>}/>
+        <Route path="/learn/:unit_id/:lesson_id" element={<LearnView/>}/>
 
-      <Route path="/about" element={<AboutPage/>}/>
+        <Route path="/review" element={<ReviewPage/>}/>
 
-      <Route path='/merch' element={<InProgressPage/>}/>
+        <Route path="/review/:review_id" element={<InProgressPage/>}/>
 
-      <Route path='/profile/:uid' element={<ProfilePage/>}/>
+        <Route path="/about" element={<AboutPage/>}/>
 
-      <Route path='/tou' element={<InProgressPage/>}/>
-      <Route path='/pp' element={<InProgressPage/>}/>
-      <Route path='/as' element={<InProgressPage/>}/>
+        <Route path='/merch' element={<InProgressPage/>}/>
 
-      <Route path='/wip' element={<InProgressPage/>}/>
-      <Route path='*' element={<ErrorPage/>}/>
+        <Route path='/profile/:uid' element={<ProfilePage/>}/>
 
-    </Routes>
+        <Route path='/tou' element={<InProgressPage/>}/>
+        <Route path='/pp' element={<InProgressPage/>}/>
+        <Route path='/as' element={<InProgressPage/>}/>
 
-    <Footer/>
+        <Route path='/wip' element={<InProgressPage/>}/>
+        <Route path='*' element={<ErrorPage/>}/>
+
+      </Routes>
+
+      <Footer/>
+
+    </AuthContext.Provider>}
+
     </>
 
   )

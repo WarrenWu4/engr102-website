@@ -3,29 +3,34 @@ import { CgMenuRight } from "react-icons/cg";
 import { IoMdClose } from "react-icons/io";
 import { FcGoogle } from "react-icons/fc";
 import { NavLink, useLocation } from 'react-router-dom';
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import { signInWithPopup, GoogleAuthProvider, deleteUser } from "firebase/auth";
 import { auth, db } from "../firebase";
-import { setDoc, getDoc, doc } from "firebase/firestore";
+import { setDoc, getDoc, doc } from "firebase/firestore"; 
+import { AuthContext } from "../App";
 
 export default function Nav() {
 
+    const signup = useRef();
     const { pathname } = useLocation();
     const [nav, setNav] = useState({"open":false, "sidebar":"none"});
-    const [isLoading, setIsLoading] = useState(true);
     const [userState, setUserState] = useState("")
-    const signup = useRef();
+    const {uid, userData} = useContext(AuthContext);
 
+    // reset window on route change
     useEffect(() => {
+        window.scrollTo(0, 0);
         setNav({"open":false, "sidebar":"none"})
     }, [pathname]);
 
+    // open/close navigation
     const handleNav = () => {
         setNav((nav["open"]) ? 
             {"open":false, "sidebar":"none"}:
             {"open":true, "sidebar":"flex"});
     }
 
+    // open/close dialog box
     const handleDialog = () => {
         if (signup.current.open) {
             signup.current.close();
@@ -36,56 +41,32 @@ export default function Nav() {
     }
 
     useEffect(() => {
-
-        const validateUser = async () => {
-            if (localStorage.getItem("uid") !== null) {
-                const uid = localStorage.getItem("uid");
-                const docInfo = await getDoc(doc(db, "users", uid))
-                if (docInfo.exists()) {
-                    setUserState(   
-                        <NavLink to={"/profile/"+uid} className="mt-[1.6rem] items-center">
-                            <img src={docInfo.data()["profile"]} alt="user profile" className="w-[4rem] h-[4rem] rounded-[50%] mr-[0.8rem]"/>
-                        </NavLink>
-                    )
-                    setIsLoading(false);
-                }
-                else {
-                    setUserState(
-                        <button type="button" onClick={handleDialog} className="px-[1.6rem] py-[0.8rem] rounded-[0.4rem] bg-orange-600 font-medium text-h8 mt-[1.6rem]">Sign In</button>
-                    )
-                    setIsLoading(false);
-                }
-            }
-            else {
-                setUserState(
-                    <button type="button" onClick={handleDialog} className="px-[1.6rem] py-[0.8rem] rounded-[0.4rem] bg-orange-600 font-medium text-h8 mt-[1.6rem]">Sign In</button>
-                )
-                setIsLoading(false);
-            }
+        // if user is already logged in, show profile
+        if(uid !== null) {
+            const profileBtn = <NavLink to={"/profile/"+uid} className="mt-[1.6rem] items-center"><img src={userData["profile"]} alt="user profile" className="w-[4rem] h-[4rem] rounded-[50%] mr-[0.8rem]"/></NavLink>
+            setUserState(profileBtn)
+        }
+        // otherwise show default login button
+        else {
+            const signInBtn = <button type="button" onClick={handleDialog} className="px-[1.6rem] py-[0.8rem] rounded-[0.4rem] bg-orange-600 font-medium text-h8 mt-[1.6rem]">Sign In</button>
+            setUserState(signInBtn)
         }
 
-        // check if user is logged in already (cross check w/ database)
-        validateUser()
-
-    }, [localStorage.getItem("uid")])
+    }, [])
 
     // ! MAKE SURE TO REMOVE LOCALHOST AS AUTHORIZED DOMAIN IN FIREBASE CONSOLE
     const handleSignIn = async () => {
-
         const provider = new GoogleAuthProvider();
-        setIsLoading(false);
-
         try {
             const result = await signInWithPopup(auth, provider)
-
             const { displayName, email, photoURL, uid } = result.user
             
             // ? might be better to use firebase cloud functions in the future
-            // split email at @ and verify that it's an A&M email
+            // split email at @ and verify that it's an A&M email (delete if not)
             if (email.split("@")[1] !== "tamu.edu") {
-                deleteUser(auth.currentUser).then(() => {console.log("User deleted, not @tamu.edu")}).catch((error)=>console.log(error))
+                deleteUser(auth.currentUser)
+                alert("TAMU EMAILS ONLY PLZ");
             }
-
             // otherwise if valid profile, create a document with info about user (assign perms to normal by default (tas need to be manually assigned))
             else {
                 // create user document if user doesn't already exist
@@ -97,18 +78,14 @@ export default function Nav() {
                         uid: uid,
                         ta: false,
                         special: "",
-                        desc: "",
-                        socials: "",
                     })
 
                 }
-
                 // store uid in local storage to save sessions
                 localStorage.setItem("uid", uid)
-
+                // reload page to register user change
+                window.location.reload(false);
             }
-
-            // close dialog
             handleDialog()
         }
         catch (e) {
@@ -135,7 +112,7 @@ export default function Nav() {
                         <NavLink className="navlink" to="/about">About</NavLink>
                         <NavLink className="navlink" to="/merch">Merch</NavLink>
 
-                        {!isLoading && userState}
+                        {userState}
 
                     </div>
 
