@@ -22,11 +22,11 @@ export default function App() {
 
       <Route path="/learn" element={<LearnPage/>}/>
 
-      <Route path="/learn/:id/:lesson_id" element={<LearnView/>}/>
+      <Route path="/learn/:unit_id/:lesson_id" element={<LearnView/>}/>
 
       <Route path="/review" element={<ReviewPage/>}/>
 
-      <Route path="/review/:id" element={<InProgressPage/>}/>
+      <Route path="/review/:review_id" element={<InProgressPage/>}/>
 
       <Route path="/about" element={<AboutPage/>}/>
 

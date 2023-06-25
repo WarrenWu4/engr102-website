@@ -1,24 +1,42 @@
+import { getDocs, query, collection, where } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { db } from "../firebase";
 import { NavLink } from "react-router-dom";
 
 export default function LearnPage() {
 
+    const [isLoading, setIsLoading] = useState(true);
+    const [taData, setTaData] = useState();
+
+    useEffect(() => {
+
+        // fetch all tas
+        const getTAs = async () => {
+
+            const taSnapshot = await getDocs(query(collection(db, "users"), where("ta", "==", true)))
+            setTaData(taSnapshot);
+            setIsLoading(false);
+
+        }
+
+        getTAs();
+
+    },[])
+
     return(
-        <div className="w-full px-[1.6rem] flex flex-col items-center">
+        <div className="max-w-[128rem] w-full px-[1.6rem] flex flex-col items-center sm:px-[6.4rem] lg:px-[12.8rem]">
 
             <div className="w-full mt-[2.4rem] font-bold text-[3.6rem]">TEAM</div>
 
-            <div className="w-full mt-[2rem] gap-[2rem] grid grid-cols-1 place-items-center p-[1.6rem] rounded-[0.8rem] bg-neutral-800">
+            <div className="w-full mt-[2rem] gap-[2rem] grid grid-cols-1 place-items-center p-[1.6rem] rounded-[0.8rem] bg-neutral-800 md:grid-cols-2 xl:grid-cols-3">
 
-                <TaCard profile="/ta_profile/default.jpg" name="Warren Wu" special="👑" desc="" socials=""/>
-                <TaCard profile="/ta_profile/default.jpg" name="Lily Tang" special="🤡" desc="" socials=""/>
-                <TaCard profile="/ta_profile/default.jpg" name="Ryan Kabir" special="🐐" desc="" socials=""/>
-                <TaCard profile="/ta_profile/default.jpg" name="Casey Pei" special="👍" desc="" socials=""/>
+                {!isLoading && taData.docs.map((doc) => <TaCard profile={doc.data()["profile"]} name={doc.data()["name"]}  special={doc.data()["special"]} desc={doc.data()["desc"]} socials={doc.data()["socials"]} />)}
 
             </div>
 
             <div className="w-full mt-[4rem] font-bold text-[3.6rem]">MISSION</div>
 
-            <div className="w-full mt-[2rem] gap-[3.2rem] grid grid-cols-1 place-items-center">
+            <div className="w-full mt-[2rem] gap-[3.2rem] grid grid-cols-1 place-items-center mb-[12.8rem] md:grid-cols-2">
 
                 <MissionCard title="0 Stress" desc="lorem ipsum bullshit"/>
                 <MissionCard title="Explore CS" desc=""/>
@@ -47,7 +65,7 @@ const TaCard = ({profile, name, special, desc, socials}) => {
 
 const MissionCard = ({title, desc}) => {
     return (
-        <div className="w-[28.8rem] h-[30rem] bg-neutral-800 rounded-[0.8rem] p-[1.6rem]">
+        <div className="w-full h-[30rem] bg-neutral-800 rounded-[0.8rem] p-[1.6rem]">
 
             <div className="font-medium text-h7">{title}</div>
             

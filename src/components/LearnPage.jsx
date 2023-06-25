@@ -41,7 +41,7 @@ export default function LearnPage() {
 export const LearnView = () => {
 
     // based on the route, get the lesson documents
-    const unitNum = useParams()["id"];
+    const unitNum = useParams()["unit_id"];
     const lessonNum = useParams()["lesson_id"];
 
     const [vid, setVid] = useState();
@@ -91,7 +91,7 @@ export const LearnView = () => {
 
 const LessonSideBar = () => {
 
-    const unitNum = useParams()["id"];
+    const unitNum = useParams()["unit_id"];
     const [data, setData] = useState();
     const [title, setTitle] = useState();
     const [loading, setLoading] = useState(true);
