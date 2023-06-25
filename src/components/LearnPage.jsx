@@ -1,21 +1,21 @@
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, useState } from "react";
 import { NavLink, useParams, useNavigate } from "react-router-dom";
 import { db } from "../firebase";
 import { collection, getDocs, doc, getDoc } from "firebase/firestore";
-import { FaLongArrowAltRight, FaLongArrowAltLeft, FaDiscord } from "react-icons/fa";
+import { FaLongArrowAltRight, FaLongArrowAltLeft, FaDiscord, FaLock } from "react-icons/fa";
 
 export default function LearnPage() {
 
-    const [uCards, setUCards] = useState([]);    
+    const [lessonData, setLessonData] = useState([]);    
+    const [isLoading, setIsLoading] = useState(true);
 
     // fetch data from firestore
     useEffect(() => {
         const getData = async () => {
             // await firebase get docs method
             const querySnapshot = await getDocs(collection(db, "units"));
-            
-            // display all units
-            querySnapshot.docs.map((doc, index) => setUCards([...uCards, <UnitCard key={index} thumbnail={doc.data()["thumbnail"]} title={doc.data()["title"]} desc={doc.data()["desc"]} link={doc.data()["link"]}/>]))
+            setLessonData(querySnapshot)
+            setIsLoading(false);
         }
         
         getData()
@@ -29,7 +29,7 @@ export default function LearnPage() {
 
             <div className="w-full mt-[2rem] gap-x-[2rem] gap-y-[2rem] grid grid-cols-1 place-items-center mb-[6.4rem] md:gap-y-[3.2rem] lg:gap-y-[6.4rem] md:mb-[12.8rem] md:grid-cols-2 xl:grid-cols-3">
         
-                {uCards}
+                {!isLoading && lessonData.docs.map((doc, index) => <UnitCard key={index} thumbnail={doc.data()["thumbnail"]} title={doc.data()["title"]} desc={doc.data()["desc"]} link={doc.data()["link"]} locked={doc.data()["locked"]} />)}
 
             </div>
 
@@ -48,9 +48,14 @@ export const LearnView = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+
         // get data from lesson number
         const getData = async () => {
             try {
+                // verify that the unit isn't locked
+                const lockStatus =  await getDoc(doc(db, "units", unitNum));
+                if (lockStatus.data()["locked"]) {nav("/error")}
+
                 const lessonInfo = await getDoc(doc(db, "units", unitNum, "lessons", lessonNum));
                 setVid(lessonInfo.data()["video"]);
                 setLoading(false);
@@ -65,40 +70,41 @@ export const LearnView = () => {
     }, [unitNum, lessonNum])
 
     return (
-        <div className="max-w-[128rem] w-full px-[1.6rem] flex flex-col items-center sm:px-[6.4rem] lg:px-[12.8rem]">
+        <>
+            {!loading && 
+            <div className="max-w-[128rem] w-full px-[1.6rem] flex flex-col items-center sm:px-[6.4rem] lg:px-[12.8rem]">
 
-            {!loading && <iframe className="w-full aspect-video rounded-[0.8rem] bg-neutral-800 mt-[2.4rem]" allowFullScreen 
-            src={vid}></iframe>}
+                <iframe className="w-full aspect-video rounded-[0.8rem] bg-neutral-800 mt-[2.4rem]" allowFullScreen 
+                src={vid}></iframe>
 
-            <div className="w-full h-[4.8rem] bg-neutral-700 rounded-[0.8rem] my-[1.6rem] flex text-h7 justify-center items-center [&>svg]:cursor-pointer [&>svg]:ml-[1.6rem]">
-                <FaLongArrowAltLeft/>
-                <FaLongArrowAltRight/>
+                <LessonSideBar />
+
+                <div className="flex flex-col items-center my-[6.4rem]">
+
+                    <div className="font-bold text-h7">QUESTIONS?</div>
+
+                    <a href="https://tx.ag/216server" target="_blank" className="flex bg-blue-600 px-[1.6rem] py-[0.8rem] my-[0.8rem] rounded-[0.4rem] font-bold text-h9">
+                        <FaDiscord className="text-h7 mr-[0.8rem]"/>
+                        DISCORD
+                    </a>
+
+                    <div className="font-medium text-h9">ping a TA/PT</div>
+
+                </div>
+
             </div>
-
-            <LessonSideBar />
-
-            <div className="flex flex-col items-center my-[6.4rem]">
-
-                <div className="font-bold text-h7">QUESTIONS?</div>
-
-                <a href="https://tx.ag/216server" target="_blank" className="flex bg-blue-600 px-[1.6rem] py-[0.8rem] my-[0.8rem] rounded-[0.4rem] font-bold text-h9">
-                    <FaDiscord className="text-h7 mr-[0.8rem]"/>
-                    DISCORD
-                </a>
-
-                <div className="font-medium text-h9">ping a TA/PT</div>
-
-            </div>
-
-        </div>
+            }
+        </>
     )
 }
 
 const LessonSideBar = () => {
 
     const unitNum = useParams()["unit_id"];
+    const lessonNum = useParams()["lesson_id"]
     const [data, setData] = useState();
     const [title, setTitle] = useState();
+    const [lessonLength, setLessonLength] = useState(1)
     const [loading, setLoading] = useState(true);
 
     // get all lessons from unit
@@ -115,16 +121,32 @@ const LessonSideBar = () => {
         getData()
         
     }, [])
+
+    const prevLesson = () => {
+        console.log("wip")
+    }
+
+    const nextLesson = () => {
+        console.log("wip")
+    }
+
     return (
-        <div className="w-full p-[1.6rem] bg-neutral-800 rounded-[0.8rem]">
-                    
-            <div className="font-medium text-h7">{title}</div>
+        <>
+            <div className="w-full h-[4.8rem] bg-neutral-700 rounded-[0.8rem] my-[1.6rem] flex text-h7 px-[3.2rem] justify-end items-center [&>svg]:cursor-pointer [&>svg]:mx-[0.8rem]">
+                <FaLongArrowAltLeft onClick={prevLesson}/>
+                <FaLongArrowAltRight onClick={nextLesson}/>
+            </div>
 
-            <div className="w-full h-[0.2rem] bg-neutral-700 mt-[0.8rem]"></div>
+            <div className="w-full p-[1.6rem] bg-neutral-800 rounded-[0.8rem]">
+                        
+                <div className="font-medium text-h7">{title}</div>
 
-            {!loading && data.docs.map((doc, index) => <LessonCard key={index} link={"/learn/"+unitNum+"/lesson"+(index+1)} title={doc.data()["title"]} complete={false} />)}
+                <div className="w-full h-[0.2rem] bg-neutral-700 mt-[0.8rem]"></div>
 
-        </div>
+                {!loading && data.docs.map((doc, index) => <LessonCard key={index} link={"/learn/"+unitNum+"/lesson"+(index+1)} title={doc.data()["title"]} complete={false} />)}
+
+            </div>
+        </>
     )
 }
 
@@ -133,7 +155,7 @@ const LessonCard = ({title, complete, link}) => {
     const completion = (complete) ? "bg-green-100":"border-[0.2rem]"
 
     return (
-        <NavLink to={link} className="w-full py-[0.8rem] px-[1.6rem] flex items-center rounded-[0.8rem] my-[1.6rem] bg-neutral-700">
+        <NavLink to={link} className="lessonlink">
             
             <div className={"w-[1.6rem] aspect-square rounded-[50%] mr-[0.8rem] " + completion}></div>
 
@@ -143,21 +165,27 @@ const LessonCard = ({title, complete, link}) => {
     )
 }
 
-const UnitCard = ({thumbnail, title, desc, link}) => {
+const UnitCard = ({thumbnail, title, desc, link, locked}) => {
+
     return (
-        <div className="w-[28.8rem] h-[38.6rem] bg-neutral-800 rounded-[0.8rem] flex flex-col">
+        <div className="w-[28.8rem] h-[38.6rem] bg-neutral-800 rounded-[0.8rem] flex flex-col relative">
 
             <img src={thumbnail} alt="thumbanil" className="w-full aspect-video rounded-t-[0.8rem]" />
 
             <div className="w-full px-[1.6rem] flex flex-col">
 
-                <div className="font-medium text-[2.4rem] mt-[2.4rem]">{title}</div>
+                <div className="font-medium text-[2.4rem] mt-[2.4rem] text-ellipsis overflow-hidden line-clamp-1">{title}</div>
 
-                <div className="text-[1.6rem] leading-[1.5] mt-[1.2rem]">{desc}</div>
+                <div className="text-[1.6rem] leading-[1.5] mt-[1.2rem] text-ellipsis overflow-hidden line-clamp-3">{desc}</div>
 
                 <NavLink to={link} className="w-full h-[4.7rem] my-[2rem] rounded-[0.8rem] font-medium text-[1.6rem] bg-primary-600 hover:bg-primary-500 flex justify-center items-center">START</NavLink>
             
             </div>
+
+            {locked && <div className="w-full h-full absolute top-0 left-0 rounded-[0.8rem] backdrop-blur-[0.8rem] flex justify-center items-center flex-col"> 
+                <FaLock className="text-h7"/>
+                <div className="text-h7 font-bold mt-[1.6rem]">Unit Locked</div>
+            </div>}
 
         </div>
     )
