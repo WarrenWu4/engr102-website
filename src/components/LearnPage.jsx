@@ -30,7 +30,7 @@ export default function LearnPage() {
         {!isLoading && 
         <div className="max-w-[128rem] w-full px-[1.6rem] flex flex-col items-center sm:px-[6.4rem] lg:px-[12.8rem] ">
 
-                <div className="w-full mt-[2.4rem] font-bold text-[3.6rem] md:mt-[5.6rem] xl:mt-[6.4rem]">UNITS</div>
+                <div className="w-full mt-[2.4rem] font-bold text-[3.6rem] md:mt-[5.6rem] xl:mt-[6.4rem] text-center md:text-left">UNITS</div>
 
                 <div className="w-full mt-[2rem] gap-[3.2rem] grid place-items-center mb-[6.4rem] md:mb-[12.8rem] grid-cols-1 md:grid-cols-wwu">
             
