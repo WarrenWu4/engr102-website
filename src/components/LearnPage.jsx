@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import { NavLink, useParams, useNavigate } from "react-router-dom";
 import { db } from "../firebase";
-import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { collection, getDocs, doc, getDoc, updateDoc } from "firebase/firestore";
 import { FaLongArrowAltRight, FaLongArrowAltLeft, FaDiscord, FaLock } from "react-icons/fa";
 import { AuthContext } from "../App";
 
@@ -137,19 +137,13 @@ export const LearnView = () => {
 const LessonCard = ({title, link, active}) => {
 
     const [compClass, setCompClass] = useState("border-[0.2rem]");
-    const [warning, setWarning] = useState("opacity-0")
+    const [warning, setWarning] = useState(0)
     const on = (active) ? "bg-primary-600" : "hover:bg-neutral-600 bg-neutral-700"
-
-    // *if user not logged in, send alert
-    // *if user logged in, see if they completed this lesson by matching unit and lesson ids
-    // *if user logged in and clicks complete --> update db
     
-    // todo: add warning animation
-    // todo: add db implementations for handleComp
-
     const {uid, userData} = useContext(AuthContext);
 
     useEffect(() => {
+        // if user logged in, see if they completed this lesson by matching unit and lesson ids
         if (uid !== null) {
             const unitNum = link.split("/")[2].split("unit")[1]
             const lessonNum = link.split("/")[3].split("of")[0]
@@ -159,19 +153,37 @@ const LessonCard = ({title, link, active}) => {
         }
     }, [])
 
-    const handleComp = (e) => {
+    const handleComp = async (e) => {
         e.preventDefault();
+        // if user logged in and clicks complete --> update db
         if (uid !== null) {
             // toggle completion 1. if not complete -> set complete & vice versa
             if (compClass === "border-[0.2rem]") {
                 setCompClass("bg-green-100")
+                const unitNum = link.split("/")[2].split("unit")[1]
+                const lessonNum = link.split("/")[3].split("of")[0]
+
+                let prevComp = userData["u_comp"];
+                prevComp[unitNum+"."+lessonNum] = true;
+                await updateDoc(doc(db, "users", uid), {
+                    u_comp: prevComp
+                })
             }
             else {
                 setCompClass("border-[0.2rem]")
+                const unitNum = link.split("/")[2].split("unit")[1]
+                const lessonNum = link.split("/")[3].split("of")[0]
+                
+                let prevComp = userData["u_comp"];
+                prevComp[unitNum+"."+lessonNum] = false;
+                await updateDoc(doc(db, "users", uid), {
+                    u_comp: prevComp
+                })
             }
         }
+        // if user not logged in, send alert
         else {
-            setWarning("opacity-100")
+            setWarning(1)
         }
     }
 
@@ -185,7 +197,7 @@ const LessonCard = ({title, link, active}) => {
 
             </NavLink>
 
-            <div className={"w-[30rem] px-[1.6rem] py-[0.8rem] rounded-[0.8rem] fixed left-[50%] translate-x-[-50%] bottom-[6.4rem] bg-red-100 font-bold text-h8 text-center "+warning}>SIGN IN TO TRACK PROGRESS</div>
+            <div className={"w-[30rem] px-[1.6rem] py-[0.8rem] rounded-[0.8rem] fixed left-[50%] translate-x-[-50%] bottom-[6.4rem] bg-red-100 font-bold text-h8 text-center opacity-0"} id="warning" warn={warning} onAnimationEnd={() => setWarning(0)}>SIGN IN TO TRACK PROGRESS</div>
         </>
     )
 }
