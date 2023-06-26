@@ -59,13 +59,11 @@ export default function App() {
 
         <Route path="/review" element={<ReviewPage/>}/>
 
-        <Route path="/review/:review_id" element={<InProgressPage/>}/>
-
         <Route path="/about" element={<AboutPage/>}/>
 
         <Route path='/merch' element={<InProgressPage/>}/>
 
-        <Route path='/profile/:uid' element={<ProfilePage/>}/>
+        {(user["uid"] !== null) && <Route path='/profile/:uid' element={<ProfilePage/>}/>}
 
         <Route path='/tou' element={<InProgressPage/>}/>
         <Route path='/pp' element={<InProgressPage/>}/>

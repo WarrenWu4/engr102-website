@@ -77,7 +77,7 @@ export const LearnView = () => {
         setPages({"curr":Number(lessonNum.split("of")[0]), "max":Number(lessonNum.split("of")[1])})
         getData();
 
-    }, [unitNum, lessonNum])
+    }, [unitNum, lessonNum])    
 
     const prevLesson = () => {
         if(pages["curr"] > 1) {
@@ -86,7 +86,7 @@ export const LearnView = () => {
     }
 
     const nextLesson = () => {
-        if(pages["curr"] <= pages["max"]) {
+        if(pages["curr"] < pages["max"]) {
             nav("/learn/"+unitNum+"/"+(pages["curr"]+1)+"of"+pages["max"])
         }
     }
