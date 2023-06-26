@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import { NavLink, useParams, useNavigate } from "react-router-dom";
-import { db } from "../firebase";
+import { db, storage } from "../firebase";
+import { ref, getDownloadURL } from "firebase/storage";
 import { collection, getDocs, doc, getDoc, updateDoc } from "firebase/firestore";
 import { FaLongArrowAltRight, FaLongArrowAltLeft, FaDiscord, FaLock } from "react-icons/fa";
 import { AuthContext } from "../App";
@@ -204,10 +205,26 @@ const LessonCard = ({title, link, active}) => {
 
 const UnitCard = ({thumbnail, title, desc, link, locked, max}) => {
 
+    const [tImg, setTImg] = useState("")
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        
+        try {
+            getDownloadURL(ref(storage, thumbnail)).then((url) => {
+                setTImg(url)
+                setIsLoading(false);
+            })
+        }
+        catch (err) {}
+
+
+    })
+
     return (
         <div className="w-[28.8rem] h-[38.6rem] bg-neutral-800 rounded-[0.8rem] flex flex-col relative">
 
-            <img src={thumbnail} alt="thumbanil" className="w-full aspect-video rounded-t-[0.8rem]" />
+            {!isLoading && <img src={tImg} alt="thumbanil" className="w-full aspect-video rounded-t-[0.8rem]" />}
 
             <div className="w-full px-[1.6rem] flex flex-col">
 
