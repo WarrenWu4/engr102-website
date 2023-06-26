@@ -1,5 +1,3 @@
-import { NavLink } from "react-router-dom";
-import { FaRegStar } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { getDocs, collection, doc, getDoc } from "firebase/firestore";
@@ -30,9 +28,9 @@ export default function ReviewPage() {
 
             <div className="w-full mt-[2.4rem] font-bold text-[3.6rem] md:mt-[5.6rem] xl:mt-[6.4rem]">REVIEW</div>
 
-            <div className="w-full mt-[2rem] gap-x-[2rem] gap-y-[2rem] grid grid-cols-1 place-items-center mb-[6.4rem] md:gap-y-[3.2rem] lg:gap-y-[6.4rem] md:mb-[12.8rem] md:grid-cols-2 xl:grid-cols-3">
+            <div className="w-full mt-[2rem] gap-[3.2rem] grid place-items-center mb-[6.4rem] md:mb-[12.8rem] grid-cols-1 md:grid-cols-wwu">
 
-                {!isLoading && reviewData.docs.map((doc, index) => <ReviewCard key={index} thumbanil={doc.data()["thumbnail"]} title={doc.data()["title"]} author={doc.data()["author"]} type={doc.data()["type"]}  stars={doc.data()["stars"]} link={doc.data()["source"]} />)}
+                {!isLoading && reviewData.docs.map((doc, index) => <ReviewCard key={index} thumbanil={doc.data()["thumbnail"]} title={doc.data()["title"]} author={doc.data()["author"]} type={doc.data()["type"]} link={doc.data()["source"]} />)}
 
             </div>
 
@@ -40,7 +38,7 @@ export default function ReviewPage() {
     );
 }
 
-const ReviewCard = ({thumbnail, title, author, type, stars, link}) => {
+const ReviewCard = ({title, author, type, link}) => {
 
     const [isLoading, setIsLoading] = useState(true);
     const [authorInfo, setAuthorInfo] = useState()
@@ -72,40 +70,39 @@ const ReviewCard = ({thumbnail, title, author, type, stars, link}) => {
         getAuthorInfo()
 
     }, [])
-    
 
     return (
-        <div className="w-[28.8rem] h-[38.6rem] bg-neutral-800 rounded-[0.8rem] flex flex-col">
-
-            {!isLoading && <> <img src={thumbnail} alt="thumbanil" className="w-full aspect-video rounded-t-[0.8rem]" />
+        <>
+        {!isLoading && <div className="w-[28.8rem] bg-neutral-800 rounded-[0.8rem] flex flex-col">
 
             <div className="w-full px-[1.6rem] flex flex-col">
 
-                <div className="font-medium text-[2.4rem] mt-[2.4rem]">{title}</div>
+                <div className="font-medium text-[2.4rem] mt-[2rem]">{title}</div>
 
-                <div className="text-[1.6rem] text-neutral-200 leading-[1.5] mt-[0.8rem] flex items-center">
-                    
-                    by
-                    <img className="ml-[0.8rem] mr-[0.4rem] w-[1.6rem] h-[1.6rem] rounded-[0.4rem]" src={authorInfo.data()["profile"]} alt="author profile" />
-                    {authorInfo.data()["name"]}
+                <div className="w-full flex justify-between items-center">
 
-                </div>
-
-                <div className="w-full flex justify-between items-center mt-[1.2rem]">
-                    
-                    <div style={{background: reviewType["color"]}} className="px-[0.8rem] py-[0.5rem] flex justify-center items-center rounded-[0.4rem]">
-                        <div className="bg-neutral-100 rounded-[50%] w-[0.8rem] h-[0.8rem] mr-[0.4rem]"></div>
-                        <div className="text-h10 font-medium">{reviewType["text"]}</div>
+                    <div className="text-h9 text-neutral-200 leading-[1.5] mt-[0.8rem] flex items-center">
+                        by
+                        <img className="ml-[0.8rem] mr-[0.4rem] w-[1.6rem] h-[1.6rem] rounded-[0.4rem]" src={authorInfo.data()["profile"]} alt="author profile" />
+                        {authorInfo.data()["name"]}
                     </div>
 
-                    <div className="flex items-end text-[1.6rem] text-neutral-200">{stars} <span className="cursor-pointer text-[2.4rem] ml-[0.2rem]"><FaRegStar/></span></div>
+                    <div className="flex items-center mt-[1.2rem]">
+                        
+                        <div style={{background: reviewType["color"]}} className="px-[0.8rem] py-[0.4rem] flex justify-center items-center rounded-[0.4rem]">
+                            <div className="bg-neutral-100 rounded-[50%] w-[0.8rem] h-[0.8rem] mr-[0.4rem]"></div>
+                            <div className="text-h10 font-medium">{reviewType["text"]}</div>
+                        </div>
+
+                    </div>
 
                 </div>
 
-                <NavLink to={link} className="w-full h-[4.7rem] my-[2rem] rounded-[0.8rem] font-medium text-[1.6rem] bg-primary-600 hover:bg-primary-500 flex justify-center items-center">START</NavLink>
+                <a href={link} target="_blank" className="w-full h-[4.7rem] my-[2rem] rounded-[0.8rem] font-medium text-[1.6rem] bg-primary-600 hover:bg-primary-500 flex justify-center items-center">START</a>
             
-            </div></>}
+            </div>
 
-        </div>
+        </div>}
+        </>
     )
 }

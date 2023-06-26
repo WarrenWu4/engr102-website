@@ -1,7 +1,6 @@
 import { getDocs, query, collection, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../firebase";
-import { NavLink } from "react-router-dom";
 
 export default function LearnPage() {
 
@@ -48,7 +47,7 @@ export default function LearnPage() {
     );
 }
 
-const TaCard = ({profile, name, special, desc, socials}) => {
+const TaCard = ({profile, name, special}) => {
     return (
         <div className="w-full h-[6.8rem] bg-neutral-700 rounded-[0.8rem] flex justify-between p-[1.6rem] cursor-pointer">
 

@@ -26,17 +26,21 @@ export default function LearnPage() {
     }, [])
 
     return(
+        <>
+        {!isLoading && 
         <div className="max-w-[128rem] w-full px-[1.6rem] flex flex-col items-center sm:px-[6.4rem] lg:px-[12.8rem] ">
 
-            <div className="w-full mt-[2.4rem] font-bold text-[3.6rem] md:mt-[5.6rem] xl:mt-[6.4rem]">UNITS</div>
+                <div className="w-full mt-[2.4rem] font-bold text-[3.6rem] md:mt-[5.6rem] xl:mt-[6.4rem]">UNITS</div>
 
-            <div className="w-full mt-[2rem] gap-x-[2rem] gap-y-[2rem] grid grid-cols-1 place-items-center mb-[6.4rem] md:gap-y-[3.2rem] lg:gap-y-[6.4rem] md:mb-[12.8rem] md:grid-cols-2 xl:grid-cols-3">
-        
-                {!isLoading && lessonData.docs.map((doc, index) => <UnitCard key={index} thumbnail={doc.data()["thumbnail"]} title={doc.data()["title"]} desc={doc.data()["desc"]} link={doc.id} locked={doc.data()["locked"]} max={Object.keys(doc.data()["lessons"]).length}/>)}
+                <div className="w-full mt-[2rem] gap-[3.2rem] grid place-items-center mb-[6.4rem] md:mb-[12.8rem] grid-cols-1 md:grid-cols-wwu">
+            
+                    {lessonData.docs.map((doc, index) => <UnitCard key={index} thumbnail={doc.data()["thumbnail"]} title={doc.data()["title"]} desc={doc.data()["desc"]} link={doc.id} locked={doc.data()["locked"]} max={Object.keys(doc.data()["lessons"]).length}/>)}
+
+                </div>
 
             </div>
-
-        </div>
+        }
+        </>
     );
 }
 
@@ -205,6 +209,8 @@ const LessonCard = ({title, link, active}) => {
 
 const UnitCard = ({thumbnail, title, desc, link, locked, max}) => {
 
+    // ? might be worth it to just upload to images to public since it seems faster
+
     const [tImg, setTImg] = useState("")
     const [isLoading, setIsLoading] = useState(true);
 
@@ -222,13 +228,16 @@ const UnitCard = ({thumbnail, title, desc, link, locked, max}) => {
     })
 
     return (
-        <div className="w-[28.8rem] h-[38.6rem] bg-neutral-800 rounded-[0.8rem] flex flex-col relative">
+        <div className="w-[28.8rem] h-[39.3rem] bg-neutral-800 rounded-[0.8rem] flex flex-col relative">
 
             {!isLoading && <img src={tImg} alt="thumbanil" className="w-full aspect-video rounded-t-[0.8rem]" />}
 
+            {/* placeholder */}
+            {isLoading && <div className="w-full aspect-video rounded-t-[0.8rem] bg-neutral-800" />}
+
             <div className="w-full px-[1.6rem] flex flex-col">
 
-                <div className="font-medium text-[2.4rem] mt-[2.4rem] text-ellipsis overflow-hidden line-clamp-1">{title}</div>
+                <div className="font-medium text-h7 mt-[2.4rem] text-ellipsis overflow-hidden line-clamp-1">{title}</div>
 
                 <div className="text-[1.6rem] leading-[1.5] mt-[1.2rem] text-ellipsis overflow-hidden line-clamp-3">{desc}</div>
 

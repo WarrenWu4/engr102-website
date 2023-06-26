@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        'wwu': 'repeat(auto-fit, 28.8rem)'
+      },
       dropShadow: {
         'light': [
           '0px 0px 5.760000228881836px #FFF',
