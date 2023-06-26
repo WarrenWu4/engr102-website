@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { NavLink, useParams, useNavigate } from "react-router-dom";
 import { db } from "../firebase";
 import { collection, getDocs, doc, getDoc } from "firebase/firestore";
 import { FaLongArrowAltRight, FaLongArrowAltLeft, FaDiscord, FaLock } from "react-icons/fa";
+import { AuthContext } from "../App";
 
 export default function LearnPage() {
 
@@ -11,8 +12,9 @@ export default function LearnPage() {
 
     // fetch data from firestore
     useEffect(() => {
+
         const getData = async () => {
-            // await firebase get docs method
+            // await firebase get docs method to get all units
             const querySnapshot = await getDocs(collection(db, "units"));
             setLessonData(querySnapshot)
             setIsLoading(false);
@@ -29,7 +31,7 @@ export default function LearnPage() {
 
             <div className="w-full mt-[2rem] gap-x-[2rem] gap-y-[2rem] grid grid-cols-1 place-items-center mb-[6.4rem] md:gap-y-[3.2rem] lg:gap-y-[6.4rem] md:mb-[12.8rem] md:grid-cols-2 xl:grid-cols-3">
         
-                {!isLoading && lessonData.docs.map((doc, index) => <UnitCard key={index} thumbnail={doc.data()["thumbnail"]} title={doc.data()["title"]} desc={doc.data()["desc"]} link={doc.data()["link"]} locked={doc.data()["locked"]} />)}
+                {!isLoading && lessonData.docs.map((doc, index) => <UnitCard key={index} thumbnail={doc.data()["thumbnail"]} title={doc.data()["title"]} desc={doc.data()["desc"]} link={doc.id} locked={doc.data()["locked"]} max={Object.keys(doc.data()["lessons"]).length}/>)}
 
             </div>
 
@@ -40,44 +42,73 @@ export default function LearnPage() {
 
 export const LearnView = () => {
 
-    // based on the route, get the lesson documents
+    // based on the route, get the associated lesson
     const unitNum = useParams()["unit_id"];
     const lessonNum = useParams()["lesson_id"];
     const nav = useNavigate();
-    const [vid, setVid] = useState();
     const [loading, setLoading] = useState(true);
+    const [lessonData, setLessonData] = useState();
+    const [pages, setPages] = useState({"curr":Number(lessonNum.split("of")[0]), "max":Number(lessonNum.split("of")[1])})
 
     useEffect(() => {
 
         // get data from lesson number
         const getData = async () => {
             try {
-                // verify that the unit isn't locked
-                const lockStatus =  await getDoc(doc(db, "units", unitNum));
-                if (lockStatus.data()["locked"]) {nav("/error")}
-
-                const lessonInfo = await getDoc(doc(db, "units", unitNum, "lessons", lessonNum));
-                setVid(lessonInfo.data()["video"]);
+                // verify that the unit isn't locked and that it exists
+                const querySnapshot =  await getDoc(doc(db, "units", unitNum));
+                setLessonData(querySnapshot.data())
                 setLoading(false);
             }
-            catch {
+            catch (err) {
+                console.log(err);
                 nav("/error");
             }
         }
 
+        if(isNaN(pages["curr"])) {
+            nav("/error")
+        }
+        setPages({"curr":Number(lessonNum.split("of")[0]), "max":Number(lessonNum.split("of")[1])})
         getData();
 
     }, [unitNum, lessonNum])
 
+    const prevLesson = () => {
+        if(pages["curr"] > 1) {
+            nav("/learn/"+unitNum+"/"+(pages["curr"]-1)+"of"+pages["max"])
+        }
+    }
+
+    const nextLesson = () => {
+        if(pages["curr"] <= pages["max"]) {
+            nav("/learn/"+unitNum+"/"+(pages["curr"]+1)+"of"+pages["max"])
+        }
+    }
+
     return (
         <>
-            {!loading && 
+            {!loading &&
             <div className="max-w-[128rem] w-full px-[1.6rem] flex flex-col items-center sm:px-[6.4rem] lg:px-[12.8rem]">
 
-                <iframe className="w-full aspect-video rounded-[0.8rem] bg-neutral-800 mt-[2.4rem]" allowFullScreen 
-                src={vid}></iframe>
+                {!lessonData["locked"] &&
+                    <iframe className="w-full aspect-video rounded-[0.8rem] bg-neutral-800 mt-[2.4rem]" allowFullScreen 
+                    src={lessonData["lessons"][pages["curr"]]["video"]}></iframe>
+                }
 
-                <LessonSideBar />
+                <div className="w-full h-[4.8rem] bg-neutral-700 rounded-[0.8rem] my-[1.6rem] flex text-h7 px-[3.2rem] justify-end items-center [&>svg]:cursor-pointer [&>svg]:mx-[0.8rem]">
+                    <FaLongArrowAltLeft onClick={prevLesson}/>
+                    <FaLongArrowAltRight onClick={nextLesson}/>
+                </div>
+
+                <div className="w-full p-[1.6rem] bg-neutral-800 rounded-[0.8rem]">
+                            
+                    <div className="font-medium text-h7">{lessonData["title"]}</div>
+
+                    <div className="w-full h-[0.2rem] bg-neutral-700 mt-[0.8rem]"></div>
+
+                    {Object.keys(lessonData["lessons"]).map((lesson) => <LessonCard key={lesson} link={"/learn/"+unitNum+"/"+lesson+"of"+pages["max"]} active={Number(lesson) === pages["curr"]} title={lessonData["lessons"][lesson]["title"]}/>)}
+                </div>
 
                 <div className="flex flex-col items-center my-[6.4rem]">
 
@@ -92,80 +123,74 @@ export const LearnView = () => {
 
                 </div>
 
+                {lessonData["locked"] && <div className="w-full h-full absolute top-0 left-0 rounded-[0.8rem] backdrop-blur-[0.8rem] flex justify-center items-center flex-col"> 
+                    <FaLock className="text-h7"/>
+                    <div className="text-h7 font-bold mt-[1.6rem]">Lesson Locked</div>
+                </div>}
+
             </div>
             }
         </>
     )
 }
 
-const LessonSideBar = () => {
+const LessonCard = ({title, link, active}) => {
 
-    const unitNum = useParams()["unit_id"];
-    const lessonNum = useParams()["lesson_id"]
-    const [data, setData] = useState();
-    const [title, setTitle] = useState();
-    const [lessonLength, setLessonLength] = useState(1)
-    const [loading, setLoading] = useState(true);
+    const [compClass, setCompClass] = useState("border-[0.2rem]");
+    const [warning, setWarning] = useState("opacity-0")
+    const on = (active) ? "bg-primary-600" : "hover:bg-neutral-600 bg-neutral-700"
 
-    // get all lessons from unit
+    // *if user not logged in, send alert
+    // *if user logged in, see if they completed this lesson by matching unit and lesson ids
+    // *if user logged in and clicks complete --> update db
+    
+    // todo: add warning animation
+    // todo: add db implementations for handleComp
+
+    const {uid, userData} = useContext(AuthContext);
+
     useEffect(() => {
-        const getData = async () => {
-            const unitInfo = await getDoc(doc(db, "units", unitNum));
-            setTitle(unitInfo.data()["title"]);
-            getDocs(collection(db, "units", unitNum, "lessons")).then((dat) => {
-                setData(dat);
-                setLoading(false);
-            });
+        if (uid !== null) {
+            const unitNum = link.split("/")[2].split("unit")[1]
+            const lessonNum = link.split("/")[3].split("of")[0]
+            if (userData["u_comp"][unitNum+"."+lessonNum]) {
+                setCompClass("bg-green-100")
+            }
         }
-
-        getData()
-        
     }, [])
 
-    const prevLesson = () => {
-        console.log("wip")
-    }
-
-    const nextLesson = () => {
-        console.log("wip")
+    const handleComp = (e) => {
+        e.preventDefault();
+        if (uid !== null) {
+            // toggle completion 1. if not complete -> set complete & vice versa
+            if (compClass === "border-[0.2rem]") {
+                setCompClass("bg-green-100")
+            }
+            else {
+                setCompClass("border-[0.2rem]")
+            }
+        }
+        else {
+            setWarning("opacity-100")
+        }
     }
 
     return (
         <>
-            <div className="w-full h-[4.8rem] bg-neutral-700 rounded-[0.8rem] my-[1.6rem] flex text-h7 px-[3.2rem] justify-end items-center [&>svg]:cursor-pointer [&>svg]:mx-[0.8rem]">
-                <FaLongArrowAltLeft onClick={prevLesson}/>
-                <FaLongArrowAltRight onClick={nextLesson}/>
-            </div>
+            <NavLink to={link} className={"w-full py-[0.8rem] px-[1.6rem] flex items-center rounded-[0.8rem] my-[1.6rem] transition-all duration-[0.5s] "+on}>
+                
+                <button type="button" className={"w-[1.6rem] aspect-square rounded-[50%] mr-[0.8rem] " + compClass} onClick={handleComp}></button>
 
-            <div className="w-full p-[1.6rem] bg-neutral-800 rounded-[0.8rem]">
-                        
-                <div className="font-medium text-h7">{title}</div>
+                <div className="text-h9 leading-[1.5]">{title}</div>
 
-                <div className="w-full h-[0.2rem] bg-neutral-700 mt-[0.8rem]"></div>
+            </NavLink>
 
-                {!loading && data.docs.map((doc, index) => <LessonCard key={index} link={"/learn/"+unitNum+"/lesson"+(index+1)} title={doc.data()["title"]} complete={false} />)}
-
-            </div>
+            <div className={"w-[30rem] px-[1.6rem] py-[0.8rem] rounded-[0.8rem] fixed left-[50%] translate-x-[-50%] bottom-[6.4rem] bg-red-100 font-bold text-h8 text-center "+warning}>SIGN IN TO TRACK PROGRESS</div>
         </>
     )
 }
 
-const LessonCard = ({title, complete, link}) => {
-
-    const completion = (complete) ? "bg-green-100":"border-[0.2rem]"
-
-    return (
-        <NavLink to={link} className="lessonlink">
-            
-            <div className={"w-[1.6rem] aspect-square rounded-[50%] mr-[0.8rem] " + completion}></div>
-
-            <div className="text-h9 leading-[1.5]">{title}</div>
-
-        </NavLink>
-    )
-}
-
-const UnitCard = ({thumbnail, title, desc, link, locked}) => {
+const UnitCard = ({thumbnail, title, desc, link, locked, max}) => {
 
     return (
         <div className="w-[28.8rem] h-[38.6rem] bg-neutral-800 rounded-[0.8rem] flex flex-col relative">
@@ -178,7 +203,7 @@ const UnitCard = ({thumbnail, title, desc, link, locked}) => {
 
                 <div className="text-[1.6rem] leading-[1.5] mt-[1.2rem] text-ellipsis overflow-hidden line-clamp-3">{desc}</div>
 
-                <NavLink to={link} className="w-full h-[4.7rem] my-[2rem] rounded-[0.8rem] font-medium text-[1.6rem] bg-primary-600 hover:bg-primary-500 flex justify-center items-center">START</NavLink>
+                <NavLink to={"/learn/"+link+"/1of"+max} className="w-full h-[4.7rem] my-[2rem] rounded-[0.8rem] font-medium text-[1.6rem] bg-primary-600 hover:bg-primary-500 flex justify-center items-center">START</NavLink>
             
             </div>
 

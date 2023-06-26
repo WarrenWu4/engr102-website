@@ -78,6 +78,7 @@ export default function Nav() {
                         uid: uid,
                         ta: false,
                         special: "",
+                        u_comp: {},
                     })
 
                 }
