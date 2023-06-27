@@ -13,15 +13,29 @@ export default function Nav() {
 
     const signup = useRef();
     const { pathname } = useLocation();
-    const [nav, setNav] = useState({"open":false, "sidebar":"none"});
+    const [nav, setNav] = useState((window.innerWidth < 1024) ? {"open":false, "sidebar":"none"}: {"open":true, "sidebar":"flex"});
     const [userState, setUserState] = useState("")
     const {uid, userData} = useContext(AuthContext);
 
     // reset window on route change
     useEffect(() => {
         window.scrollTo(0, 0);
-        setNav({"open":false, "sidebar":"none"})
+        setNav((window.innerWidth < 1024) ? {"open":false, "sidebar":"none"}: {"open":true, "sidebar":"flex"})
     }, [pathname]);
+
+    useEffect(() => {
+        const changeNav = () => {
+            setNav((window.innerWidth < 1024) ? 
+            {"open":false, "sidebar":"none"}:
+            {"open":true, "sidebar":"flex"});
+        }
+
+        window.addEventListener("resize", changeNav)
+
+        return () => {
+            window.removeEventListener("resize", changeNav);
+        }
+    })
 
     // open/close navigation
     const handleNav = () => {
@@ -43,7 +57,7 @@ export default function Nav() {
     useEffect(() => {
         // if user is already logged in, show profile
         if(uid !== null) {
-            const profileBtn = <NavLink to={"/profile/"+uid} className="mt-[1.6rem] items-center"><img src={userData["profile"]} alt="user profile" className="w-[4rem] h-[4rem] rounded-[50%] mr-[0.8rem]"/></NavLink>
+            const profileBtn = <NavLink to={"/profile"} className="mt-[1.6rem] items-center"><img src={userData["profile"]} alt="user profile" className="w-[4rem] h-[4rem] rounded-[50%] mr-[0.8rem]"/></NavLink>
             setUserState(profileBtn)
         }
         // otherwise show default login button
@@ -101,12 +115,12 @@ export default function Nav() {
 
                 <img src={logo} alt="logo" className="w-[4rem] h-[4rem]"/>
 
-                <CgMenuRight onClick={handleNav} className="cursor-pointer w-[4rem] h-[4rem]"/>
+                <CgMenuRight onClick={handleNav} className="cursor-pointer w-[4rem] h-[4rem] lg:hidden"/>
 
-                <div style={{display: nav["sidebar"]}} className="fixed top-0 right-0 w-full h-screen z-[20] bg-neutral-900/60 backdrop-blur-[4rem]">
+                <div style={{display: nav["sidebar"]}} className="fixed top-0 right-0 w-full h-screen z-[20] bg-neutral-900/60 backdrop-blur-[4rem] lg:relative lg:h-fit lg:w-fit lg:backdrop-blur-0 lg:z-0">
 
-                    <div className="w-full mt-[2.4rem] flex flex-col items-center ">
-                        <IoMdClose onClick={handleNav} className="w-[3.6rem] h-[3.6rem] my-[2.4rem] cursor-pointer"/>
+                    <div className="w-full mt-[2.4rem] flex flex-col items-center lg:flex-row lg:mt-0 lg:[&>*]:ml-[1.2rem]">
+                        <IoMdClose onClick={handleNav} className="w-[3.6rem] h-[3.6rem] my-[2.4rem] cursor-pointer lg:hidden"/>
                         <NavLink className="navlink" to="/">Home</NavLink>
                         <NavLink className="navlink" to="/learn">Learn</NavLink>
                         <NavLink className="navlink" to="/review">Review</NavLink>
