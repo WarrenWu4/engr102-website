@@ -48,10 +48,14 @@ body {
 }
 
 #warning[warn='1'] {
-  animation: warning 2s linear;
+  animation: upTool 2s linear;
 }
 
-@keyframes warning {
+#success[suc='1'] {
+  animation: upTool 2s linear;
+}
+
+@keyframes upTool {
   0% {
     opacity: 0;
     bottom: 5.6rem;

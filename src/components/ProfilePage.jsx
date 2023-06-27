@@ -1,10 +1,9 @@
 import { useEffect, useState, useContext, useRef } from "react";
 import { db } from "../firebase";
-import { getDocs, collection, query, where } from "firebase/firestore";
+import { getDocs, collection, query, where, addDoc } from "firebase/firestore";
 import { BiPlus } from "react-icons/bi";
 import { AuthContext } from "../App";
 import { IoMdClose } from "react-icons/io"
-
 
 export default function ProfilePage() {
 
@@ -12,8 +11,10 @@ export default function ProfilePage() {
     const [upRev, setUpRev] = useState("none");
     const [logData, setLogData] = useState()
     const [isLoading, setIsLoading] = useState(true);
+    const [success, setSuccess] = useState(0);
     const upTitle = useRef();
     const upLink = useRef();
+    const upType = useRef();
 
     useEffect(() => {
 
@@ -28,11 +29,21 @@ export default function ProfilePage() {
 
         getReviews();
 
-    }, [])
+    }, [success])
 
-    const addReview = (e) => {
+    const addReview = async(e) => {
         e.preventDefault();
 
+        await addDoc(collection(db, "reviews"), {
+            author: uid,
+            source: upLink.current.value,
+            title: upTitle.current.value,
+            type: upType.current.value
+        })
+        setSuccess(1);
+        setUpRev("none");
+        upTitle.current.value = ""
+        upLink.current.value = "" 
     }
 
     return (
@@ -59,15 +70,21 @@ export default function ProfilePage() {
                         
                         <label className="min-w-[24rem] w-full justify-between flex items-center text-h8 font-medium">Review Title <IoMdClose className="text-h7 cursor-pointer" onClick={() => setUpRev("none")}/></label>
                         <br/>
-                        <input className="rounded-[0.4rem] py-[0.8rem] px-[1.2rem] w-full bg-neutral-700 text-h9 placeholder:text-neutral-200" type="text" placeholder="title" required/>
+                        <input ref={upTitle} className="rounded-[0.4rem] py-[0.8rem] px-[1.2rem] w-full bg-neutral-700 text-h9 placeholder:text-neutral-200" type="text" placeholder="title" required/>
                         <br/><br/>
                         <label className="min-w-[24rem] w-full justify-between flex items-center text-h8 font-medium">Link To Resource</label>
                         <br/>
-                        <input className="rounded-[0.4rem] py-[0.8rem] px-[1.2rem] w-full bg-neutral-700 text-h9 placeholder:text-neutral-200" type="text" placeholder="link" required/>
+                        <input ref={upLink} className="rounded-[0.4rem] py-[0.8rem] px-[1.2rem] w-full bg-neutral-700 text-h9 placeholder:text-neutral-200" type="text" placeholder="link" required/>
                         <br/><br/>
                         <label className="min-w-[24rem] w-full justify-between flex items-center text-h8 font-medium">Review Type</label>
                         <br/>
-                        <input className="rounded-[0.4rem] py-[0.8rem] px-[1.2rem] w-full bg-neutral-700 text-h9 placeholder:text-neutral-200" type="text" placeholder="link" required/>
+                        <div className="rounded-[0.4rem] py-[0.8rem] px-[1.2rem] w-full bg-neutral-700 text-h9 placeholder:text-neutral-200 appearance-none grid">
+                            <select ref={upType} className="bg-neutral-700" type="text" placeholder="link" required>
+                                <option value={"video"}>Video</option>
+                                <option value={"cheat_sheet"}>Cheat Sheet</option>
+                                <option value={"practice_exam"}>Practice Exam</option>
+                            </select>
+                        </div>
                         <br/>
                         <button type="submit" className="mt-[1.6rem] rounded-[0.4rem] bg-primary-500 px-[1.2rem] py-[0.8rem] text-h10 font-bold">SUBMIT</button>
 
@@ -89,6 +106,10 @@ export default function ProfilePage() {
                 </div>
 
                 {!isLoading && logData.docs.map((doc, index) => <ReviewLog key={index} title={doc.data()["title"]} type={doc.data()["type"]} link={doc.data()["source"]} />)}
+            </div>
+
+            <div className="min-w-[30rem] max-w-[40rem] px-[1.6rem] py-[0.8rem] rounded-[0.8rem] fixed left-[50%] translate-x-[-50%] bottom-[6.4rem] bg-green-400 font-bold text-h8 text-center opacity-0" id="success" suc={success} onAnimationEnd={() => setSuccess(0)}>
+                Success! You should see your review resource in the reviews page now.<br/>Thanks for contributing 😊.
             </div>
 
         </div>
