@@ -209,31 +209,10 @@ const LessonCard = ({title, link, active}) => {
 
 const UnitCard = ({thumbnail, title, desc, link, locked, max}) => {
 
-    // ? might be worth it to just upload to images to public since it seems faster
-
-    const [tImg, setTImg] = useState("")
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        
-        try {
-            getDownloadURL(ref(storage, thumbnail)).then((url) => {
-                setTImg(url)
-                setIsLoading(false);
-            })
-        }
-        catch (err) {}
-
-
-    })
-
     return (
         <div className="w-[28.8rem] h-[39.3rem] bg-neutral-800 rounded-[0.8rem] flex flex-col relative">
 
-            {!isLoading && <img src={tImg} alt="thumbanil" className="w-full aspect-video rounded-t-[0.8rem]" />}
-
-            {/* placeholder */}
-            {isLoading && <div className="w-full aspect-video rounded-t-[0.8rem] bg-neutral-800" />}
+            <img src={thumbnail} alt="thumbanil" className="w-full aspect-video rounded-t-[0.8rem]" />
 
             <div className="w-full px-[1.6rem] flex flex-col">
 
