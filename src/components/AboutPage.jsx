@@ -23,27 +23,29 @@ export default function LearnPage() {
     },[])
 
     return(
-        <div className="max-w-[128rem] w-full px-[1.6rem] flex flex-col items-center sm:px-[6.4rem] lg:px-[12.8rem]">
+        <>
+            {!isLoading && <div className="max-w-[128rem] w-full px-[1.6rem] flex flex-col items-center sm:px-[6.4rem] lg:px-[12.8rem]">
 
-            <div className="w-full mt-[2.4rem] font-bold text-[3.6rem]">TEAM</div>
+                <div className="w-full mt-[2.4rem] font-bold text-[3.6rem]">TEAM</div>
 
-            <div className="w-full mt-[2rem] gap-[2rem] grid grid-cols-1 place-items-center p-[1.6rem] rounded-[0.8rem] bg-neutral-800 md:grid-cols-2 xl:grid-cols-3">
+                <div className="w-full mt-[2rem] gap-[2rem] grid grid-cols-1 place-items-center p-[1.6rem] rounded-[0.8rem] bg-neutral-800 md:grid-cols-2 xl:grid-cols-3">
 
-                {!isLoading && taData.docs.map((doc, index) => <TaCard key={index} profile={doc.data()["profile"]} name={doc.data()["name"]}  special={doc.data()["special"]} desc={doc.data()["desc"]} socials={doc.data()["socials"]} />)}
+                    {taData.docs.map((doc, index) => <TaCard key={index} profile={doc.data()["profile"]} name={doc.data()["name"]}  special={doc.data()["special"]} desc={doc.data()["desc"]} socials={doc.data()["socials"]} />)}
 
-            </div>
+                </div>
 
-            <div className="w-full mt-[4rem] font-bold text-[3.6rem]">MISSION</div>
+                <div className="w-full mt-[4rem] font-bold text-[3.6rem]">MISSION</div>
 
-            <div className="w-full mt-[2rem] gap-[3.2rem] grid grid-cols-1 place-items-center mb-[12.8rem] md:grid-cols-2">
+                <div className="w-full mt-[2rem] gap-[3.2rem] grid grid-cols-1 place-items-center mb-[12.8rem] md:grid-cols-2">
 
-                <MissionCard title="0 Stress" desc="lorem ipsum bullshit"/>
-                <MissionCard title="Explore CS" desc=""/>
+                    <MissionCard title="0 Stress" desc="lorem ipsum bullshit"/>
+                    <MissionCard title="Explore CS" desc=""/>
 
-            </div>
+                </div>
 
 
-        </div>
+            </div>}
+        </>
     );
 }
 
