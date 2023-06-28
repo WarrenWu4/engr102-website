@@ -1,9 +1,8 @@
 import { useEffect, useState, useContext } from "react";
 import { NavLink, useParams, useNavigate } from "react-router-dom";
-import { db, storage } from "../firebase";
-import { ref, getDownloadURL } from "firebase/storage";
+import { db } from "../firebase";
 import { collection, getDocs, doc, getDoc, updateDoc } from "firebase/firestore";
-import { FaLongArrowAltRight, FaLongArrowAltLeft, FaDiscord, FaLock } from "react-icons/fa";
+import { FaLongArrowAltRight, FaLongArrowAltLeft, FaDiscord, FaLock, FaHome } from "react-icons/fa";
 import { AuthContext } from "../App";
 
 export default function LearnPage() {
@@ -101,9 +100,12 @@ export const LearnView = () => {
                     src={lessonData["lessons"][pages["curr"]]["video"]}></iframe>
                 }
 
-                <div className="w-full h-[4.8rem] bg-neutral-700 rounded-[0.8rem] my-[1.6rem] flex text-h7 px-[3.2rem] justify-end items-center [&>svg]:cursor-pointer [&>svg]:mx-[0.8rem]">
-                    <FaLongArrowAltLeft onClick={prevLesson}/>
-                    <FaLongArrowAltRight onClick={nextLesson}/>
+                <div className="w-full h-[4.8rem] bg-neutral-700 rounded-[0.8rem] my-[1.6rem] flex text-h7 px-[3.2rem] justify-between items-center [&>*]:cursor-pointer">
+                    <FaHome onClick={() => nav("/learn")}/>
+                    <div className="flex [&>svg]:mx-[0.8rem]">
+                        <FaLongArrowAltLeft onClick={prevLesson}/>
+                        <FaLongArrowAltRight onClick={nextLesson}/>
+                    </div>
                 </div>
 
                 <div className="w-full p-[1.6rem] bg-neutral-800 rounded-[0.8rem]">
