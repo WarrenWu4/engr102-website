@@ -120,16 +120,11 @@ export default function ProfilePage() {
 const ReviewLog = ({title, type, link, docID}) => {
 
     const [editMode, setEditMode] = useState("none")
-
-    const upTitle = useRef();
-    const upLink = useRef();
-    const upType = useRef();
-
+    const [newTitle, setNewTitle] = useState(title)
+    const [newLink, setNewLink] = useState(link)
+    const [newType, setNewType] = useState(type)
     const editReview = async (e) => {
         e.preventDefault();
-        const newTitle = (upTitle.current.value !== "") ? upTitle.current.value : title
-        const newLink = (upLink.current.value !== "") ? upLink.current.value : link
-        const newType = (upType.current.value !== "") ? upType.current.value : type
         await updateDoc(doc(db, "reviews", docID), {
             title: newTitle,
             source: newLink,
@@ -146,13 +141,11 @@ const ReviewLog = ({title, type, link, docID}) => {
 
     return (
         <div className="w-full relative">
-            <div className="w-full rounded-[0.8rem] p-[1.6rem] bg-neutral-700 grid grid-cols-3 place-items-center [&>*]:text-h9 mt-[2rem] [&>*]:text-ellipsis [&>*]:overflow-hidden [&>*]:line-clamp-1">
+            <div className="w-full rounded-[0.8rem] p-[1.6rem] bg-neutral-700 grid grid-cols-3 place-items-center [&>*]:text-h9 mt-[2rem] [&>*]:text-ellipsis [&>*]:overflow-hidden [&>*]:w-full [&>*]:px-[1.2rem] text-center">
 
                 <span>{title}</span>
                 <span>{type}</span>
-                <span>
-                    "{link}" 
-                </span>
+                <span>"{link}"</span>
 
 
             </div>
@@ -168,20 +161,24 @@ const ReviewLog = ({title, type, link, docID}) => {
                         
                         <label className="min-w-[24rem] w-full justify-between flex items-center text-h8 font-medium">Review Title <IoMdClose className="text-h7 cursor-pointer" onClick={() => setEditMode("none")}/></label>
                         <br/>
-                        <input ref={upTitle} className="rounded-[0.4rem] py-[0.8rem] px-[1.2rem] w-full bg-neutral-700 text-h9 placeholder:text-neutral-200" type="text" placeholder={title}/>
+
+                        <input className="rounded-[0.4rem] py-[0.8rem] px-[1.2rem] w-full bg-neutral-700 text-h9" type="text" value={newTitle} onChange={(e) => setNewTitle(e.target.value)}/>
+
                         <br/><br/>
                         <label className="min-w-[24rem] w-full justify-between flex items-center text-h8 font-medium">Link To Resource</label>
                         <br/>
-                        <input ref={upLink} className="rounded-[0.4rem] py-[0.8rem] px-[1.2rem] w-full bg-neutral-700 text-h9 placeholder:text-neutral-200" type="text" placeholder={link}/>
+                        <input className="rounded-[0.4rem] py-[0.8rem] px-[1.2rem] w-full bg-neutral-700 text-h9" type="text" value={newLink} onChange={(e) => setNewLink(e.target.value)}/>
                         <br/><br/>
                         <label className="min-w-[24rem] w-full justify-between flex items-center text-h8 font-medium">Review Type</label>
                         <br/>
                         <div className="rounded-[0.4rem] py-[0.8rem] px-[1.2rem] w-full bg-neutral-700 text-h9 placeholder:text-neutral-200 appearance-none grid">
-                            <select ref={upType} className="bg-neutral-700" type="text">
-                                <option value={"video"}>Video</option>
-                                <option value={"cheat_sheet"}>Cheat Sheet</option>
-                                <option value={"practice_exam"}>Practice Exam</option>
+
+                            <select className="bg-neutral-700" type="text">
+                                <option value={"video"} selected={(type === "video")}>Video</option>
+                                <option value={"cheat_sheet"} selected={(type === "cheat_sheet")}>Cheat Sheet</option>
+                                <option value={"practice_exam"} selected={(type === "practice_exam")}>Practice Exam</option>
                             </select>
+
                         </div>
                         <br/>
 
