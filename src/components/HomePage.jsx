@@ -1,11 +1,20 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
+import { BsArrowDownShort } from "react-icons/bs";
 import hero from "/hero-img.svg";
 
 export default function HomePage() {
 
     return(
         <div className="max-w-[128rem] w-full px-[1.6rem] flex flex-col items-center sm:px-[6.4rem] lg:px-[12.8rem]">
+
+            <div className="flex flex-col items-center absolute top-0 left-[46%] translate-x-[-50%] z-[-1]">
+                <div className="w-[0.2rem] h-[16rem] bg-neutral-100"/>
+                <div className="w-[12rem] aspect-square flex items-center justify-center relative translate-y-[-4rem]">
+                    <img className="w-[4.8rem] aspect-square" src="/light.svg" alt="light" />
+                    <div className="absolute w-[8rem] aspect-square translate-y-[0.4rem]" id="flash"/>
+                </div>
+            </div>
 
             <div className="w-full flex flex-col items-center justify-center mt-[2.4rem] md:flex-row md:mt-[5.6rem] lg:justify-between xl:mt-[6.4rem]">
                 <img src={hero} alt="hero-img" className="w-[28.8rem] h-[25.4rem] md:order-2 md:ml-[6.4rem] lg:ml-0 lg:w-[32rem] lg:h-[28.2rem] xl:w-[44rem] xl:h-[38.8rem]"/>
@@ -15,8 +24,19 @@ export default function HomePage() {
 
                     <div className="w-full font-medium text-h9 text-neutral-200 leading-[1.5] text-center mt-[1.6rem] xl:text-h6 lg:text-h7">Skip the bs, save your time. <span className="font-bold text-primary-500">Improve your grade</span> with the resources we provide.</div>
 
-                    <NavLink to="/learn" className="w-full h-[4.8rem] flex justify-center items-center border-[0.3rem] text-primary-500 font-medium text-[1.6rem] mt-[2rem] border-primary-600 rounded-[0.8rem] shadow-get_start md:w-[12.2rem]">Get Started</NavLink>
+                    <NavLink to="/learn" className="w-full h-[4.8rem] flex justify-center items-center border-[0.3rem] text-primary-500 font-medium text-[1.6rem] mt-[2rem] border-primary-600 rounded-[0.8rem] shadow-get_start md:w-[12.2rem] hover:bg-primary-500 hover:text-neutral-100 transition-all duration-[0.4s]">Get Started</NavLink>
                 </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-[2rem] bg-neutral-800 rounded-[0.8rem] p-[1.6rem] w-full mt-[6.4rem]">
+            
+                <Faq q="How is the course structured?" a="Look at the syllabus blud"/>
+                <Faq q="How do I fix my grade 😭?" a="Fuck bro"/>
+                <Faq q="Are the exams hard?" a="Not if you're a CS major 😎"/>
+                <Faq q="What is Python?" a="Search it up"/>
+                <Faq q="Why do I have to take this class?" a="Ask the department heads"/>
+                <Faq q="Is coding fun?" a="no."/>
+            
             </div>
 
             <Terminal />
@@ -25,28 +45,81 @@ export default function HomePage() {
     );
 }
 
+const Faq = ({q, a}) => {
+
+    const [showAns, setShowAns] = useState(false);
+
+    return (
+        <div className="w-full h-fit flex rounded-[0.8rem] bg-neutral-700 p-[1.6rem] font-medium text-h8 leading-[1.5] flex-col cursor-pointer" onClick={() => setShowAns((showAns) ? false : true)}>
+
+            <span className="w-full flex justify-between items-center">{q} <BsArrowDownShort className="text-h6 transition-all duration-[0.4s]" style={{rotate: (!showAns) ? "0deg": "-180deg"}}/></span>
+
+            {showAns && <span className="mt-[1.2rem] flex items-center w-full border-l-4 border-l-green-500 pl-[1.2rem]">{a}</span>}
+
+        </div>
+    )
+}
+
 const Terminal = () => {
 
     const userIn = useRef();
     const [compOut, setCompOut] = useState("")
+    const nav = useNavigate();
+
+    const getRandomEmoji = () => {
+    
+        const emojis = ['😀','😃','😄','😁','😆','😅','🤣','😂','🙂','🙃','🫠','😉','😊','😇','🥰','😍','🤩','😘','😗','☺','😚','😙','🥲','😋','😛','😜','🤪','😝','🤑','🤗','🤭','🫢','🫣','🤫','🤔','🫡','🤐','🤨','😐','😑','😶','🫥','😶‍🌫️','😏','😒','🙄','😬','😮‍💨','🤥','😌','😔','😪','🤤','😴','😷','🤒','🤕','🤢','🤮','🤧','🥵','🥶','🥴','😵','😵‍💫','🤯','🤠','🥳','🥸','😎','🤓','🧐','😕','🫤','😟','🙁','☹','😮','😯','😲','😳','🥺','🥹','😦','😧','😨','😰','😥','😢','😭','😱','😖','😣','😞','😓','😩','😫','🥱','😤','😡','😠','🤬','😈','👿','💀','☠','💩','🤡','👹','👺','👻','👽','👾','🤖','😺','😸','😹','😻','😼','😽','🙀','😿','😾','🙈','🙉','🙊']
+    
+        return emojis[~~(Math.random() * emojis.length)]
+    
+    } 
+    
 
     const handleSubmit = (e) => {
         if (e.key === "Enter") {
             e.preventDefault()
             const command = userIn.current.value.toLowerCase();
 
-            if (command === "help") {
-                 setCompOut(<div>
+            switch (command) {
+                case "help":
+                    setCompOut(<div>
                         [command] : [description]<br/>
                         clear : clears the terminal<br/>
-                        still working on it...
+                        go learn : navigate to learn page <br/>
+                        go review : navigate to review page <br/>
+                        go about : navigate to about page <br/>
+                        emoji : random emoji <br/>
+                        surprise : hehe 😏 <br/>
+                        best ta : the best ta(s) <br/>
+                        <br/>
+                        ping me on discord @warrenwu if you have a suggestion
                     </div>);
-            }
-            else if (command === "clear") {
-                setCompOut("");
-            }
-            else {
-                setCompOut("invalid command, please type help to see valid commands")
+                    break;
+                case "clear":
+                    setCompOut("");
+                    break;
+                case "go learn":
+                    nav("/learn")
+                    break;
+                case "go review":
+                    nav("/review")
+                    break;
+                case "go about":
+                    nav("/about")
+                    break;
+                case "emoji":
+                    setCompOut(getRandomEmoji())
+                    break;
+                case "surprise":
+                    setCompOut("🥳🥳🎉🎉 eat shit fuck face 😊😊")
+                    break;
+                case "best ta":
+                    setCompOut("taLily & taRyan (🐐) according to the 2022 PT Awards Survey Data")
+                    break;
+                default:
+                    setCompOut("invalid command, please type help to see valid commands");
+                    break;
+
             }
 
             userIn.current.value = "";

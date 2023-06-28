@@ -70,3 +70,12 @@ body {
     bottom: 5.6rem;
   }
 }
+
+#light {
+  background: url("/light.svg") no-repeat center;
+  background-size: contain;
+}
+
+#flash {
+  background: radial-gradient(50% 50.00% at 50% 50.00%, #83C7FF 0%, rgba(255, 255, 255, 0.00) 100%);
+}
