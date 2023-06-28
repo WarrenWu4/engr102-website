@@ -35,6 +35,8 @@ export default function ProfilePage() {
 
         await addDoc(collection(db, "reviews"), {
             author: uid,
+            author_name: userData["name"],
+            author_profile: userData["profile"],
             source: upLink.current.value,
             title: upTitle.current.value,
             type: upType.current.value

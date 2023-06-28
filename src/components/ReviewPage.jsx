@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { db } from "../firebase";
-import { getDocs, collection, doc, getDoc } from "firebase/firestore";
+import { getDocs, collection } from "firebase/firestore";
 
 export default function ReviewPage() {
 
@@ -12,10 +12,8 @@ export default function ReviewPage() {
         const getReviews = async() => {
 
             const querySnapshot = await getDocs(collection(db, "reviews"))
-
             setReviewData(querySnapshot);
             setIsLoading(false);
-
         }
 
         getReviews();
@@ -30,7 +28,7 @@ export default function ReviewPage() {
 
             <div className="w-full mt-[2rem] gap-[3.2rem] grid place-items-center mb-[6.4rem] md:mb-[12.8rem] grid-cols-1 md:grid-cols-wwu">
 
-                {!isLoading && reviewData.docs.map((doc, index) => <ReviewCard key={index} thumbanil={doc.data()["thumbnail"]} title={doc.data()["title"]} author={doc.data()["author"]} type={doc.data()["type"]} link={doc.data()["source"]} />)}
+                {!isLoading && reviewData.docs.map((doc, index) => <ReviewCard key={index} title={doc.data()["title"]} author={{"name":doc.data()["author_name"], "profile":doc.data()["author_profile"]}} type={doc.data()["type"]} link={doc.data()["source"]} />)}
 
             </div>
 
@@ -40,17 +38,9 @@ export default function ReviewPage() {
 
 const ReviewCard = ({title, author, type, link}) => {
 
-    const [isLoading, setIsLoading] = useState(true);
-    const [authorInfo, setAuthorInfo] = useState()
     const [reviewType, setReviewType] = useState({"color":"#000", "text":"unknown"})
 
     useEffect(() => {
-
-        const getAuthorInfo = async() => {
-            const querySnapshot = await getDoc(doc(db, "users", author));
-            setAuthorInfo(querySnapshot);
-            setIsLoading(false);
-        }
 
         const translateType = () => {
             switch (type) {
@@ -67,13 +57,12 @@ const ReviewCard = ({title, author, type, link}) => {
         }
 
         translateType()
-        getAuthorInfo()
 
     }, [])
 
     return (
         <>
-        {!isLoading && <div className="w-[28.8rem] bg-neutral-800 rounded-[0.8rem] flex flex-col">
+        <div className="w-[28.8rem] bg-neutral-800 rounded-[0.8rem] flex flex-col">
 
             <div className="w-full px-[1.6rem] flex flex-col">
 
@@ -83,8 +72,8 @@ const ReviewCard = ({title, author, type, link}) => {
 
                     <div className="text-h9 text-neutral-200 leading-[1.5] mt-[0.8rem] flex items-center">
                         by
-                        <img className="ml-[0.8rem] mr-[0.4rem] w-[1.6rem] h-[1.6rem] rounded-[0.4rem]" src={authorInfo.data()["profile"]} alt="author profile" />
-                        {authorInfo.data()["name"]}
+                        <img className="ml-[0.8rem] mr-[0.4rem] w-[1.6rem] h-[1.6rem] rounded-[0.4rem]" src={author["profile"]} alt="author profile" />
+                        {author["name"]}
                     </div>
 
                     <div className="flex items-center mt-[1.2rem]">
@@ -102,7 +91,7 @@ const ReviewCard = ({title, author, type, link}) => {
             
             </div>
 
-        </div>}
+        </div>
         </>
     )
 }
