@@ -119,7 +119,7 @@ export const LearnView = () => {
 
                     <div className="font-bold text-h7">QUESTIONS?</div>
 
-                    <a href="https://tx.ag/216server" target="_blank" className="flex bg-blue-600 px-[1.6rem] py-[0.8rem] my-[0.8rem] rounded-[0.4rem] font-bold text-h9">
+                    <a href="https://tx.ag/216server" target="_blank" className="flex bg-blue-600 px-[1.6rem] py-[0.8rem] my-[0.8rem] rounded-[0.4rem] font-bold text-h9 hover:bg-blue-300 transition-all duration-[0.4s]">
                         <FaDiscord className="text-h7 mr-[0.8rem]"/>
                         DISCORD
                     </a>
@@ -220,7 +220,7 @@ const UnitCard = ({thumbnail, title, desc, link, locked, max}) => {
 
                 <div className="text-[1.6rem] leading-[1.5] mt-[1.2rem] text-ellipsis overflow-hidden line-clamp-3">{desc}</div>
 
-                <NavLink to={"/learn/"+link+"/1of"+max} className="w-full h-[4.7rem] my-[2rem] rounded-[0.8rem] font-medium text-[1.6rem] bg-primary-600 hover:bg-primary-500 flex justify-center items-center">START</NavLink>
+                <NavLink to={"/learn/"+link+"/1of"+max} className="w-full h-[4.7rem] my-[2rem] rounded-[0.8rem] font-medium text-[1.6rem] bg-primary-600 hover:bg-primary-400 flex justify-center items-center transition-all duration-[0.4s]">START</NavLink>
             
             </div>
 

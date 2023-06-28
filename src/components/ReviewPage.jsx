@@ -87,7 +87,7 @@ const ReviewCard = ({title, author, type, link}) => {
 
                 </div>
 
-                <a href={link} target="_blank" className="w-full h-[4.7rem] my-[2rem] rounded-[0.8rem] font-medium text-[1.6rem] bg-primary-600 hover:bg-primary-500 flex justify-center items-center">START</a>
+                <a href={link} target="_blank" className="w-full h-[4.7rem] my-[2rem] rounded-[0.8rem] font-medium text-[1.6rem] bg-primary-600 hover:bg-primary-400 flex justify-center items-center transition-all duration-[0.4s]">START</a>
             
             </div>
 
