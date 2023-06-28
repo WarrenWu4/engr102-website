@@ -1,30 +1,36 @@
+import { useState } from "react";
+import { db } from "../firebase";
+import { doc, updateDoc, getDoc } from "firebase/firestore";
+
 export default function MerchPage() {
 
-    const handleInterest = (e) => {
+    const [active, setActive] = useState((localStorage.getItem("interest") === "true") ? true:false)
+
+    const incrementInterest = async (e) => {
         e.preventDefault()
-        console.log("WIP")
+        if (!active) {
+            setActive(true);
+            localStorage.setItem("interest", "true")
+
+            const currCount = await getDoc(doc(db, "merch_interest", "total"))
+            await updateDoc(doc(db, "merch_interest", "total"), {
+                count: (Number(currCount.data()["count"])+1)
+            })
+        }
     }
 
     return (
-        <div className="max-w-[1440px] w-full px-[1.6rem] md:px-[3.2rem] xl:px-[6.4rem] flex flex-col items-center pb-[10.8rem]">
+        <div className="max-w-[128rem] w-full px-[1.6rem] flex flex-col items-center sm:px-[6.4rem] lg:px-[12.8rem]">
 
-            <div className="font-bold text-h1 text-neutral-100 flex justify-center text-center">
+            <div className="w-full mt-[2.4rem] font-bold text-[3.6rem] md:mt-[5.6rem] xl:mt-[6.4rem] text-center">
 
                 Merchandise Coming Soon!
 
             </div>
 
-            <div className="w-[10rem] h-[0.4rem] bg-neutral-100 my-[3.2rem] opacity-20"/>
+            {!active && <button type="button" onClick={incrementInterest} className="h-[4.4rem] px-[1.6rem] rounded-[0.4rem] mt-[2.4rem] font-medium text-neutral-100 text-h8 flex justify-center items-center text-center mb-[6.4rem] md:mb-[25.6rem] hover:bg-green-600 bg-green-800 transition-all duration-[0.6s]">I'm Interested!</button>}
 
-            <form className="flex flex-col rounded-[0.8rem] bg-neutral-800 p-[3.2rem]" onSubmit={handleInterest}>
-
-                <label className='text-h7 text-neutral-200 font-medium'>Enter email to get priority</label>
-
-                <input required type="email" placeholder="john.doe@example.com" className="mt-[2.4rem] h-[4.8rem] rounded-[0.4rem] px-[1.2rem] bg-neutral-700 font-medium text-neutral-100 text-h8"/>
-
-                <button type="submit" className="h-[4.4rem] bg-green-800 rounded-[0.4rem] mt-[2.4rem] font-medium text-neutral-100 text-h8 flex justify-center items-center text-center hover:shadow-btn-highlight transition-all duration-[0.6s]">I'm Interested!</button>
-
-            </form>
+            {active && <div className="mt-[2.4rem] mb-[6.4rem] md:mb-[25.6rem] font-medium text-h8">your interest has been noted 😊🙏</div>}
 
         </div>
     )

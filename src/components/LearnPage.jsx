@@ -202,7 +202,7 @@ const LessonCard = ({title, link, active}) => {
 
             </NavLink>
 
-            <div className={"w-[30rem] px-[1.6rem] py-[0.8rem] rounded-[0.8rem] fixed left-[50%] translate-x-[-50%] bottom-[6.4rem] bg-red-100 font-bold text-h8 text-center opacity-0"} id="warning" warn={warning} onAnimationEnd={() => setWarning(0)}>SIGN IN TO TRACK PROGRESS</div>
+            <div className={"w-[30rem] px-[1.6rem] py-[0.8rem] rounded-[0.8rem] fixed left-[50%] translate-x-[-50%] bottom-[6.4rem] bg-red-100 font-medium text-h9 text-center opacity-0 z-[-2]"} id="warning" warn={warning} onAnimationEnd={() => setWarning(0)}>SIGN IN TO TRACK PROGRESS</div>
         </>
     )
 }

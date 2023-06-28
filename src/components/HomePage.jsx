@@ -13,7 +13,7 @@ export default function HomePage() {
                 <div className="flex flex-col md:[&>*]:text-left lg:w-[50%]">
                     <div className="w-full font-bold text-h3 leading-[105%] text-center mt-[3.2rem] md:mt-0 xl:text-h0 lg:text-h1">engr102 made <span className="text-primary-500">simple</span></div>
 
-                    <div className="w-full font-medium text-h9 text-neutral-200 leading-[1.5] text-center mt-[1.6rem] xl:text-h6 lg:text-h7">Skip the fluff, save your time. <span className="font-bold text-primary-500">Improve your grade</span> with the resources we provide.</div>
+                    <div className="w-full font-medium text-h9 text-neutral-200 leading-[1.5] text-center mt-[1.6rem] xl:text-h6 lg:text-h7">Skip the bs, save your time. <span className="font-bold text-primary-500">Improve your grade</span> with the resources we provide.</div>
 
                     <NavLink to="/learn" className="w-full h-[4.8rem] flex justify-center items-center border-[0.3rem] text-primary-500 font-medium text-[1.6rem] mt-[2rem] border-primary-600 rounded-[0.8rem] shadow-get_start md:w-[12.2rem]">Get Started</NavLink>
                 </div>

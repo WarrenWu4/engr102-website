@@ -61,7 +61,7 @@ export default function App() {
 
         <Route path="/about" element={<AboutPage/>}/>
 
-        <Route path='/merch' element={<InProgressPage/>}/>
+        <Route path='/merch' element={<MerchPage/>}/>
 
         {(user["uid"] !== null) && <Route path='/profile' element={<ProfilePage/>}/>}
 
