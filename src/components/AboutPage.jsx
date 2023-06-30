@@ -36,10 +36,10 @@ export default function LearnPage() {
 
                 <div className="w-full mt-[4rem] font-bold text-[3.6rem]">MISSION</div>
 
-                <div className="w-full mt-[2rem] gap-[3.2rem] grid grid-cols-1 place-items-center mb-[12.8rem] md:grid-cols-2">
+                <div className="w-full mt-[2rem] gap-[3.2rem] grid grid-cols-1 mb-[12.8rem] md:grid-cols-2">
 
-                    <MissionCard title="0 Stress" desc="lorem ipsum bullshit"/>
-                    <MissionCard title="Explore CS" desc=""/>
+                    <MissionCard title="Made Stupidly Simple" desc="Learning Python can be overwhelming, particularly for students without any previous programming experience. That's why one of the primary objectives of help102 is to break down Python into easily digestible, bite-sized videos, making the learning process more approachable and manageable."/>
+                    <MissionCard title="Minimizing Stress" desc="The ETAM process can be incredibly stressful and anxiety-inducing for students seeking a competitive major. As such, help102 is dedicated to make at least one course (ENGR102) less stressful by sufficiently preparing students for labs, homeworks, and exams."/>
 
                 </div>
 
@@ -66,7 +66,7 @@ const TaCard = ({profile, name, special}) => {
 
 const MissionCard = ({title, desc}) => {
     return (
-        <div className="w-full h-[30rem] bg-neutral-800 rounded-[0.8rem] p-[1.6rem]">
+        <div className="w-full bg-neutral-800 rounded-[0.8rem] p-[1.6rem]">
 
             <div className="font-medium text-h7">{title}</div>
             

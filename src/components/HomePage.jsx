@@ -30,12 +30,12 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-[2rem] bg-neutral-800 rounded-[0.8rem] p-[1.6rem] w-full mt-[6.4rem]">
             
-                <Faq q="How is the course structured?" a="Look at the syllabus blud"/>
-                <Faq q="How do I fix my grade 😭?" a="Fuck bro"/>
-                <Faq q="Are the exams hard?" a="Not if you're a CS major 😎"/>
-                <Faq q="What is Python?" a="Search it up"/>
-                <Faq q="Why do I have to take this class?" a="Ask the department heads"/>
-                <Faq q="Is coding fun?" a="no."/>
+                <Faq q="How is the course structured?" a="Please refer your professor's syllabus for the full details. Generally, however, every week there'll be a quiz and lab on a new topic. There will also be a midterm, final, and final project (dates *should be* located in your syllabus)."/>
+                <Faq q="How do I fix my grade 😭?" a="The hard truth is to just study hard and don't fall behind. Don't ask me 	&ldquo;how do I fix my grade&rdquo; if it's the last day of school and you have a 60 in the course... 😑 I'm not a fucking magician."/>
+                <Faq q="Are the exams hard?" a="Not if you're a CS major 😎. Although as long as you put in effort and go to a couple of review sessions, you can very easily get an A even without this website."/>
+                <Faq q="What is Python?" a="A general purpose programming language that's used in a wide variety of areas such as artificial intelligence, data science, and web development. There's a lot of complicated stuff that goes under the hood, but for the purposes of this course we can just ignore them."/>
+                <Faq q="Why do I have to take this class?" a="Idfk ask the department head 😑. All jokes aside though, Python is actually a very useful tool even for non-computer science majors since it's great for automating small tasks and dealing with data."/>
+                <Faq q="Is coding fun?" a="Yes! 😎 but even if you don't enjoy coding, help102 is designed to make the process of learning how to code as painless as possible."/>
             
             </div>
 
