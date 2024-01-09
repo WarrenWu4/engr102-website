@@ -1,12 +1,12 @@
 # help102
 
-### 🤔 About
+## 🤔 About
 
 Help102 is a dedicated online platform specifically designed for the ENGR102 (Introduction to Python) course at Texas A&M University. Our primary goal is to streamline access to course resources while simplifying complex materials, enabling students to excel in their studies and grasp Python concepts more effectively. At help102, we prioritize the creation of engaging and concise videos along with interactive content to enhance the learning experience for all students. Moreover, our platform is committed to ensuring a seamless user experience for TAs and PTs through an effortless onboarding process and an integrated content management system tailored for both videos and static educational material.
 
 If you're interested in learning about our development and design process, you can go to my dev log and search for articles with the 'help102' tag (once I'm done writing them lol).
 
-### 🎈 Usage
+## 🎈 Usage
 
 **For Students**
 
@@ -18,17 +18,17 @@ As a side note, while help102 simplifies the content and studying process, it's 
 
 If you're interested in contributing or making educational content, go to the help102 website and login with your TAMU email. Then, join the [TAO Discord](https://tx.ag/216server) if you haven't already. Afterwards, contact me via one of the contact methods [below](https://github.com/WarrenWu4/help102?tab=readme-ov-file#contact) and I'll give you TA perms (and maybe a special character if I like you 🙂). Unfortunately, I don't have access to the list of TAs, so I'll have to manually check that you're legit which might take some time since I'm always busy 😭. Otherwise, once you have TA perms, make sure not to upload anything weird (that's literally the only rule, so don't fuck it up).
 
-### ⚠️ Issues
+## ⚠️ Issues
 
 If you find a bug, typo, security threat, or literally any other issue/suggestion submit an issue [here](https://github.com/WarrenWu4/help102/issues/new). You can also contact me directly through any of the contact methods [down below](https://github.com/WarrenWu4/help102?tab=readme-ov-file#contact) and I'll fix it whenever I have time.
 
-### ⚙️ Technologies
+## ⚙️ Technologies
 
 **Frontend:** Javascript | React | TailwindCSS
 
 **Backend:** Firebase
 
-### 💬 Contact
+## 💬 Contact
 
 **Email:** warrenweiwu04@gmail.com
 
@@ -39,4 +39,4 @@ If you find a bug, typo, security threat, or literally any other issue/suggestio
 **Other:** 
 [LinkedIn](https://www.linkedin.com/in/warren-wu4/) | [GitHub](https://github.com/WarrenWu4) | [Portfolio](https://www.warrenwu.dev/) | [YouTube](https://www.youtube.com/channel/UCiJosbDdPhrP3Rn3hfSBInw/)
 
-### ✌️ Peace Out.
+## ✌️ Peace Out.
