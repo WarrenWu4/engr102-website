@@ -16,11 +16,11 @@ As a side note, while help102 simplifies the content and studying process, it's 
 
 **For TAs/PTs**
 
-If you're interested in contributing or making educational content, go to the help102 website and login with your TAMU email. Then, join the [TAO Discord](https://tx.ag/216server) if you haven't already. Afterwards, contact me via one of the contact methods [below](https://github.com/WarrenWu4/help102?tab=readme-ov-file#contact) and I'll give you TA perms (and maybe a special character if I like you 🙂). Unfortunately, I don't have access to the list of TAs, so I'll have to manually check that you're legit which might take some time since I'm always busy 😭. Otherwise, once you have TA perms, make sure not to upload anything weird (that's literally the only rule, so don't fuck it up).
+If you're interested in contributing or making educational content, go to the help102 website and login with your TAMU email. Then, join the [TAO Discord](https://tx.ag/216server) if you haven't already. Afterwards, contact me via one of the contact methods below and I'll give you TA perms (and maybe a special character if I like you 🙂). Unfortunately, I don't have access to the list of TAs, so I'll have to manually check that you're legit which might take some time since I'm always busy 😭. Otherwise, once you have TA perms, make sure not to upload anything weird (that's literally the only rule, so don't fuck it up).
 
 ## ⚠️ Issues
 
-If you find a bug, typo, security threat, or literally any other issue/suggestion submit an issue [here](https://github.com/WarrenWu4/help102/issues/new). You can also contact me directly through any of the contact methods [down below](https://github.com/WarrenWu4/help102?tab=readme-ov-file#contact) and I'll fix it whenever I have time.
+If you find a bug, typo, security threat, or literally any other issue/suggestion submit an issue [here](https://github.com/WarrenWu4/help102/issues/new). You can also contact me directly through any of the contact methods down below and I'll fix it whenever I have time.
 
 ## ⚙️ Technologies
 
@@ -39,4 +39,6 @@ If you find a bug, typo, security threat, or literally any other issue/suggestio
 **Other:** 
 [LinkedIn](https://www.linkedin.com/in/warren-wu4/) | [GitHub](https://github.com/WarrenWu4) | [Portfolio](https://www.warrenwu.dev/) | [YouTube](https://www.youtube.com/channel/UCiJosbDdPhrP3Rn3hfSBInw/)
 
-## ✌️ Peace Out.
+---
+
+✌️ Peace Out.
